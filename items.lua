@@ -43,6 +43,10 @@ return {
 		'name', "FUNCTIONS_WeaponComponentsVIsualProcessing",
 		'CodeFileName', "Code/FUNCTIONS_WeaponComponentsVIsualProcessing.lua",
 	}),
+	PlaceObj('ModItemCode', {
+		'name', "COMPATIBILITY_RevGear",
+		'CodeFileName', "Code/COMPATIBILITY_RevGear.lua",
+	}),
 	PlaceObj('ModItemFolder', {
 		'name', "RevisedMagsCompatibility",
 	}, {
@@ -3852,7 +3856,6 @@ return {
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"IncreaseRange",
 					"IncreaseOverwatchAngle",
 					"first_aim_crit",
 					"scope_snapshot",
@@ -4029,7 +4032,6 @@ return {
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"IncreaseRange",
 					"IncreaseOverwatchAngle",
 					"first_aim_crit",
 					"scope_snapshot",
@@ -4183,7 +4185,6 @@ return {
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"first_aim_crit",
-					"IncreaseRange",
 					"IncreaseOverwatchAngle",
 					"scope_snapshot",
 					"reflex_sight_close_range",
@@ -4354,7 +4355,6 @@ return {
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"first_aim_crit",
-					"IncreaseRange",
 					"IncreaseOverwatchAngle",
 					"scope_snapshot",
 					"reflex_sight_close_range",
@@ -5499,7 +5499,6 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"AccuracyBonusWhenAimed",
-					"IncreaseRange",
 					"IncreaseOverwatchAngle",
 					"reflex_sight_close_range",
 					"scope_snapshot",
@@ -5675,7 +5674,6 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"AccuracyBonusWhenAimed",
-					"IncreaseRange",
 					"IncreaseOverwatchAngle",
 					"reflex_sight_close_range",
 					"scope_snapshot",
@@ -5822,7 +5820,6 @@ return {
 				ModificationEffects = {
 					"OpportunityAttackBonusCth",
 					"IncreaseOverwatchAngle",
-					"IncreaseRange",
 					"scope_snapshot",
 					"reflex_sight_close_range",
 					"AccuracyBonusWhenAimed",
@@ -6004,7 +6001,6 @@ return {
 				ModificationEffects = {
 					"OpportunityAttackBonusCth",
 					"IncreaseOverwatchAngle",
-					"IncreaseRange",
 					"scope_snapshot",
 					"reflex_sight_close_range",
 					"AccuracyBonusWhenAimed",
