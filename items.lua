@@ -1652,7 +1652,7 @@ return {
 					"flanker",
 					"compensator_effect_silencer",
 					"DecreaseOverwatchAngle",
-					"ReduceReliability",
+					"IncreaseConditionDegradationMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamPercent', {
@@ -1671,9 +1671,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "ReliabilityDecrease",
+						'Name', "ConditionDegradationMulIncrease",
 						'Value', 10,
-						'Tag', "<ReliabilityDecrease>",
+						'Tag', "<ConditionDegradationMulIncrease>",
 					}),
 				},
 				Slot = "General",
@@ -1711,7 +1711,7 @@ return {
 					"flanker",
 					"compensator_effect_silencer",
 					"DecreaseOverwatchAngle",
-					"ReduceReliability",
+					"IncreaseConditionDegradationMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamPercent', {
@@ -1730,9 +1730,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "ReliabilityDecrease",
+						'Name', "ConditionDegradationMulIncrease",
 						'Value', 10,
-						'Tag', "<ReliabilityDecrease>",
+						'Tag', "<ConditionDegradationMulIncrease>",
 					}),
 				},
 				Slot = "Muzzle",
@@ -1911,7 +1911,7 @@ return {
 					"flanker",
 					"compensator_effect_silencer",
 					"DecreaseOverwatchAngle",
-					"ReduceReliability",
+					"IncreaseConditionDegradationMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamPercent', {
@@ -1930,9 +1930,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "ReliabilityDecrease",
+						'Name', "ConditionDegradationMulIncrease",
 						'Value', 10,
-						'Tag', "<ReliabilityDecrease>",
+						'Tag', "<ConditionDegradationMulIncrease>",
 					}),
 				},
 				Slot = "Muzzle",
@@ -2250,7 +2250,7 @@ return {
 					"flanker",
 					"compensator_effect_silencer",
 					"DecreaseOverwatchAngle",
-					"ReduceReliability",
+					"IncreaseConditionDegradationMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamPercent', {
@@ -2269,9 +2269,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "ReliabilityDecrease",
+						'Name', "ConditionDegradationMulIncrease",
 						'Value', 10,
-						'Tag', "<ReliabilityDecrease>",
+						'Tag', "<ConditionDegradationMulIncrease>",
 					}),
 				},
 				Slot = "Muzzle",
@@ -2303,7 +2303,7 @@ return {
 					"flanker",
 					"compensator_effect_silencer",
 					"DecreaseOverwatchAngle",
-					"ReduceReliability",
+					"IncreaseConditionDegradationMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamPercent', {
@@ -2322,9 +2322,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "ReliabilityDecrease",
+						'Name', "ConditionDegradationMulIncrease",
 						'Value', 10,
-						'Tag', "<ReliabilityDecrease>",
+						'Tag', "<ConditionDegradationMulIncrease>",
 					}),
 				},
 				Slot = "Muzzle",
@@ -3852,7 +3852,7 @@ return {
 					}),
 				},
 				Cost = 30,
-				DisplayName = T(170525617708, --[[ModItemWeaponComponent RAT_TOG_Reflex DisplayName]] '"Assalto" Reflex Sight 1.5x'),
+				DisplayName = T(170525617708, --[[ModItemWeaponComponent RAT_TOG_Reflex DisplayName]] '"Assalto" Reflex Sight 1x'),
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
@@ -4028,7 +4028,7 @@ return {
 					}),
 				},
 				Cost = 30,
-				DisplayName = T(735249377244, --[[ModItemWeaponComponent RAT_TOG_Reflex_rpk_mount DisplayName]] '"Assalto" Reflex Sight 1.5x'),
+				DisplayName = T(735249377244, --[[ModItemWeaponComponent RAT_TOG_Reflex_rpk_mount DisplayName]] '"Assalto" Reflex Sight 1x'),
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
@@ -4180,7 +4180,7 @@ return {
 					}),
 				},
 				Cost = 20,
-				DisplayName = T(580012332703, --[[ModItemWeaponComponent RAT_TOG_Reflex_pistol DisplayName]] '"Assalto" Reflex Sight 1.25x'),
+				DisplayName = T(580012332703, --[[ModItemWeaponComponent RAT_TOG_Reflex_pistol DisplayName]] '"Assalto" Reflex Sight 1x'),
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
@@ -4350,7 +4350,7 @@ return {
 					}),
 				},
 				Cost = 20,
-				DisplayName = T(451043391555, --[[ModItemWeaponComponent RAT_TOG_Reflex_pistol_rpk_mount DisplayName]] '"Assalto" Reflex Sight 1.25x'),
+				DisplayName = T(451043391555, --[[ModItemWeaponComponent RAT_TOG_Reflex_pistol_rpk_mount DisplayName]] '"Assalto" Reflex Sight 1x'),
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
