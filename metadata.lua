@@ -27,7 +27,7 @@ return PlaceObj('ModDef', {
 	'author', "rato",
 	'version_major', 1,
 	'version_minor', 24,
-	'version', 3422,
+	'version', 3424,
 	'lua_revision', 233360,
 	'saved_with_revision', 366685,
 	'code', {
@@ -42,6 +42,7 @@ return PlaceObj('ModDef', {
 		"Code/WEAPON_COMPONENTS_components.lua",
 		"Code/FUNCTIONS_WeaponComponentsVIsualProcessing.lua",
 		"Code/COMPATIBILITY_RevGear.lua",
+		"Code/APPEND_CLASS_WeaponComponent.lua",
 		"Code/COMPATIBILITY_RevMag.lua",
 		"Code/COMPATIBILITY_RevMag_generated.lua",
 		"Code/explosion_inherit.lua",
@@ -50,8 +51,8 @@ return PlaceObj('ModDef', {
 	},
 	'default_options', {},
 	'has_data', true,
-	'saved', 1788036378,
-	'code_hash', 7869704154009827011,
+	'saved', 1788240057,
+	'code_hash', 8357001141989908648,
 	'affected_resources', {
 		PlaceObj('ModResourcePreset', {
 			'Class', "Caliber",
