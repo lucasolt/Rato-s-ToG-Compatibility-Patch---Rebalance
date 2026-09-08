@@ -47,10 +47,6 @@ return {
 		'name', "COMPATIBILITY_RevGear",
 		'CodeFileName', "Code/COMPATIBILITY_RevGear.lua",
 	}),
-	PlaceObj('ModItemCode', {
-		'name', "APPEND_CLASS_WeaponComponent",
-		'CodeFileName', "Code/APPEND_CLASS_WeaponComponent.lua",
-	}),
 	PlaceObj('ModItemFolder', {
 		'name', "RevisedMagsCompatibility",
 	}, {
@@ -328,14 +324,19 @@ return {
 				"hipfire_dot_effect_laser",
 				"IncreaseCritChangeScaled",
 				"critical_per_aim_laser",
-				"reflex_sight_close_range",
 				"AccuracyBonusWhenAimed",
+				"DecreaseSnapshotMul",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
-					'Name', "bonus_cth",
+					'Name', "Close_bonus",
+					'Value', 5,
+					'Tag', "<Close_bonus>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "CritChangeScaledIncrease",
 					'Value', 10,
-					'Tag', "<bonus_cth>",
+					'Tag', "<CritChangeScaledIncrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "OverwatchAngleIncrease",
@@ -343,19 +344,19 @@ return {
 					'Tag', "<OverwatchAngleIncrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
-					'Name', "Close_bonus",
-					'Value', 5,
-					'Tag', "<Close_bonus>",
+					'Name', "bonus_cth",
+					'Value', 12,
+					'Tag', "<bonus_cth>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "snap_mul_reduc",
+					'Value', 85,
+					'Tag', "<snap_mul_reduc>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "snap_reduc",
 					'Value', 15,
 					'Tag', "<snap_reduc>",
-				}),
-				PlaceObj('PresetParamNumber', {
-					'Name', "CritChangeScaledIncrease",
-					'Value', 10,
-					'Tag', "<CritChangeScaledIncrease>",
 				}),
 			},
 			Slot = "Scope",
@@ -960,17 +961,29 @@ return {
 				"CritBonusWhenFullyAimed",
 				"ScopePenalty3",
 				"DecreaseOverwatchAngle",
+				"ScopeAimThresholdBonus",
+				"IncreaseSnapshotMul",
 			},
 			Parameters = {
+				PlaceObj('PresetParamNumber', {
+					'Name', "MaxAimActionsIncrease",
+					'Value', 3,
+					'Tag', "<MaxAimActionsIncrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "OverwatchAngleDecrease",
+					'Value', 60,
+					'Tag', "<OverwatchAngleDecrease>",
+				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "RangeIncrease",
 					'Value', 16,
 					'Tag', "<RangeIncrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
-					'Name', "MaxAimActionsIncrease",
-					'Value', 1,
-					'Tag', "<MaxAimActionsIncrease>",
+					'Name', "aim_level_threshold",
+					'Value', 6,
+					'Tag', "<aim_level_threshold>",
 				}),
 				PlaceObj('PresetParamPercent', {
 					'Name', "crit",
@@ -978,9 +991,14 @@ return {
 					'Tag', "<crit>%",
 				}),
 				PlaceObj('PresetParamNumber', {
-					'Name', "OverwatchAngleDecrease",
-					'Value', 60,
-					'Tag', "<OverwatchAngleDecrease>",
+					'Name', "snap_mul_inc",
+					'Value', 160,
+					'Tag', "<snap_mul_inc>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "threshold_bonus_acc",
+					'Value', 5,
+					'Tag', "<threshold_bonus_acc>",
 				}),
 			},
 			Slot = "Scope",
@@ -1011,12 +1029,31 @@ return {
 				"AccuracyBonusWhenAimed",
 				"DecreaseOverwatchAngle",
 				"IncreaseRange",
+				"ScopePenalty1",
+				"ScopeAimThresholdBonus",
+				"IncreaseMaxAimActions",
+				"IncreaseSnapshotMul",
 			},
 			Parameters = {
+				PlaceObj('PresetParamNumber', {
+					'Name', "MaxAimActionsIncrease",
+					'Value', 1,
+					'Tag', "<MaxAimActionsIncrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "OverwatchAngleDecrease",
+					'Value', 85,
+					'Tag', "<OverwatchAngleDecrease>",
+				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "RangeIncrease",
 					'Value', 4,
 					'Tag', "<RangeIncrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "aim_level_threshold",
+					'Value', 4,
+					'Tag', "<aim_level_threshold>",
 				}),
 				PlaceObj('PresetParamPercent', {
 					'Name', "bonus_cth",
@@ -1024,9 +1061,14 @@ return {
 					'Tag', "<bonus_cth>%",
 				}),
 				PlaceObj('PresetParamNumber', {
-					'Name', "OverwatchAngleDecrease",
-					'Value', 85,
-					'Tag', "<OverwatchAngleDecrease>",
+					'Name', "snap_mul_inc",
+					'Value', 125,
+					'Tag', "<snap_mul_inc>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "threshold_bonus_acc",
+					'Value', 3,
+					'Tag', "<threshold_bonus_acc>",
 				}),
 			},
 			Slot = "Scope",
@@ -1072,24 +1114,15 @@ return {
 			Icon = "Mod/KKh3Yhf/Images/SteyrScout_Scope.png",
 			ModificationDifficulty = 0,
 			ModificationEffects = {
-				"pso_dragunov_scope",
 				"IncreaseMaxAimActions",
 				"ScopePenalty2",
 				"scout_scope_crit",
 				"IncreaseRange",
 				"DecreaseOverwatchAngle",
+				"ScopeAimThresholdBonus",
+				"IncreaseSnapshotMul",
 			},
 			Parameters = {
-				PlaceObj('PresetParamNumber', {
-					'Name', "RangeIncrease",
-					'Value', 10,
-					'Tag', "<RangeIncrease>",
-				}),
-				PlaceObj('PresetParamNumber', {
-					'Name', "OverwatchAngleDecrease",
-					'Value', 60,
-					'Tag', "<OverwatchAngleDecrease>",
-				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "APincrease",
 					'Value', 1,
@@ -1097,13 +1130,38 @@ return {
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "MaxAimActionsIncrease",
-					'Value', 1,
+					'Value', 2,
 					'Tag', "<MaxAimActionsIncrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "OverwatchAngleDecrease",
+					'Value', 60,
+					'Tag', "<OverwatchAngleDecrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "RangeIncrease",
+					'Value', 10,
+					'Tag', "<RangeIncrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "aim_level_threshold",
+					'Value', 5,
+					'Tag', "<aim_level_threshold>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "critical_head",
 					'Value', 15,
 					'Tag', "<critical_head>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "snap_mul_inc",
+					'Value', 140,
+					'Tag', "<snap_mul_inc>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "threshold_bonus_acc",
+					'Value', 5,
+					'Tag', "<threshold_bonus_acc>",
 				}),
 			},
 			Slot = "Scope",
@@ -1135,19 +1193,15 @@ return {
 				"IncreaseRange",
 				"DecreaseOverwatchAngle",
 				"ScopePenalty2",
-				"pso_dragunov_scope",
 				"zrak_scope_crit",
+				"ScopeAimThresholdBonus",
+				"IncreaseSnapshotMul",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
 					'Name', "MaxAimActionsIncrease",
-					'Value', 1,
+					'Value', 2,
 					'Tag', "<MaxAimActionsIncrease>",
-				}),
-				PlaceObj('PresetParamNumber', {
-					'Name', "RangeIncrease",
-					'Value', 10,
-					'Tag', "<RangeIncrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "OverwatchAngleDecrease",
@@ -1155,9 +1209,29 @@ return {
 					'Tag', "<OverwatchAngleDecrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
+					'Name', "RangeIncrease",
+					'Value', 10,
+					'Tag', "<RangeIncrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "aim_level_threshold",
+					'Value', 5,
+					'Tag', "<aim_level_threshold>",
+				}),
+				PlaceObj('PresetParamNumber', {
 					'Name', "crit_torso",
 					'Value', 12,
 					'Tag', "<crit_torso>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "snap_mul_inc",
+					'Value', 140,
+					'Tag', "<snap_mul_inc>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "threshold_bonus_acc",
+					'Value', 5,
+					'Tag', "<threshold_bonus_acc>",
 				}),
 			},
 			Slot = "Scope",
@@ -1248,18 +1322,24 @@ return {
 			Icon = "Mod/KKh3Yhf/Images/VSS_Scope_icon.png",
 			ModificationDifficulty = 10,
 			ModificationEffects = {
-				"pso_dragunov_scope",
 				"IncreaseRange",
 				"ScopePenalty2",
 				"DecreaseOverwatchAngle",
 				"StealthKillBonusPerAim",
 				"IncreaseMaxAimActions",
+				"ScopeAimThresholdBonus",
+				"IncreaseSnapshotMul",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
-					'Name', "RangeIncrease",
-					'Value', 10,
-					'Tag', "<RangeIncrease>",
+					'Name', "APincrease",
+					'Value', 1,
+					'Tag', "<APincrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "MaxAimActionsIncrease",
+					'Value', 2,
+					'Tag', "<MaxAimActionsIncrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "OverwatchAngleDecrease",
@@ -1267,9 +1347,19 @@ return {
 					'Tag', "<OverwatchAngleDecrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
-					'Name', "APincrease",
-					'Value', 1,
-					'Tag', "<APincrease>",
+					'Name', "RangeIncrease",
+					'Value', 10,
+					'Tag', "<RangeIncrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "aim_level_threshold",
+					'Value', 5,
+					'Tag', "<aim_level_threshold>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "snap_mul_inc",
+					'Value', 140,
+					'Tag', "<snap_mul_inc>",
 				}),
 				PlaceObj('PresetParamPercent', {
 					'Name', "stealth_kill_bonus",
@@ -1277,9 +1367,9 @@ return {
 					'Tag', "<stealth_kill_bonus>%",
 				}),
 				PlaceObj('PresetParamNumber', {
-					'Name', "MaxAimActionsIncrease",
-					'Value', 1,
-					'Tag', "<MaxAimActionsIncrease>",
+					'Name', "threshold_bonus_acc",
+					'Value', 5,
+					'Tag', "<threshold_bonus_acc>",
 				}),
 			},
 			Slot = "Scope",
@@ -1325,8 +1415,14 @@ return {
 			ModificationEffects = {
 				"IncreaseRange",
 				"AccuracyBonusWhenAimed",
+				"IncreaseMaxAimActions",
 			},
 			Parameters = {
+				PlaceObj('PresetParamNumber', {
+					'Name', "MaxAimActionsIncrease",
+					'Value', 1,
+					'Tag', "<MaxAimActionsIncrease>",
+				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "RangeIncrease",
 					'Value', 4,
@@ -1389,6 +1485,7 @@ return {
 				},
 				Cost = 35,
 				DisplayName = T(119456042859, --[[ModItemWeaponComponent ToG_Comp_AR_Barrel_Long_1_SMG DisplayName]] "Extended Barrel"),
+				GBO_ComponentAncestor = "BarrelLong_handgun",
 				Icon = "UI/Icons/Upgrades/galil_barrel_long",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -1477,6 +1574,7 @@ return {
 				},
 				Cost = 60,
 				DisplayName = T(410804291740, --[[ModItemWeaponComponent ToG_Comp_AR_Barrel_Long_2_SMG DisplayName]] "Improved Extended Barrel"),
+				GBO_ComponentAncestor = "BarrelLongImproved_handgun",
 				Icon = "UI/Icons/Upgrades/galil_barrel_long",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -1607,6 +1705,7 @@ return {
 				},
 				Cost = 30,
 				DisplayName = T(718708284618, --[[ModItemWeaponComponent R_TOG_light_barrel DisplayName]] "Light Barrel"),
+				GBO_ComponentAncestor = "BarrelLight",
 				Icon = "UI/Icons/Upgrades/galil_barrel_short",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
@@ -1649,6 +1748,7 @@ return {
 				},
 				Cost = 10,
 				DisplayName = T(816803515806, --[[ModItemWeaponComponent R_VSS_suppressor DisplayName]] "Suppressor"),
+				GBO_ComponentAncestor = "Suppressor",
 				Icon = "Mod/Dau6w/Images/VSS_silencer.png",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -1708,6 +1808,7 @@ return {
 				},
 				Cost = 10,
 				DisplayName = T(981109124405, --[[ModItemWeaponComponent RAT_VSK_Suppressor DisplayName]] "Suppressor"),
+				GBO_ComponentAncestor = "Suppressor",
 				Icon = "Mod/Dau6w/Images/VSS_silencer.png",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -1760,6 +1861,7 @@ return {
 			}),
 			PlaceObj('ModItemWeaponComponent', {
 				DisplayName = T(102725922765, --[[ModItemWeaponComponent RAT_pap_compensator DisplayName]] "Compensator"),
+				GBO_ComponentAncestor = "Compensator",
 				Icon = "UI/Icons/Upgrades/m16_muzzle",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -1796,6 +1898,7 @@ return {
 			}),
 			PlaceObj('ModItemWeaponComponent', {
 				DisplayName = T(465995430320, --[[ModItemWeaponComponent RAT_TOG_CompensatorNoEntity DisplayName]] "Compensator"),
+				GBO_ComponentAncestor = "Compensator",
 				Icon = "UI/Icons/Upgrades/m16_muzzle",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -1852,6 +1955,7 @@ return {
 			PlaceObj('ModItemWeaponComponent', {
 				Cost = 30,
 				DisplayName = T(379441111699, --[[ModItemWeaponComponent hk53_Stock_heavy DisplayName]] "Heavy Stock"),
+				GBO_ComponentAncestor = "StockHeavy",
 				Icon = "Mod/KKh3Yhf/Images/HK33_stock_def.png",
 				ModificationDifficulty = 20,
 				ModificationEffects = {
@@ -1908,6 +2012,7 @@ return {
 				},
 				Cost = 30,
 				DisplayName = T(925798349418, --[[ModItemWeaponComponent RAT_TOG_suppressor DisplayName]] "Suppressor"),
+				GBO_ComponentAncestor = "Suppressor",
 				Icon = "UI/Icons/Upgrades/beretta_silencer",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -2247,6 +2352,7 @@ return {
 				},
 				Cost = 30,
 				DisplayName = T(997833765455, --[[ModItemWeaponComponent RAT_TOG_suppressor_wp DisplayName]] "Suppressor"),
+				GBO_ComponentAncestor = "Suppressor",
 				Icon = "UI/Icons/Upgrades/beretta_silencer",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -2300,6 +2406,7 @@ return {
 				},
 				Cost = 30,
 				DisplayName = T(343573025525, --[[ModItemWeaponComponent RAT_TOG_suppressor_762 DisplayName]] "Suppressor"),
+				GBO_ComponentAncestor = "Suppressor",
 				Icon = "UI/Icons/Upgrades/762_suppressor",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -2347,6 +2454,7 @@ return {
 			PlaceObj('ModItemWeaponComponent', {
 				Cost = 25,
 				DisplayName = T(846837355653, --[[ModItemWeaponComponent RAT_TOG_compensator DisplayName]] "Compensator"),
+				GBO_ComponentAncestor = "Compensator",
 				Icon = "UI/Icons/Upgrades/m16_muzzle",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
@@ -2609,14 +2717,14 @@ return {
 				},
 				Cost = 25,
 				DisplayName = T(578140184480, --[[ModItemWeaponComponent RAT_TOG_ACOG DisplayName]] "Quick Prism Scope 2x"),
+				GBO_ComponentAncestor = "ScopeCOGQuick",
 				Icon = "UI/Icons/Upgrades/scope_thermal",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"FirstAimBonusModifier",
+					"IncreaseRange",
 					"ScopePenalty1",
-					"scope_snapshot",
 					"IncreaseOverwatchAngle",
-					"BonusAccuracyWhenFullyAimed",
 					"IncreaseMaxAimActions",
 				},
 				Parameters = {
@@ -2641,9 +2749,24 @@ return {
 						'Tag', "<RangeIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 4,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "first_aim_bonus_acc",
+						'Value', 3,
+						'Tag', "<first_aim_bonus_acc>",
+					}),
+					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
 						'Value', 5,
 						'Tag', "<snap_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 2,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -2816,14 +2939,14 @@ return {
 				},
 				Cost = 25,
 				DisplayName = T(700049720123, --[[ModItemWeaponComponent RAT_TOG_ACOG_rpk_mount DisplayName]] "Quick Prism Scope 2x"),
+				GBO_ComponentAncestor = "ScopeCOGQuick",
 				Icon = "UI/Icons/Upgrades/scope_thermal",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"FirstAimBonusModifier",
+					"IncreaseRange",
 					"ScopePenalty1",
-					"scope_snapshot",
 					"IncreaseOverwatchAngle",
-					"BonusAccuracyWhenFullyAimed",
 					"IncreaseMaxAimActions",
 				},
 				Parameters = {
@@ -2848,9 +2971,24 @@ return {
 						'Tag', "<RangeIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 4,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "first_aim_bonus_acc",
+						'Value', 3,
+						'Tag', "<first_aim_bonus_acc>",
+					}),
+					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
 						'Value', 5,
 						'Tag', "<snap_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 2,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -2957,14 +3095,16 @@ return {
 				},
 				Cost = 25,
 				DisplayName = T(826230452776, --[[ModItemWeaponComponent RAT_TOG_WideScope DisplayName]] '"Vulto" Wide Scope 2x'),
+				GBO_ComponentAncestor = "WideScope",
 				Icon = "Mod/KKh3Yhf/Images/L85A1_scope.png",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"OpportunityAttackBonusCth",
+					"IncreaseRange",
 					"ScopePenalty1",
-					"scope_snapshot",
-					"BonusAccuracyWhenFullyAimed",
 					"IncreaseMaxAimActions",
+					"DecreaseSnapshotMul",
+					"FirstAimBonusModifier",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -2986,6 +3126,16 @@ return {
 						'Name', "bonus_cth_interrupt",
 						'Value', 8,
 						'Tag', "<bonus_cth_interrupt>%",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "first_aim_bonus_acc",
+						'Value', 2,
+						'Tag', "<first_aim_bonus_acc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 95,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -3127,14 +3277,16 @@ return {
 				},
 				Cost = 25,
 				DisplayName = T(695118715718, --[[ModItemWeaponComponent RAT_TOG_WideScope_rpk_mount DisplayName]] '"Vulto" Wide Scope 2x'),
+				GBO_ComponentAncestor = "WideScope",
 				Icon = "Mod/KKh3Yhf/Images/L85A1_scope.png",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"OpportunityAttackBonusCth",
+					"IncreaseRange",
 					"ScopePenalty1",
-					"scope_snapshot",
-					"BonusAccuracyWhenFullyAimed",
 					"IncreaseMaxAimActions",
+					"DecreaseSnapshotMul",
+					"FirstAimBonusModifier",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -3156,6 +3308,16 @@ return {
 						'Name', "bonus_cth_interrupt",
 						'Value', 8,
 						'Tag', "<bonus_cth_interrupt>%",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "first_aim_bonus_acc",
+						'Value', 2,
+						'Tag', "<first_aim_bonus_acc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 95,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -3267,13 +3429,16 @@ return {
 				},
 				Cost = 30,
 				DisplayName = T(709499728501, --[[ModItemWeaponComponent RAT_TOG_LRoptics DisplayName]] "Sniper Scope 4x"),
+				GBO_ComponentAncestor = "LROptics",
 				Icon = "UI/Icons/Upgrades/scope_longrange",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"IncreaseMaxAimActions",
+					"IncreaseRange",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
-					"sniper_aim_scope",
+					"ScopeAimThresholdBonus",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -3295,6 +3460,21 @@ return {
 						'Name', "RangeIncrease",
 						'Value', 10,
 						'Tag', "<RangeIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 5,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 140,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 5,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -3431,13 +3611,16 @@ return {
 				},
 				Cost = 30,
 				DisplayName = T(369676866578, --[[ModItemWeaponComponent RAT_TOG_LRoptics_rpk_mount DisplayName]] "Sniper Scope 4x"),
+				GBO_ComponentAncestor = "LROptics",
 				Icon = "UI/Icons/Upgrades/scope_longrange",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"IncreaseMaxAimActions",
+					"IncreaseRange",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
-					"sniper_aim_scope",
+					"ScopeAimThresholdBonus",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -3459,6 +3642,21 @@ return {
 						'Name', "RangeIncrease",
 						'Value', 10,
 						'Tag', "<RangeIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 5,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 140,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 5,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -3565,13 +3763,17 @@ return {
 				},
 				Cost = 50,
 				DisplayName = T(779671366710, --[[ModItemWeaponComponent RAT_TOG_PSGScope DisplayName]] "Hensoldt ZF Scope 6x"),
+				GBO_ComponentAncestor = "PSG_DefaultScope",
 				Icon = "UI/Icons/Upgrades/custom_PSG1_scope",
 				ModificationDifficulty = 20,
 				ModificationEffects = {
 					"IncreaseMaxAimActions",
+					"IncreaseRange",
 					"ScopePenalty3",
 					"DecreaseOverwatchAngle",
 					"bodypart_scope",
+					"ScopeAimThresholdBonus",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -3594,10 +3796,25 @@ return {
 						'Value', 16,
 						'Tag', "<RangeIncrease>",
 					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 6,
+						'Tag', "<aim_level_threshold>",
+					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "crit",
 						'Value', 15,
 						'Tag', "<crit>%",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 160,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 5,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -3734,13 +3951,17 @@ return {
 				},
 				Cost = 50,
 				DisplayName = T(171974969803, --[[ModItemWeaponComponent RAT_TOG_PSGScope_rpk_mount DisplayName]] "Hensoldt ZF Scope 6x"),
+				GBO_ComponentAncestor = "PSG_DefaultScope",
 				Icon = "UI/Icons/Upgrades/custom_PSG1_scope",
 				ModificationDifficulty = 20,
 				ModificationEffects = {
 					"IncreaseMaxAimActions",
+					"IncreaseRange",
 					"ScopePenalty3",
 					"DecreaseOverwatchAngle",
 					"bodypart_scope",
+					"ScopeAimThresholdBonus",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -3763,10 +3984,25 @@ return {
 						'Value', 16,
 						'Tag', "<RangeIncrease>",
 					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 6,
+						'Tag', "<aim_level_threshold>",
+					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "crit",
 						'Value', 15,
 						'Tag', "<crit>%",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 160,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 5,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -3873,14 +4109,14 @@ return {
 				},
 				Cost = 30,
 				DisplayName = T(170525617708, --[[ModItemWeaponComponent RAT_TOG_Reflex DisplayName]] '"Assalto" Reflex Sight 1x'),
+				GBO_ComponentAncestor = "ReflexSightAdvanced",
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"IncreaseOverwatchAngle",
 					"first_aim_crit",
-					"scope_snapshot",
-					"reflex_sight_close_range",
 					"AccuracyBonusWhenAimed",
+					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -3900,8 +4136,13 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 3,
+						'Value', 10,
 						'Tag', "<bonus_cth>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 90,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -4049,14 +4290,14 @@ return {
 				},
 				Cost = 30,
 				DisplayName = T(735249377244, --[[ModItemWeaponComponent RAT_TOG_Reflex_rpk_mount DisplayName]] '"Assalto" Reflex Sight 1x'),
+				GBO_ComponentAncestor = "ReflexSightAdvanced",
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"IncreaseOverwatchAngle",
 					"first_aim_crit",
-					"scope_snapshot",
-					"reflex_sight_close_range",
 					"AccuracyBonusWhenAimed",
+					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -4076,8 +4317,13 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 3,
+						'Value', 10,
 						'Tag', "<bonus_cth>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 90,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -4201,14 +4447,14 @@ return {
 				},
 				Cost = 20,
 				DisplayName = T(580012332703, --[[ModItemWeaponComponent RAT_TOG_Reflex_pistol DisplayName]] '"Assalto" Reflex Sight 1x'),
+				GBO_ComponentAncestor = "ReflexSightAdvanced_Glock",
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"first_aim_crit",
 					"IncreaseOverwatchAngle",
-					"scope_snapshot",
-					"reflex_sight_close_range",
 					"AccuracyBonusWhenAimed",
+					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -4228,8 +4474,13 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 3,
+						'Value', 10,
 						'Tag', "<bonus_cth>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 90,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -4371,14 +4622,14 @@ return {
 				},
 				Cost = 20,
 				DisplayName = T(451043391555, --[[ModItemWeaponComponent RAT_TOG_Reflex_pistol_rpk_mount DisplayName]] '"Assalto" Reflex Sight 1x'),
+				GBO_ComponentAncestor = "ReflexSightAdvanced_Glock",
 				Icon = "UI/Icons/Upgrades/scope_reflex",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"first_aim_crit",
 					"IncreaseOverwatchAngle",
-					"scope_snapshot",
-					"reflex_sight_close_range",
 					"AccuracyBonusWhenAimed",
+					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -4398,8 +4649,13 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 3,
+						'Value', 10,
 						'Tag', "<bonus_cth>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 90,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -4517,13 +4773,16 @@ return {
 				},
 				Cost = 40,
 				DisplayName = T(411606517558, --[[ModItemWeaponComponent RAT_TOG_LRoptics_advanced DisplayName]] "Sniper Scope 6x"),
+				GBO_ComponentAncestor = "LROpticsAdvanced",
 				Icon = "UI/Icons/Upgrades/sniper_scope_x10",
 				ModificationDifficulty = 20,
 				ModificationEffects = {
 					"IncreaseMaxAimActions",
+					"IncreaseRange",
 					"ScopePenalty3",
 					"DecreaseOverwatchAngle",
-					"sniper_adv_aim_scope",
+					"ScopeAimThresholdBonus",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -4545,6 +4804,21 @@ return {
 						'Name', "RangeIncrease",
 						'Value', 16,
 						'Tag', "<RangeIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 6,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 160,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 5,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -4681,13 +4955,16 @@ return {
 				},
 				Cost = 40,
 				DisplayName = T(882077124196, --[[ModItemWeaponComponent RAT_TOG_LRoptics_advanced_rpk_mount DisplayName]] "Sniper Scope 6x"),
+				GBO_ComponentAncestor = "LROpticsAdvanced",
 				Icon = "UI/Icons/Upgrades/sniper_scope_x10",
 				ModificationDifficulty = 20,
 				ModificationEffects = {
 					"IncreaseMaxAimActions",
+					"IncreaseRange",
 					"ScopePenalty3",
 					"DecreaseOverwatchAngle",
-					"sniper_adv_aim_scope",
+					"ScopeAimThresholdBonus",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -4709,6 +4986,21 @@ return {
 						'Name', "RangeIncrease",
 						'Value', 16,
 						'Tag', "<RangeIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 6,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 160,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 5,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -4819,6 +5111,7 @@ return {
 				},
 				Cost = 60,
 				DisplayName = T(903883430588, --[[ModItemWeaponComponent RAT_TOG_thermal DisplayName]] "Thermal Scope 4x"),
+				GBO_ComponentAncestor = "ThermalScope",
 				Icon = "UI/Icons/Upgrades/scope_ACOG",
 				ModificationDifficulty = 20,
 				ModificationEffects = {
@@ -4826,9 +5119,12 @@ return {
 					"IgnoreCoverCtHWhenFullyAimed",
 					"IgnoreLightOfSightWhenFullyAimed",
 					"IgnoreGrazingHitsWhenFullyAimed",
+					"IncreaseRange",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
+					"ScopeAimThresholdBonus",
 					"IncreaseMaxAimActions",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -4850,6 +5146,21 @@ return {
 						'Name', "RangeIncrease",
 						'Value', 10,
 						'Tag', "<RangeIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 5,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 140,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 5,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -4990,6 +5301,7 @@ return {
 				},
 				Cost = 60,
 				DisplayName = T(720979900068, --[[ModItemWeaponComponent RAT_TOG_thermal_rpk_mount DisplayName]] "Thermal Scope 4x"),
+				GBO_ComponentAncestor = "ThermalScope",
 				Icon = "UI/Icons/Upgrades/scope_ACOG",
 				ModificationDifficulty = 20,
 				ModificationEffects = {
@@ -4997,9 +5309,12 @@ return {
 					"IgnoreCoverCtHWhenFullyAimed",
 					"IgnoreLightOfSightWhenFullyAimed",
 					"IgnoreGrazingHitsWhenFullyAimed",
+					"IncreaseRange",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
+					"ScopeAimThresholdBonus",
 					"IncreaseMaxAimActions",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -5021,6 +5336,21 @@ return {
 						'Name', "RangeIncrease",
 						'Value', 10,
 						'Tag', "<RangeIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 5,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 140,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 5,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -5513,13 +5843,13 @@ return {
 				},
 				Cost = 20,
 				DisplayName = T(129608310281, --[[ModItemWeaponComponent RAT_TOG_compactRS DisplayName]] "Compact Reflex Sight 1.25x"),
+				GBO_ComponentAncestor = "ReflexSight",
 				Icon = "UI/Icons/Upgrades/compact_reflex_sight",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"AccuracyBonusWhenAimed",
 					"IncreaseOverwatchAngle",
-					"reflex_sight_close_range",
-					"scope_snapshot",
+					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -5539,8 +5869,13 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 3,
+						'Value', 12,
 						'Tag', "<bonus_cth>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 85,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -5688,13 +6023,13 @@ return {
 				},
 				Cost = 20,
 				DisplayName = T(633204289463, --[[ModItemWeaponComponent RAT_TOG_compactRS_rpk_mount DisplayName]] "Compact Reflex Sight 1.25x"),
+				GBO_ComponentAncestor = "ReflexSight",
 				Icon = "UI/Icons/Upgrades/compact_reflex_sight",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"AccuracyBonusWhenAimed",
 					"IncreaseOverwatchAngle",
-					"reflex_sight_close_range",
-					"scope_snapshot",
+					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -5714,8 +6049,13 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 3,
+						'Value', 12,
 						'Tag', "<bonus_cth>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 85,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -5833,14 +6173,14 @@ return {
 				},
 				Cost = 20,
 				DisplayName = T(422877531589, --[[ModItemWeaponComponent RAT_TOG_vigilanceRS DisplayName]] '"Vigilante" Reflex Sight 1.5x'),
+				GBO_ComponentAncestor = "_ReflexSIghtVigilance",
 				Icon = "Mod/KQkEVHf/Icons/Upgrades/ToC_Scope_kentaur.png",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"OpportunityAttackBonusCth",
 					"IncreaseOverwatchAngle",
-					"scope_snapshot",
-					"reflex_sight_close_range",
 					"AccuracyBonusWhenAimed",
+					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -5860,13 +6200,18 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 3,
+						'Value', 5,
 						'Tag', "<bonus_cth>",
 					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "bonus_cth_interrupt",
 						'Value', 10,
 						'Tag', "<bonus_cth_interrupt>%",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 85,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -6014,14 +6359,14 @@ return {
 				},
 				Cost = 20,
 				DisplayName = T(921032371113, --[[ModItemWeaponComponent RAT_TOG_vigilanceRS_rpk_mount DisplayName]] '"Vigilante" Reflex Sight 1.5x'),
+				GBO_ComponentAncestor = "_ReflexSIghtVigilance",
 				Icon = "Mod/KQkEVHf/Icons/Upgrades/ToC_Scope_kentaur.png",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
 					"OpportunityAttackBonusCth",
 					"IncreaseOverwatchAngle",
-					"scope_snapshot",
-					"reflex_sight_close_range",
 					"AccuracyBonusWhenAimed",
+					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -6041,13 +6386,18 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 3,
+						'Value', 5,
 						'Tag', "<bonus_cth>",
 					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "bonus_cth_interrupt",
 						'Value', 10,
 						'Tag', "<bonus_cth_interrupt>%",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 85,
+						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -6171,14 +6521,17 @@ return {
 				},
 				Cost = 25,
 				DisplayName = T(286391491990, --[[ModItemWeaponComponent RAT_TOG_Prism DisplayName]] "Prism Scope 2x"),
+				GBO_ComponentAncestor = "ScopeCOG",
 				Icon = "UI/Icons/Upgrades/prism_scope",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
+					"IncreaseRange",
 					"ScopePenalty1",
 					"DecreaseOverwatchAngle",
 					"critical_per_aim_scope",
-					"BonusAccuracyWhenFullyAimed",
+					"ScopeAimThresholdBonus",
 					"IncreaseMaxAimActions",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -6200,6 +6553,21 @@ return {
 						'Name', "RangeIncrease",
 						'Value', 6,
 						'Tag', "<RangeIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 4,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 125,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 3,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -6336,14 +6704,17 @@ return {
 				},
 				Cost = 25,
 				DisplayName = T(438439614258, --[[ModItemWeaponComponent RAT_TOG_Prism_rpk_mount DisplayName]] "Prism Scope 2x"),
+				GBO_ComponentAncestor = "ScopeCOG",
 				Icon = "UI/Icons/Upgrades/prism_scope",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
+					"IncreaseRange",
 					"ScopePenalty1",
 					"DecreaseOverwatchAngle",
 					"critical_per_aim_scope",
-					"BonusAccuracyWhenFullyAimed",
+					"ScopeAimThresholdBonus",
 					"IncreaseMaxAimActions",
+					"IncreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -6365,6 +6736,21 @@ return {
 						'Name', "RangeIncrease",
 						'Value', 6,
 						'Tag', "<RangeIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "aim_level_threshold",
+						'Value', 4,
+						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_inc",
+						'Value', 125,
+						'Tag', "<snap_mul_inc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "threshold_bonus_acc",
+						'Value', 3,
+						'Tag', "<threshold_bonus_acc>",
 					}),
 				},
 				Slot = "Scope",
@@ -6465,6 +6851,7 @@ return {
 			PlaceObj('ModItemWeaponComponent', {
 				Cost = 10,
 				DisplayName = T(762085999190, --[[ModItemWeaponComponent RAT_TOG_flashlight DisplayName]] "Flashlight"),
+				GBO_ComponentAncestor = "Flashlight",
 				Icon = "UI/Icons/Upgrades/side_light",
 				ModificationDifficulty = -25,
 				ModificationEffects = {
@@ -6574,6 +6961,7 @@ return {
 			PlaceObj('ModItemWeaponComponent', {
 				Cost = 10,
 				DisplayName = T(979546779119, --[[ModItemWeaponComponent RAT_TOG_flashlight_rpk_mount DisplayName]] "Flashlight"),
+				GBO_ComponentAncestor = "Flashlight",
 				Icon = "UI/Icons/Upgrades/side_light",
 				ModificationDifficulty = -25,
 				ModificationEffects = {
@@ -6671,6 +7059,7 @@ return {
 				},
 				Cost = 20,
 				DisplayName = T(245194308684, --[[ModItemWeaponComponent RAT_TOG_tactical_dot DisplayName]] "Tactical Device"),
+				GBO_ComponentAncestor = "FlashlightDot",
 				Icon = "UI/Icons/Upgrades/side_laserlight",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
@@ -6804,6 +7193,7 @@ return {
 				},
 				Cost = 20,
 				DisplayName = T(425363484872, --[[ModItemWeaponComponent RAT_TOG_tactical_dot_rpk_mount DisplayName]] "Tactical Device"),
+				GBO_ComponentAncestor = "FlashlightDot",
 				Icon = "UI/Icons/Upgrades/side_laserlight",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
@@ -6920,10 +7310,12 @@ return {
 				Cost = 20,
 				DisplayName = T(146752405468, --[[ModItemWeaponComponent RAT_TOG_laser_dot DisplayName]] "Red Dot"),
 				EnableAimFX = true,
+				GBO_ComponentAncestor = "LaserDot",
 				Icon = "UI/Icons/Upgrades/side_laser",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"hipfire_dot_effect_laser",
+					"DecreaseSnapshotMul",
+					"DecreaseHipfireMul",
 					"IncreaseCritChangeScaled",
 					"critical_per_aim_laser",
 				},
@@ -6932,6 +7324,16 @@ return {
 						'Name', "CritChangeScaledIncrease",
 						'Value', 10,
 						'Tag', "<CritChangeScaledIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "hipfire_mul_reduc",
+						'Value', 90,
+						'Tag', "<hipfire_mul_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 90,
+						'Tag', "<snap_mul_reduc>",
 					}),
 				},
 				Slot = "Scope",
@@ -7045,10 +7447,12 @@ return {
 				Cost = 20,
 				DisplayName = T(921437895662, --[[ModItemWeaponComponent RAT_TOG_laser_dot_rpk_mount DisplayName]] "Red Dot"),
 				EnableAimFX = true,
+				GBO_ComponentAncestor = "LaserDot",
 				Icon = "UI/Icons/Upgrades/side_laser",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"hipfire_dot_effect_laser",
+					"DecreaseSnapshotMul",
+					"DecreaseHipfireMul",
 					"IncreaseCritChangeScaled",
 					"critical_per_aim_laser",
 				},
@@ -7057,6 +7461,16 @@ return {
 						'Name', "CritChangeScaledIncrease",
 						'Value', 10,
 						'Tag', "<CritChangeScaledIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "hipfire_mul_reduc",
+						'Value', 90,
+						'Tag', "<hipfire_mul_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 90,
+						'Tag', "<snap_mul_reduc>",
 					}),
 				},
 				Slot = "Scope",
@@ -7152,10 +7566,12 @@ return {
 				Cost = 10,
 				DisplayName = T(637586551881, --[[ModItemWeaponComponent RAT_TOG_uv_dot DisplayName]] "UV Dot"),
 				EnableAimFX = true,
+				GBO_ComponentAncestor = "UVDot",
 				Icon = "UI/Icons/Upgrades/side_laser",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"hipfire_dot_effect_uv",
+					"DecreaseSnapshotMul",
+					"DecreaseHipfireMul",
 					"IncreaseAimAccuracy",
 					"body_part_uv",
 				},
@@ -7164,6 +7580,16 @@ return {
 						'Name', "AimAccuracyIncrease",
 						'Value', 1,
 						'Tag', "<AimAccuracyIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "hipfire_mul_reduc",
+						'Value', 90,
+						'Tag', "<hipfire_mul_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 90,
+						'Tag', "<snap_mul_reduc>",
 					}),
 				},
 				Slot = "Scope",
@@ -7283,10 +7709,12 @@ return {
 				Cost = 10,
 				DisplayName = T(389832314388, --[[ModItemWeaponComponent RAT_TOG_uv_dot_rpk_mount DisplayName]] "UV Dot"),
 				EnableAimFX = true,
+				GBO_ComponentAncestor = "UVDot",
 				Icon = "UI/Icons/Upgrades/side_laser",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"hipfire_dot_effect_uv",
+					"DecreaseSnapshotMul",
+					"DecreaseHipfireMul",
 					"IncreaseAimAccuracy",
 					"body_part_uv",
 				},
@@ -7295,6 +7723,16 @@ return {
 						'Name', "AimAccuracyIncrease",
 						'Value', 1,
 						'Tag', "<AimAccuracyIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "hipfire_mul_reduc",
+						'Value', 90,
+						'Tag', "<hipfire_mul_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "snap_mul_reduc",
+						'Value', 90,
+						'Tag', "<snap_mul_reduc>",
 					}),
 				},
 				Slot = "Scope",

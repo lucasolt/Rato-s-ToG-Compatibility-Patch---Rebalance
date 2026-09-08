@@ -43,7 +43,7 @@ function OnMsg.ModsReloaded()
 end
 
 ---- Disable unpatched guns
-disable_unpatched_shop()
+--disable_unpatched_shop()
 disable_old_ammo()
 
 -- Change Zulib Calibers

@@ -29,8 +29,12 @@ function place_22mm_FXs()
 				fx.Actor = actor
 				fx.id = rat_generate_random_id_TOG()
 				fx = PlaceObj(class, fx)
+				--if not FXRules[fx] then
 				AddInRules(fx)
-				-- print(fx)
+				--	print("GBO-TOG: FX added to rules: ", fx)
+				--else
+				--	print("GBO-TOG: FX already in rules: ", fx)
+				--end
 			end
 		end
 	end

@@ -21,6 +21,10 @@ function rat_change_bipod(unit)
         {"AR10std", "U100_bipod_unfld_1", "U100_bipod_fld_1"}
     }
 
+	local function has_bipod(weapon)
+		return weapon:HasComponent("AccuracyBonusProne") or weapon:HasComponent("RecoilControlWhenProne")
+	end
+
     -- Process active weapons
     for _, weaponInfo in ipairs(weaponsTable) do
         local weaponClass = weaponInfo[1]
@@ -28,7 +32,7 @@ function rat_change_bipod(unit)
 
         if type(weaponClass) == "table" then
             for _, class in ipairs(weaponClass) do
-                if IsKindOf(activeWeapon, class) and activeWeapon:HasComponent("AccuracyBonusProne") then
+                if IsKindOf(activeWeapon, class) and has_bipod(activeWeapon) then
                     activeWeapon:SetWeaponComponent("Bipod", bipodComponent)
                     ObjModified(activeWeapon)
                     break
@@ -36,7 +40,7 @@ function rat_change_bipod(unit)
             end
         else
             if IsKindOf(activeWeapon, weaponClass) and
-                activeWeapon:HasComponent("AccuracyBonusProne") then
+                has_bipod(activeWeapon) then
                 activeWeapon:SetWeaponComponent("Bipod", bipodComponent)
                 ObjModified(activeWeapon)
                 break
@@ -52,7 +56,7 @@ function rat_change_bipod(unit)
 
             if type(weaponClass) == "table" then
                 for _, class in ipairs(weaponClass) do
-                    if IsKindOf(altWeapon, class) and altWeapon:HasComponent("AccuracyBonusProne") then
+                    if IsKindOf(altWeapon, class) and has_bipod(altWeapon) then
                         altWeapon:SetWeaponComponent("Bipod", bipodComponent)
                         ObjModified(altWeapon)
                         -- print("Alt weapon processed with bipod.")
@@ -61,7 +65,7 @@ function rat_change_bipod(unit)
                 end
             else
                 if IsKindOf(altWeapon, weaponClass) and
-                    activeWeapon:HasComponent("AccuracyBonusProne") then
+                    has_bipod(altWeapon) then
                     altWeapon:SetWeaponComponent("Bipod", bipodComponent)
                     ObjModified(altWeapon)
                     -- print("Alt weapon processed with bipod.")

@@ -2,6 +2,67 @@
 
 function RatoTOG_Patch()
 	print("Running RatoTOG_Patch...")
+	M1911_1.RestockWeight = 60
+	M1911_1.ReloadAP = 3000
+	M1911_1.ShootAP = 4000
+	M1911_1.OverwatchAngle = 2183
+	M1911_1.LargeItem = 0
+	M1911_1.WeaponRange = 16
+	M1911_1.AvailableAttacks = {"SingleShot", "DualShot", "CancelShot", "MobileShot"}
+	M1911_1.object_class = "Pistol"
+	M1911_1.HandSlot = "OneHanded"
+	M1911_1.ScrapParts = 7
+	M1911_1.PenetrationClass = 1
+	M1911_1.Cost = 2100
+	M1911_1.Damage = 22
+	M1911_1.MagazineSize = 7
+	M1911_1.Reliability = 86
+	M1911_1.RepairCost = 70
+	M1911_1.AimAccuracy = 3
+	M1911_1.UnitStat = "Marksmanship"
+	M1911_1.recoil_mechanism = "Short_Recoil"
+	M1911_1.APStance = 1
+	M1911_1.rat_barrel_len = 127
+	M1911_1.Valuable = 0
+	M1911_1.burst_selective = false
+	M1911_1.weigth_held_mul = 107
+	M1911_1.PBbonus_base = 12
+	M1911_1.rat_weigth = 1100
+	M1911_1.Weigth = 1100
+	M1911_1.Tier = 2
+	M1911_1.Rat_swap_ap = 1
+	M1911_1.CategoryPair = "Handguns"
+	M1911_1.wep_base_snapshot_mul = 72
+	M1911_1.Rat_cycling = "SemiAuto"
+	M1911_1.CritChanceScaled = 10
+	M1911_1.PointBlankBonus = 1
+	M1911_1.HolsterSlot = "Leg"
+	M1911_1.MaxStock = 3
+	M1911_1.CanAppearInShop = true
+	M1911_1.is_tog_patched = true
+	M1911_1.ObjDamageMod = 100
+	M1911_1.Cumbersome = 0
+	M1911_1.PreparedAttackType = "Overwatch"
+	M1911_1.Noise = 20
+	M1911_1.wep_base_hip_mul = 115
+	M1911_1.is_vanilla_firearm = false
+	M1911_1.fxClass = "HiPower"
+	M1911_1.wep_base_recoil_mul = 113
+	M1911_1.rat_scope_block = false
+	M1911_1.ComponentSlots = {{CanBeEmpty = false, SlotType = 'Muzzle', DefaultComponent = 'ToG_VFX_Muzzle', Modifiable = true, AvailableComponents = {'RAT_TOG_suppressor', 'Compensator', 'ToG_VFX_Muzzle', }}, {CanBeEmpty = false, SlotType = 'Magazine', DefaultComponent = 'M1911_Mag_def_1', Modifiable = true, AvailableComponents = {'M1911_Mag_def_1', 'M1911_Mag_ext_1', }}, {CanBeEmpty = false, SlotType = 'Barrel', DefaultComponent = 'M1911_Barrel_def_1', Modifiable = true, AvailableComponents = {'M1911_Barrel_def_1', 'M1911_Barrel_ext_1', }}, {CanBeEmpty = false, SlotType = 'Scope', Modifiable = true, AvailableComponents = {'RAT_TOG_compactRS', 'RAT_TOG_vigilanceRS', }}}
+	M1911_1.CritChance = 0
+	M1911_1.Condition = 100
+	M1911_1.unwieldy_weapon = false
+	M1911_1.default_long_barrel = false
+	M1911_1.CanAppearUsed = true
+	M1911_1.pistol_swap = false
+	M1911_1.AdditionalHint = T( 566181481232, [[<description_hints>]] )
+	M1911_1.HandlingBaseMul = 100
+	M1911_1.Description = T(120228027438, [[<style PerkststsBold ><scale 600>The 1911 is a single-action, recoil-operated, semi-automatic pistol chambered for the .45 ACP cartridge.<newline><newline>The pistol's formal U.S. military designation as of 1940 was , "1911" for the original model adopted March 1911, and "1911A1" for the improved 1911 model which entered service in 1926. 
+<newline><newline><style MMOptionEntry>Made in USA <image UI/Icons/Flags/f_usa.dds 1600>]])
+	M1911_1.PenetrationClass = 1
+
+
 	P08_1.RestockWeight = 40
 	P08_1.ReloadAP = 4000
 	P08_1.ShootAP = 4000
@@ -58,7 +119,7 @@ function RatoTOG_Patch()
 	P08_1.pistol_swap = false
 	P08_1.AdditionalHint = T( 346431845219, [[<description_hints>
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Swapping to this weapon is free, as long it is not dual-wielded]] )
-	P08_1.ApertureSnapHipMul = 80
+	P08_1.HandlingBaseMul = 100
 	P08_1.Description = T(980505415616, [[<style PerkststsBold ><scale 600>The Pistole Parabellum or Parabellum-Pistole, commonly known as just the Luger or Luger P08, is a toggle-locked recoil-operated semi-automatic pistol. The Luger was produced in several models and by several nations from 1898 to 1949.<newline><newline>The Luger was officially adopted by the Swiss military in 1900, the Imperial German Navy in 1906 and the German Army in 1908. The Luger was the standard service pistol of Switzerland, Portugal, the Netherlands, Brazil, Bolivia, and Bulgaria. It was widely used in other countries as a military service pistol and by police forces.<newline><newline>In the German Army service, it was adopted in a slightly modified form as the Pistole Modell 1908 (Pistole 08) in caliber 9×19mm Parabellum.<newline><newline>The Model 08 was eventually succeeded by the P38.
 <newline><newline><style ConversationChoiceNormalRollover ><scale  600>Designed by Georg von Luger <newline><image Mod/KKh3Yhf/Images/designers/GJvLuger.png 1200><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	P08_1.PenetrationClass = 1
@@ -119,7 +180,7 @@ function RatoTOG_Patch()
 	MAC11_1.CanAppearUsed = true
 	MAC11_1.pistol_swap = false
 	MAC11_1.AdditionalHint = T( 681827100466, [[<description_hints>]] )
-	MAC11_1.ApertureSnapHipMul = 80
+	MAC11_1.HandlingBaseMul = 100
 	MAC11_1.Description = T(247259528688, [[<style PerkststsBold ><scale 650>The Model-11 is a machine pistol/submachine gun developed by American firearm designer Gordon Ingram during the 1970s<newline><newline>Like the larger M-10, the M-11 has iron sights with the rear pinhole sight welded to the receiver. These sights are for use with the folding stock, as using them without the stock is nearly useless because of the initial jump of the weapon due to its heavy, open-bolt design.<newline><newline>The rate of fire of the M-11A1 is one of the biggest complaints about the firearm. Listed as 1,200 rounds per minute, the M-11's high cyclic rate is able to empty the entire 32-round magazine in about two seconds, which many users view as a drawback.<newline><newline>Noting the weapon's poor accuracy, in the 1970s International Association of Police Chiefs weapons researcher David Steele described the M series as "fit only for combat in a phone booth".<newline><newline><style MMOptionEntry>Made in USA <image UI/Icons/Flags/f_usa.dds 1600>]])
 	MAC11_1.PenetrationClass = 1
 
@@ -185,71 +246,10 @@ function RatoTOG_Patch()
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Selective fire burst mode leads to less recoil]] )
 	B93RR_1.__parents[1] = "Pistol"
 	B93RR_1.SingleShotCustomDeltaAP = 1
-	B93RR_1.ApertureSnapHipMul = 80
+	B93RR_1.HandlingBaseMul = 100
 	B93RR_1.Description = T(485390782648, [[<style PerkststsBold ><scale 600>The 93R is an Italian selective-fire machine pistol, designed in the late 1970s for police and military use, that is derived from their semi-automatic 92. The "R" stands for Raffica, which is Italian for "volley", "flurry", or "burst"<newline><newline>The 93R was designed to be used by the Italian counter-terrorism forces of the national police but was also adopted by other police and military forces who required a concealable weapon with rapid fire capabilities.<newline><newline>Much more controllable compared to other machine pistols because it was designed with only a three-round burst mode as well as a ported barrel
 <newline><newline><style MMOptionEntry>Made in Italy<image Mod/HXzCpFa/Icons/Flags/Italy.png 1600>]])
 	B93RR_1.PenetrationClass = 1
-
-
-	M1911_1.RestockWeight = 60
-	M1911_1.ReloadAP = 3000
-	M1911_1.ShootAP = 4000
-	M1911_1.OverwatchAngle = 2183
-	M1911_1.LargeItem = 0
-	M1911_1.WeaponRange = 16
-	M1911_1.AvailableAttacks = {"SingleShot", "DualShot", "CancelShot", "MobileShot"}
-	M1911_1.object_class = "Pistol"
-	M1911_1.HandSlot = "OneHanded"
-	M1911_1.ScrapParts = 7
-	M1911_1.PenetrationClass = 1
-	M1911_1.Cost = 2100
-	M1911_1.Damage = 22
-	M1911_1.MagazineSize = 7
-	M1911_1.Reliability = 86
-	M1911_1.RepairCost = 70
-	M1911_1.AimAccuracy = 3
-	M1911_1.UnitStat = "Marksmanship"
-	M1911_1.recoil_mechanism = "Short_Recoil"
-	M1911_1.APStance = 1
-	M1911_1.rat_barrel_len = 127
-	M1911_1.Valuable = 0
-	M1911_1.burst_selective = false
-	M1911_1.weigth_held_mul = 107
-	M1911_1.PBbonus_base = 12
-	M1911_1.rat_weigth = 1100
-	M1911_1.Weigth = 1100
-	M1911_1.Tier = 2
-	M1911_1.Rat_swap_ap = 1
-	M1911_1.CategoryPair = "Handguns"
-	M1911_1.wep_base_snapshot_mul = 72
-	M1911_1.Rat_cycling = "SemiAuto"
-	M1911_1.CritChanceScaled = 10
-	M1911_1.PointBlankBonus = 1
-	M1911_1.HolsterSlot = "Leg"
-	M1911_1.MaxStock = 3
-	M1911_1.CanAppearInShop = true
-	M1911_1.is_tog_patched = true
-	M1911_1.ObjDamageMod = 100
-	M1911_1.Cumbersome = 0
-	M1911_1.PreparedAttackType = "Overwatch"
-	M1911_1.Noise = 20
-	M1911_1.wep_base_hip_mul = 115
-	M1911_1.is_vanilla_firearm = false
-	M1911_1.fxClass = "HiPower"
-	M1911_1.wep_base_recoil_mul = 113
-	M1911_1.rat_scope_block = false
-	M1911_1.ComponentSlots = {{CanBeEmpty = false, SlotType = 'Muzzle', DefaultComponent = 'ToG_VFX_Muzzle', Modifiable = true, AvailableComponents = {'RAT_TOG_suppressor', 'Compensator', 'ToG_VFX_Muzzle', }}, {CanBeEmpty = false, SlotType = 'Magazine', DefaultComponent = 'M1911_Mag_def_1', Modifiable = true, AvailableComponents = {'M1911_Mag_def_1', 'M1911_Mag_ext_1', }}, {CanBeEmpty = false, SlotType = 'Barrel', DefaultComponent = 'M1911_Barrel_def_1', Modifiable = true, AvailableComponents = {'M1911_Barrel_def_1', 'M1911_Barrel_ext_1', }}, {CanBeEmpty = false, SlotType = 'Scope', Modifiable = true, AvailableComponents = {'RAT_TOG_compactRS', 'RAT_TOG_vigilanceRS', }}}
-	M1911_1.CritChance = 0
-	M1911_1.Condition = 100
-	M1911_1.unwieldy_weapon = false
-	M1911_1.default_long_barrel = false
-	M1911_1.CanAppearUsed = true
-	M1911_1.pistol_swap = false
-	M1911_1.AdditionalHint = T( 566181481232, [[<description_hints>]] )
-	M1911_1.ApertureSnapHipMul = 80
-	M1911_1.Description = T(120228027438, [[<style PerkststsBold ><scale 600>The 1911 is a single-action, recoil-operated, semi-automatic pistol chambered for the .45 ACP cartridge.<newline><newline>The pistol's formal U.S. military designation as of 1940 was , "1911" for the original model adopted March 1911, and "1911A1" for the improved 1911 model which entered service in 1926. 
-<newline><newline><style MMOptionEntry>Made in USA <image UI/Icons/Flags/f_usa.dds 1600>]])
-	M1911_1.PenetrationClass = 1
 
 
 	Glock17_1.RestockWeight = 100
@@ -308,7 +308,7 @@ function RatoTOG_Patch()
 	Glock17_1.pistol_swap = false
 	Glock17_1.AdditionalHint = T( 246679208709, [[<description_hints>
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Swapping to this weapon is free, as long it is not dual-wielded]] )
-	Glock17_1.ApertureSnapHipMul = 80
+	Glock17_1.HandlingBaseMul = 100
 	Glock17_1.Description = T(442902725085, [[<style PerkststsBold ><scale 700>The Glock 17 is a short recoil-operated, locked-breech semi-automatic pistol that uses a modified Browning cam-lock system adapted from the Hi-Power pistol.<newline><newline>The handgun was adopted into service with the Austrian military and law enforcement in 1982 as the Pistole 80, with an initial order for 25,000 guns. The Glock 17 outperformed eight different pistols from five other established manufacturers<newline><newline>In 1985, after joint Norwegian and Swedish trials from 1983 to 1985, the Glock 17 was accepted into service as the P80 in Norway, and in 1988 as the Pistol 88 in Sweden, where it surpassed all prior NATO durability standards. As a result, the Glock 17 became a standard NATO-classified sidearm<newline><newline><style MMOptionEntry>Made in Austria<image Mod/HXzCpFa/Icons/Flags/Austria.png 1600>]])
 	Glock17_1.PenetrationClass = 1
 
@@ -368,7 +368,7 @@ function RatoTOG_Patch()
 	USP_1.pistol_swap = false
 	USP_1.AdditionalHint = T( 928500227524, [[<description_hints>
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Swapping to this weapon is free, as long it is not dual-wielded.]] )
-	USP_1.ApertureSnapHipMul = 80
+	USP_1.HandlingBaseMul = 100
 	USP_1.Description = T(313263970388, [[<style PerkststsBold ><scale 700>The USP (Universelle Selbstladepistole or "universal self-loading pistol") is a semi-automatic pistol developed in Germany as a replacement for the P7 series of handguns.<newline><newline>Design work on a new family of pistols commenced in September 1989, focused primarily on the United States commercial and law enforcement markets. USP prototypes participated in rigorous testing in the Offensive Handgun Weapon System (OHWS) program requested by the U.S. Special Operations Command (USSOCOM), which would later result in the Mk 23<newline><newline>One of the distinguishing features of the USP is the mechanical recoil reduction system. It consists of a short additional spring located within the main recoil spring on the breech end of the recoil spring assembly. Designed primarily to reduce wear on the pistol's components, the system also lowers the peak recoil forces felt by the shooter.<newline><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	USP_1.PenetrationClass = 1
 
@@ -427,68 +427,9 @@ function RatoTOG_Patch()
 	VikingMP446_1.CanAppearUsed = true
 	VikingMP446_1.pistol_swap = false
 	VikingMP446_1.AdditionalHint = T( 746490991929, [[<description_hints>]] )
-	VikingMP446_1.ApertureSnapHipMul = 80
+	VikingMP446_1.HandlingBaseMul = 100
 	VikingMP446_1.Description = T(602960483459, [[<style PerkststsBold ><scale 700>The MP-446 Viking is an internal hammer firing 9mm semi-automatic handgun originating from Russia.<newline><newline>It is a short recoil operated, locked breech pistol. The Browning-type locking is achieved using traditional cam system and one large lug on the breech of the barrel, which engages the enlarged ejection port in the slide. The frame of the pistol is made from high-strength polymer.<newline><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
 	VikingMP446_1.PenetrationClass = 1
-
-
-	PP91_1.RestockWeight = 60
-	PP91_1.ReloadAP = 3000
-	PP91_1.ShootAP = 3000
-	PP91_1.OverwatchAngle = 1528
-	PP91_1.LargeItem = 0
-	PP91_1.WeaponRange = 22
-	PP91_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "RunAndGun", "CancelShot"}
-	PP91_1.object_class = "SubmachineGun"
-	PP91_1.HandSlot = "OneHanded"
-	PP91_1.ScrapParts = 10
-	PP91_1.PenetrationClass = 1
-	PP91_1.Cost = 2100
-	PP91_1.Damage = 16
-	PP91_1.MagazineSize = 20
-	PP91_1.Reliability = 82
-	PP91_1.RepairCost = 50
-	PP91_1.AimAccuracy = 2
-	PP91_1.UnitStat = "Marksmanship"
-	PP91_1.recoil_mechanism = "Blowback"
-	PP91_1.APStance = 2
-	PP91_1.rat_barrel_len = 170
-	PP91_1.Valuable = 0
-	PP91_1.burst_selective = false
-	PP91_1.weigth_held_mul = 117
-	PP91_1.PBbonus_base = 11
-	PP91_1.rat_weigth = 2500
-	PP91_1.Weigth = 2500
-	PP91_1.Tier = 1
-	PP91_1.Rat_swap_ap = 1
-	PP91_1.CategoryPair = "SubmachineGuns"
-	PP91_1.wep_base_snapshot_mul = 80
-	PP91_1.Rat_cycling = "Auto"
-	PP91_1.CritChanceScaled = 10
-	PP91_1.PointBlankBonus = 1
-	PP91_1.HolsterSlot = "Leg"
-	PP91_1.MaxStock = 3
-	PP91_1.CanAppearInShop = true
-	PP91_1.is_tog_patched = true
-	PP91_1.ObjDamageMod = 100
-	PP91_1.Cumbersome = 0
-	PP91_1.PreparedAttackType = "Overwatch"
-	PP91_1.Noise = 20
-	PP91_1.wep_base_hip_mul = 112
-	PP91_1.is_vanilla_firearm = false
-	PP91_1.wep_base_recoil_mul = 121
-	PP91_1.rat_scope_block = true
-	PP91_1.ComponentSlots = {{CanBeEmpty = false, SlotType = 'Barrel', DefaultComponent = 'PP91_Barrel_def_1', Modifiable = true, AvailableComponents = {'PP91_Barrel_def_1', 'PP91_Barrel_ext_1', }}, {CanBeEmpty = false, SlotType = 'Magazine', DefaultComponent = 'PP91_Mag_def_1', Modifiable = true, AvailableComponents = {'PP91_Mag_def_1', 'PP91_Mag_ext_1', }}, {CanBeEmpty = false, SlotType = 'Muzzle', Modifiable = true, AvailableComponents = {'Compensator', 'MuzzleBooster', 'Suppressor', 'ImprovisedSuppressor', }}, {CanBeEmpty = false, SlotType = 'Stock', DefaultComponent = 'PP91_Stock_fld_1', Modifiable = true, AvailableComponents = {'PP91_Stock_fld_1', 'PP91_Stock_unfld_1', }}, {CanBeEmpty = true, SlotType = 'Scope', Modifiable = true, AvailableComponents = {'RAT_TOG_ACOG', 'RAT_TOG_WideScope', 'RAT_TOG_Reflex', 'RAT_TOG_compactRS', 'RAT_TOG_vigilanceRS', }}}
-	PP91_1.CritChance = 0
-	PP91_1.Condition = 100
-	PP91_1.unwieldy_weapon = false
-	PP91_1.default_long_barrel = false
-	PP91_1.CanAppearUsed = true
-	PP91_1.pistol_swap = false
-	PP91_1.AdditionalHint = T( 183411732483, [[<description_hints>]] )
-	PP91_1.ApertureSnapHipMul = 80
-	PP91_1.Description = T(112464140424, [[<style PerkststsBold ><scale 600>The PP-91 Kedr is a 9mm machine pistol developed from a prototype from the 1970s and since 1994 adopted by the Russian Ministry of Internal Affairs.<newline><newline>It is blowback operated and fires from a closed bolt, allowing for more accurate shooting than would be possible from an open bolt design. Ammunition is fed from a double column box magazine and it is supplied with folding shoulder stock.<newline><newline>Despite the small caliber of the round it uses, the notable advantages of the PP-91 are its compact size and the weight of only 1.5 kg, making it very easy to carry, and can be fired effectively by only one hand. The safety/selector lever is located on the right hand side and allows for semi-automatic single shots and fully automatic fire at the rate of 800 rounds per minute. The effective range of the PP-91 is between 50-100m<newline><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
-	PP91_1.PenetrationClass = 1
 
 
 	MicroUZI_1.RestockWeight = 40
@@ -548,9 +489,68 @@ function RatoTOG_Patch()
 	MicroUZI_1.pistol_swap = true
 	MicroUZI_1.AdditionalHint = T( 118830685302, [[<description_hints>
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Swapping to this weapon is free, as long it is not dual-wielded]] )
-	MicroUZI_1.ApertureSnapHipMul = 80
+	MicroUZI_1.HandlingBaseMul = 100
 	MicroUZI_1.Description = T(696572248221, [[<style PerkststsBold ><scale 600>The Micro Uzi is an even further scaled down version of the Mini Uzi, introduced in 1986.<newline><newline>It was designed as a semi-automatic, tactical pistol with high firepower. Its distinctive design is unique and recognizable at first glance. It has a blowback operating principle, manual safety with additional palm safety, adjustable sights, and a magazine capacity of 20 rounds.<newline><newline>The most significant mechanical difference between this version and the original Uzi is that the Micro Uzi fires from a closed bolt instead of an open bolt.<newline><newline><style MMOptionEntry>Made in Israel<image Mod/HXzCpFa/Icons/Flags/Israel.png 1600>]])
 	MicroUZI_1.PenetrationClass = 1
+
+
+	PP91_1.RestockWeight = 60
+	PP91_1.ReloadAP = 3000
+	PP91_1.ShootAP = 3000
+	PP91_1.OverwatchAngle = 1528
+	PP91_1.LargeItem = 0
+	PP91_1.WeaponRange = 22
+	PP91_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "RunAndGun", "CancelShot"}
+	PP91_1.object_class = "SubmachineGun"
+	PP91_1.HandSlot = "OneHanded"
+	PP91_1.ScrapParts = 10
+	PP91_1.PenetrationClass = 1
+	PP91_1.Cost = 2100
+	PP91_1.Damage = 16
+	PP91_1.MagazineSize = 20
+	PP91_1.Reliability = 82
+	PP91_1.RepairCost = 50
+	PP91_1.AimAccuracy = 2
+	PP91_1.UnitStat = "Marksmanship"
+	PP91_1.recoil_mechanism = "Blowback"
+	PP91_1.APStance = 2
+	PP91_1.rat_barrel_len = 170
+	PP91_1.Valuable = 0
+	PP91_1.burst_selective = false
+	PP91_1.weigth_held_mul = 117
+	PP91_1.PBbonus_base = 11
+	PP91_1.rat_weigth = 2500
+	PP91_1.Weigth = 2500
+	PP91_1.Tier = 1
+	PP91_1.Rat_swap_ap = 1
+	PP91_1.CategoryPair = "SubmachineGuns"
+	PP91_1.wep_base_snapshot_mul = 80
+	PP91_1.Rat_cycling = "Auto"
+	PP91_1.CritChanceScaled = 10
+	PP91_1.PointBlankBonus = 1
+	PP91_1.HolsterSlot = "Leg"
+	PP91_1.MaxStock = 3
+	PP91_1.CanAppearInShop = true
+	PP91_1.is_tog_patched = true
+	PP91_1.ObjDamageMod = 100
+	PP91_1.Cumbersome = 0
+	PP91_1.PreparedAttackType = "Overwatch"
+	PP91_1.Noise = 20
+	PP91_1.wep_base_hip_mul = 112
+	PP91_1.is_vanilla_firearm = false
+	PP91_1.wep_base_recoil_mul = 121
+	PP91_1.rat_scope_block = true
+	PP91_1.ComponentSlots = {{CanBeEmpty = false, SlotType = 'Barrel', DefaultComponent = 'PP91_Barrel_def_1', Modifiable = true, AvailableComponents = {'PP91_Barrel_def_1', 'PP91_Barrel_ext_1', }}, {CanBeEmpty = false, SlotType = 'Magazine', DefaultComponent = 'PP91_Mag_def_1', Modifiable = true, AvailableComponents = {'PP91_Mag_def_1', 'PP91_Mag_ext_1', }}, {CanBeEmpty = false, SlotType = 'Muzzle', Modifiable = true, AvailableComponents = {'Compensator', 'MuzzleBooster', 'Suppressor', 'ImprovisedSuppressor', }}, {CanBeEmpty = false, SlotType = 'Stock', DefaultComponent = 'PP91_Stock_fld_1', Modifiable = true, AvailableComponents = {'PP91_Stock_fld_1', 'PP91_Stock_unfld_1', }}, {CanBeEmpty = true, SlotType = 'Scope', Modifiable = true, AvailableComponents = {'RAT_TOG_ACOG', 'RAT_TOG_WideScope', 'RAT_TOG_Reflex', 'RAT_TOG_compactRS', 'RAT_TOG_vigilanceRS', }}}
+	PP91_1.CritChance = 0
+	PP91_1.Condition = 100
+	PP91_1.unwieldy_weapon = false
+	PP91_1.default_long_barrel = false
+	PP91_1.CanAppearUsed = true
+	PP91_1.pistol_swap = false
+	PP91_1.AdditionalHint = T( 183411732483, [[<description_hints>]] )
+	PP91_1.HandlingBaseMul = 100
+	PP91_1.Description = T(112464140424, [[<style PerkststsBold ><scale 600>The PP-91 Kedr is a 9mm machine pistol developed from a prototype from the 1970s and since 1994 adopted by the Russian Ministry of Internal Affairs.<newline><newline>It is blowback operated and fires from a closed bolt, allowing for more accurate shooting than would be possible from an open bolt design. Ammunition is fed from a double column box magazine and it is supplied with folding shoulder stock.<newline><newline>Despite the small caliber of the round it uses, the notable advantages of the PP-91 are its compact size and the weight of only 1.5 kg, making it very easy to carry, and can be fired effectively by only one hand. The safety/selector lever is located on the right hand side and allows for semi-automatic single shots and fully automatic fire at the rate of 800 rounds per minute. The effective range of the PP-91 is between 50-100m<newline><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
+	PP91_1.PenetrationClass = 1
 
 
 	HK53_1.RestockWeight = 50
@@ -608,7 +608,7 @@ function RatoTOG_Patch()
 	HK53_1.pistol_swap = false
 	HK53_1.AdditionalHint = T( 123942705172, [[<description_hints>]] )
 	HK53_1.__parents[1] = "SubmachineGun"
-	HK53_1.ApertureSnapHipMul = 80
+	HK53_1.HandlingBaseMul = 100
 	HK53_1.Description = T(326107292886, [[<style PerkststsBold ><scale 600>The HK 53 is a compact assault rifle of German origin and the short carbine variant of the HK 33 rifle. It is often classified as a sub machine gun due to its compact size.<newline><newline>A number of police forces and militaries adopted the HK53 for a variety of roles. Special forces units around the world including the British SAS, Royal Military Police Close Protection Unit and Royal Marines, designated the L101A1 in British service, who typically used it during close protection duties and operations involving close quarter battle.<newline><newline>During its service life the HK53 went through a series of changes to furniture mouldings, buttstock types and fire selector options. It remained in production into the early 2000s, when the HK33 and HK53 where replaced with the G36 and G36K<newline><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	HK53_1.PenetrationClass = 1
 
@@ -639,7 +639,7 @@ function RatoTOG_Patch()
 	M79SAW_1.AdditionalHint = T( 309537575554, [[<image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Shoots 40mm Grenades
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Mishap chance increased with distance
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Slow rate of Fire]] )
-	M79SAW_1.ApertureSnapHipMul = 80
+	M79SAW_1.HandlingBaseMul = 100
 	M79SAW_1.Description = T(937706780893, [[<style PerkststsBold ><scale 900>The M79 grenade launcher is a single-shot, shoulder-fired, break-action grenade launcher that fires a 40×46mm grenade<newline><newline>It can fire a wide variety of 40 mm rounds, including explosive, anti-personnel, smoke, buckshot, flechette (pointed steel projectiles with a vaned tail for stable flight), and illumination. While largely replaced by the M203, the M79 has remained in service in many units worldwide in niche roles.<newline><newline>In 1961, the first M79 grenade launchers were delivered to the US Army. Owing to its ease of use, reliability, and firepower, the M79 became popular among American soldiers, who dubbed it "the platoon leader's artillery".<newline><newline><style MMOptionEntry>Made in USA <image UI/Icons/Flags/f_usa.dds 1600>]])
 	M79SAW_1.PenetrationClass = 1
 
@@ -670,7 +670,7 @@ function RatoTOG_Patch()
 	M79SAW2_1.AdditionalHint = T( 455509044395, [[<image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Shoots 40mm Grenades
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Mishap chance increased with distance
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Slow rate of Fire]] )
-	M79SAW2_1.ApertureSnapHipMul = 80
+	M79SAW2_1.HandlingBaseMul = 100
 	M79SAW2_1.Description = T(296206496671, [[<style PerkststsBold ><scale 900>The M79 grenade launcher is a single-shot, shoulder-fired, break-action grenade launcher that fires a 40×46mm grenade<newline><newline>It can fire a wide variety of 40 mm rounds, including explosive, anti-personnel, smoke, buckshot, flechette (pointed steel projectiles with a vaned tail for stable flight), and illumination. While largely replaced by the M203, the M79 has remained in service in many units worldwide in niche roles.<newline><newline>In 1961, the first M79 grenade launchers were delivered to the US Army. Owing to its ease of use, reliability, and firepower, the M79 became popular among American soldiers, who dubbed it "the platoon leader's artillery".<newline><newline><style MMOptionEntry>Made in USA <image UI/Icons/Flags/f_usa.dds 1600>]])
 	M79SAW2_1.PenetrationClass = 1
 
@@ -729,7 +729,7 @@ function RatoTOG_Patch()
 	VigM2_1.CanAppearUsed = true
 	VigM2_1.pistol_swap = false
 	VigM2_1.AdditionalHint = T( 595870360399, [[<description_hints>]] )
-	VigM2_1.ApertureSnapHipMul = 82
+	VigM2_1.HandlingBaseMul = 100
 	VigM2_1.Description = T(714227871457, [[<style PerkststsBold ><scale 550>The Vigneron is a submachine gun manufactured in Belgium during the 1950s. It used the 9×19mm NATO cartridge and was used by the Belgian Army until the 1980s.It remains reasonably accurate up to 100 m using sighted semi-automatic fire.<newline><newline>After World War II the Belgian Army was equipped with a mixture of British and American guns. The army wanted to replace these weapons with modern designs of preferable Belgian origin. The Vigneron is a simple blowback design and was made out of stamped sheet metal and a plastic grip frame. It uses the standard 9×19mm NATO round out of a 32-shot double-column, single-feed, box magazine. Army doctrine recommends to shortload the magazine to 28 rounds to prevent failures. A box type loading tool is used to assist loading the magazine.<newline><newline>Influence by some popular WW-II-era designs is apparent. The "Cutts" type barrel compensator and cooling rings are reminiscent of the Thompson submachine gun, the wire stock looks like the M3 submachine gun, the bolt design is nearly identical to the Sten and the magazine is almost the same as the one designed for the MP40. However MP40 magazines will not interchange with Vigneron magazines. Neither will fit the other weapon.<newline><newline><style MMOptionEntry>Made in Belgium <image Mod/HXzCpFa/Icons/Flags/Belgium.png 1600>]])
 	VigM2_1.PenetrationClass = 1
 
@@ -788,7 +788,7 @@ function RatoTOG_Patch()
 	UMP_1.CanAppearUsed = true
 	UMP_1.pistol_swap = false
 	UMP_1.AdditionalHint = T( 863330837058, [[<description_hints>]] )
-	UMP_1.ApertureSnapHipMul = 82
+	UMP_1.HandlingBaseMul = 100
 	UMP_1.Description = T(919036161362, [[<style PerkststsBold ><scale 600>The UMP (Universale Maschinenpistole, German for "Universal Machine Pistol") is a submachine, developed the as a lighter and cheaper successor to the MP5, though both remain in production.
 <newline>
 The UMP has been adopted for use by various countries including Brazil, Canada, and the United States.<newline><newline>A small number of UMPs chambered in .45 ACP were officially purchased by the 5th Special Forces Group of the United States Army Special Forces, with some of the weapons seeing limited service in the early years of the Iraqi insurgency, making them one of the more popular submachine guns being deployed by the U.S. military personnel in recent conflicts around the world.
@@ -855,7 +855,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	VSS_1.pistol_swap = false
 	VSS_1.AdditionalHint = T( 413559350745, [[<description_hints>
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Silent Attacks]] )
-	VSS_1.ApertureSnapHipMul = 82
+	VSS_1.HandlingBaseMul = 100
 	VSS_1.Description = T(880238376758, [[<style PerkststsBold ><scale 600>The VSS Vintorez is a Soviet-designed assault rifle featuring an integral suppressor based on the prototype RG-036 completed in 1981<newline><newline>The VSS Vintorez is integrally suppressed and chambered for the 9×39mm subsonic cartridge.<newline><newline>The rifle also has an "AK-type" Warsaw Pact rail for various optical sights, namely the PSO-1-1, PSO-1M2-1, and 1-PN-51 calibrated for use with the 9x39mm cartridge.<newline><newline>The Vintorez (beginning in 1983) were developed to replace modified general-purpose firearms, such as the AKS-74UB. Production began after its adoption by the Armed Forces of the Soviet Union in 1987.<newline><newline><style ConversationChoiceNormalRollover ><scale  500>Designed by Pyotr Serdyukov and Vladimir Krasnikov<newline><image Mod/KKh3Yhf/Images/designers/Pyotr-Serdyukov.png 1200><newline><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
 	VSS_1.PenetrationClass = 1
 
@@ -912,7 +912,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	StenMK2_1.CanAppearUsed = true
 	StenMK2_1.pistol_swap = false
 	StenMK2_1.AdditionalHint = T( 615691579287, [[<description_hints>]] )
-	StenMK2_1.ApertureSnapHipMul = 84
+	StenMK2_1.HandlingBaseMul = 100
 	StenMK2_1.Description = T(351352336825, [[<style PerkststsBold ><scale 600>The STEN (or Sten gun) is a British submachine gun chambered in 9×19mm which was used extensively by British and Commonwealth forces throughout World War II and post war including the Korean War.<newline><newline>The Sten was a simple design with very low production cost for mass production to meet demand for submachine guns. As well as equipping regular units, the Sten was distributed to resistance groups within occupied Europe; its simple design making it an effective insurgency weapon for resistance groups.<newline><newline>Around four million Stens in various versions were made in the 1940s, making it the second most produced submachine gun of the Second World War, after the Soviet PPSh-41. The Sten served as the basis for the Sterling submachine gun, which replaced the Sten in British service from the 1950s. The Mark II was the most common mainstream variant, with two million units produced.<newline><newline><style MMOptionEntry>Made in England <image UI/Icons/Flags/f_england.dds 1600>]])
 	StenMK2_1.PenetrationClass = 1
 
@@ -975,7 +975,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	P90_2.CanAppearUsed = true
 	P90_2.pistol_swap = false
 	P90_2.AdditionalHint = T( 157356398627, [[<description_hints>]] )
-	P90_2.ApertureSnapHipMul = 87
+	P90_2.HandlingBaseMul = 100
 	P90_2.Description = T(788185092104, [[<style PerkststsBold ><scale 600>The P90 is a submachine gun chambered for the 5.7×28mm cartridge, also classified as a personal defense weapon. Created in response to NATO requests for a replacement for 9×19mm Parabellum firearms, the P90 was designed as a compact but powerful firearm for vehicle crews, operators of crew-served weapons, support personnel, special forces, and counter-terrorist groups.
 <newline><newline><style MMOptionEntry>Made in Belgium]])
 	P90_2.PenetrationClass = 1
@@ -1035,7 +1035,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	Delisle_1.CanAppearUsed = true
 	Delisle_1.pistol_swap = false
 	Delisle_1.AdditionalHint = T( 528620989138, [[<description_hints>]] )
-	Delisle_1.ApertureSnapHipMul = 87
+	Delisle_1.HandlingBaseMul = 100
 	Delisle_1.Description = T(616470478099, [[<style PerkststsBold ><scale 550>De Lisle Commando carbine was a British firearm used during World War II that was designed with an integrated suppressor. That, combined with its use of subsonic ammunition, made it extremely quiet in action, possibly one of the quietest firearms ever made.<newline><newline>The weapon was designed as a private venture by William Godfray de Lisle (known as Godfray), an engineer who worked for the Air Ministry. In 1943, he approached Major Sir Malcolm Campbell with his prototype<newline><newline>Subsequent official firing tests recorded the De Lisle produced 85.5 dB of noise when fired. As a comparison, modern testing on a selection of handguns has shown that they produce 156 to 168 dB when firing without a suppressor, and 117 to 140 dB when firing with one fitted. The De Lisle's quietness was found to be comparable to the British Welrod pistol<newline><newline>A number of De Lisles were shipped to the Far East and used during the Burma Campaign. The De Lisle would also be used during the Korean War and the Malayan Emergency. It has been claimed the weapon was also used by the Special Air Service during the Northern Irish Troubles.
 <newline><newline><style MMOptionEntry>Made in England <image UI/Icons/Flags/f_england.dds 1600>]])
 	Delisle_1.PenetrationClass = 1
@@ -1096,7 +1096,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	Groza_1.CanAppearUsed = true
 	Groza_1.pistol_swap = false
 	Groza_1.AdditionalHint = T( 727933339009, [[<description_hints>]] )
-	Groza_1.ApertureSnapHipMul = 87
+	Groza_1.HandlingBaseMul = 100
 	Groza_1.Description = T(276433924285, [[<style PerkststsBold ><scale 600>The OTs-14-4 "Groza-4" (Russian: ОЦ-14-4 "Гроза") is a Russian selective fire bullpup assault rifle chambered for the 9×39mm subsonic cartridge. It was developed in the 1990s in Tula, Russia.
 
 The weapon is colloquially known as OC-14 or OTs-14 "Groza". The OTs-14-4A "Groza-4" has one derivative, the TKB-0239 (ТКБ-0239), also known as OTs-14-1A "Groza-1", chambered for the 7.62×39mm cartridge.
@@ -1162,7 +1162,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	VSK94_1.CanAppearUsed = true
 	VSK94_1.pistol_swap = false
 	VSK94_1.AdditionalHint = T( 500671780217, [[<description_hints>]] )
-	VSK94_1.ApertureSnapHipMul = 88
+	VSK94_1.HandlingBaseMul = 100
 	VSK94_1.Description = T(218260476236, [[<style PerkststsBold ><scale 600>The VSK-94 is a 9x39mm suppressed designated marksman rifle designed in 1995 in the KBP Instrument Design Bureau<newline><newline>The VSK-94 retains the gas-driven operating principle of the 9A-91 with a rotating bolt and hammer fire mechanism. The rifle features a stamped steel receiver, skeletonized polymer stock integrated with the pistol grip and a synthetic forearm. The VSK-94 is equipped with a 4x PSO-1 optical sight (adapted for subsonic rounds shooting) and standard flip iron sights from the 9A-91.<newline><newline>Since the 9x39mm bullet weighs about twice as much as that of the 9×19mm Parabellum, its muzzle energy is about twice as high as that of a subsonic 9×19mm Parabellum bullet fired from an HK MP5SD<newline><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
 	VSK94_1.PenetrationClass = 1
 
@@ -1210,7 +1210,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	A91_2.CanAppearUsed = true
 	A91_2.pistol_swap = false
 	A91_2.AdditionalHint = T(836660682051, [[<description_hints>]] )
-	A91_2.ApertureSnapHipMul = 93
+	A91_2.HandlingBaseMul = 100
 	A91_2.Description = T(832950361147, [[<style PerkststsBold ><scale 450>The A-91 is a bullpup assault rifle developed during the 1990s as an offspring of the 9A-91 firearm family.<newline><newline>The A-91 has a forward ejection system, initially developed in Tula by designers like Afanasiev during the early 1960s. In this system, the ejection port is located right above the pistol grip, and is directed forward. Extracted cases go from bolt head through the short ejection tube to the ejection port, and fall out of the gun well clear of the shooter's face, even when firing from the left shoulder.<newline><newline> As for now, the A-91 is made in small numbers and, probably, is used by some elite police units in Russia<newline><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
 	A91_2.PenetrationClass = 1
 
@@ -1267,7 +1267,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	RK62_1.CanAppearUsed = true
 	RK62_1.pistol_swap = false
 	RK62_1.AdditionalHint = T( 347255431158, [[<description_hints>]] )
-	RK62_1.ApertureSnapHipMul = 98
+	RK62_1.HandlingBaseMul = 100
 	RK62_1.Description = T(164668406560, [[<style PerkststsBold ><scale 600>The RK 62 officially 7.62 RK 62, is the standard issue infantry weapon of the Finnish Defence Forces.<newline><newline>Lauri Oksanen designed the RK 62 between 1957 and 1962, based on the Polish licensed version of the Soviet AK-47 design. The RK 62 uses the same 7.62×39mm cartridge as the AK-47. It is considered a high-quality variant of the AK-47, with a unique design that includes a three-pronged flash suppressor and a groove for a specially designed knife bayonet that can be used alone as a combat knife.<newline><newline>The RK 62 has several improvements over most AK variants, including the metallurgical quality of the receiver and barrel. The most significant improvement is in the sights: while most AK variants have the rear sight mounted on top of the gas piston housing on top of the receiver, in the RK 62, it is mounted on the rear of the receiver cover with tritium illuminated night-sights. The sight radius is doubled, enhancing accuracy along with the hammer-forged match CM barrel.<newline><newline><style MMOptionEntry>Made in Finland <image Mod/HXzCpFa/Icons/Flags/Finland.png 1600>]])
 	RK62_1.PenetrationClass = 1
 
@@ -1325,7 +1325,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	RK95_1.CanAppearUsed = true
 	RK95_1.pistol_swap = false
 	RK95_1.AdditionalHint = T( 266083134551, [[<description_hints>]] )
-	RK95_1.ApertureSnapHipMul = 99
+	RK95_1.HandlingBaseMul = 100
 	RK95_1.Description = T(296496696034, [[<style PerkststsBold ><scale 600>The RK 95 TP is a 7.62×39mm Finnish assault rifle adopted in relatively small numbers by the Finnish Defence Forces in the 1990s.<newline><newline>The rifle was developed in the late 1980s in response to a requirement to replace the 7.62mm RK 62 service rifle. Between 1988 and 1990, the M90 prototype was developed, which was a substantially upgraded variant of the RK 62.<newline><newline>After undergoing further testing and implementing several changes (among them, the selector mechanism was reverted to the familiar RK 62 configuration) the rifle was introduced into service with the Finnish Army as the 7.62 RK 95 TP. Deliveries to the Finnish started in 1995 and ended at 1997 with further orders ceasing in 1998.<newline><newline><style MMOptionEntry>Made in Finland <image Mod/HXzCpFa/Icons/Flags/Finland.png 1600>]])
 	RK95_1.PenetrationClass = 1
 
@@ -1389,7 +1389,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Unique 2 shot burst function at 1800 rounds per minute]] )
 	AN94_1.AutoFireCustomDeltaAP = 1
 	AN94_1.SingleShotCustomDeltaAP = 2
-	AN94_1.ApertureSnapHipMul = 99
+	AN94_1.HandlingBaseMul = 100
 	AN94_1.Description = T(260761277742, [[<style PerkststsBold ><scale 600>The AN-94 is a Russian assault rifle designed as a potential replacement to the AK-74<newline><newline>It offers a unique two-shot burst function at a stated 1800 rounds per minute, increasing hit probability under the most adverse combat conditions.<newline><newline>Due to its complex design and expense, it failed to fill its intended role as a replacement for the AK-74, but it is in limited use as a special purpose weapon.<newline><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
 	AN94_1.PenetrationClass = 1
 
@@ -1448,7 +1448,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	HK33A2_1.CanAppearUsed = true
 	HK33A2_1.pistol_swap = false
 	HK33A2_1.AdditionalHint = T( 630164376246, [[<description_hints>]] )
-	HK33A2_1.ApertureSnapHipMul = 99
+	HK33A2_1.HandlingBaseMul = 100
 	HK33A2_1.Description = T(419973268941, [[<style PerkststsBold ><scale 600>The HK33 is a 5.56mm assault rifle developed in the 1960s<newline><newline>
 The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea Brasileira or FAB), the armed forces of Thailand and Malaysia where they were produced under a licence agreement. The rifle was also licence-built in Turkey, and exported from France but actually made in Germany.<newline><newline>A copy of the HK33 was built under licence as T223 during the Vietnam War. Although heavier than the M16, it was used in small numbers by SEAL teams due to its available 40-round magazine.<newline><newline>In Myanmar, the Karen National Liberation Army fielded government-made HK33s. Thai government units fielded HK33s during the South Thailand insurgency. Some of these rifles were seized by groups such as the Patani United Liberation Organisation or the Gerakan Mujahidin Islam Patani<newline><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	HK33A2_1.PenetrationClass = 1
@@ -1506,7 +1506,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	Mosin_1.CanAppearUsed = true
 	Mosin_1.pistol_swap = false
 	Mosin_1.AdditionalHint = T( 471813286018, [[<description_hints>]] )
-	Mosin_1.ApertureSnapHipMul = 100
+	Mosin_1.HandlingBaseMul = 100
 	Mosin_1.Description = T(913798103123, [[<style PerkststsBold ><scale 600>The Mosin-Nagant is a five-shot, bolt-action, internal magazine-fed military rifle. Known officially as the 3-line rifle M1891 and informally in Russia and the former Soviet Union as Mosin's rifle.<newline><newline>It is primarily found chambered for its original 7.62×54mmR cartridge. Developed from 1882 to 1891, it was used by the armed forces of the Russian Empire, the Soviet Union and various other states. It is one of the most mass-produced military bolt-action rifles in history, with over 37 million units produced since 1891. In spite of its age, it has been used in various conflicts around the world up to the present day.<newline><newline>Large numbers of Mosin-Nagants were captured by German and Austro-Hungarian forces in WW1 and saw service with the rear-echelon forces of both armies, and also with the Imperial German Navy.<newline><newline><style ConversationChoiceNormalRollover ><scale  900>Designed by Mosin & Nagant <newline><image Mod/KKh3Yhf/Images/designers/Mosin_Mosin.png 1200><image Mod/KKh3Yhf/Images/designers/Mosin_Nagant.png 1000><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
 	Mosin_1.PenetrationClass = 1
 
@@ -1566,7 +1566,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	G3A3_1.CanAppearUsed = true
 	G3A3_1.pistol_swap = false
 	G3A3_1.AdditionalHint = T( 540692805911, [[<description_hints>]] )
-	G3A3_1.ApertureSnapHipMul = 100
+	G3A3_1.HandlingBaseMul = 100
 	G3A3_1.Description = T(780263210373, [[<style PerkststsBold ><scale 600>The G3 (Gewehr 3) is a 7.62×51mm NATO, select-fire battle rifle developed in the 1950s<newline><newline>The modular designed G3 has over the years been exported to over 70 countries and manufactured under licence in at least 15 countries, bringing the total number built to around 7,800,000. It was the service rifle of the armed forces of Germany until it was replaced by the G36 in the 1990s.<newline><newline>The G3A3 is the most well known 1963 version. Drum sights with an improved front sight, a flash-suppressor/muzzle brake capable of firing NATO standard grenades, a fixed solid plastic buttstock, and a plastic handguard that does not contact the free-floating barrel. The handguard came in a slim, ventilated version and a wide version. The latter allows for the attachment of a bipod.<newline><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	G3A3_1.PenetrationClass = 1
 
@@ -1626,7 +1626,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	G3A3Green_1.CanAppearUsed = true
 	G3A3Green_1.pistol_swap = false
 	G3A3Green_1.AdditionalHint = T( 334688337888, [[<description_hints>]] )
-	G3A3Green_1.ApertureSnapHipMul = 100
+	G3A3Green_1.HandlingBaseMul = 100
 	G3A3Green_1.Description = T(937019771354, [[<style PerkststsBold ><scale 600>The G3 (Gewehr 3) is a 7.62×51mm NATO, select-fire battle rifle developed in the 1950s<newline><newline>The modular designed G3 has over the years been exported to over 70 countries and manufactured under licence in at least 15 countries, bringing the total number built to around 7,800,000. It was the service rifle of the armed forces of Germany until it was replaced by the G36 in the 1990s.<newline><newline>The G3A3 is the most well known 1963 version. Drum sights with an improved front sight, a flash-suppressor/muzzle brake capable of firing NATO standard grenades, a fixed solid plastic buttstock, and a plastic handguard that does not contact the free-floating barrel. The handguard came in a slim, ventilated version and a wide version. The latter allows for the attachment of a bipod.<newline><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	G3A3Green_1.PenetrationClass = 1
 
@@ -1685,7 +1685,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	TAR21_1.CanAppearUsed = true
 	TAR21_1.pistol_swap = false
 	TAR21_1.AdditionalHint = T( 292214856686, [[<description_hints>]] )
-	TAR21_1.ApertureSnapHipMul = 101
+	TAR21_1.HandlingBaseMul = 101
 	TAR21_1.Description = T(829730422375, [[<style PerkststsBold ><scale 600>The TAR-21 is an Israeli bullpup assault rifle chambered in 5.56×45mm NATO calibre, designed and produced in Israel.<newline><newline>Built around a long-stroke piston system (as found in the M1 Garand and AK-47), the Tar-21 is designed to maximise reliability, durability, simplicity of design, and ease of maintenance, particularly under adverse or battlefield conditions.<newline><newline>The Tar-21 prevailed over the M4A1 in a series of trials conducted during 2001 by the Israel Defense Force. Qualities tested included Mean Rounds Between Failures (MRBF), reliability, ergonomics during long marches, and ease-of-maintenance.<newline><newline><style MMOptionEntry>Made in Israel<image Mod/HXzCpFa/Icons/Flags/Israel.png 1600>]])
 	TAR21_1.PenetrationClass = 1
 
@@ -1744,7 +1744,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	M70_1.CanAppearUsed = true
 	M70_1.pistol_swap = false
 	M70_1.AdditionalHint = T( 943877456040, [[<description_hints>]] )
-	M70_1.ApertureSnapHipMul = 102
+	M70_1.HandlingBaseMul = 102
 	M70_1.Description = T(960118679815, [[<style PerkststsBold ><scale 500>The M70 is a 7.62×39mm assault rifle. Developed in the Socialist Federal Republic of Yugoslavia during the 1960s, the M70 was an unlicensed derivative of the Soviet AK-47 (specifically the Type 3 variant).<newline><newline>Due to political differences between the Soviet Union and Yugoslavia at the time, namely the latter's refusal to join the Warsaw Pact, Yugoslavia was unable to directly obtain the technical specifications for the AK and opted to reverse engineer the weapon type. Although the M70 was functionally identical to the AK, it had unique in-built features that better enabled it to fire rifle grenades. These included thicker receivers, new latches for the dust cover to ensure it wouldn't be jarred loose by a grenade's discharge, and folding grenade sight brackets over the rifles' gas blocks, which also shut off the gas system when raised.<newline><newline>The M70 became the standard issue infantry weapon in the Yugoslav People's Army in 1970, complementing and later superseding the Zastava M59/66. It remains in use with all former Yugoslav nations, although some are replacing it with more modern designs. Additionally the M70 has been widely exported and encountered often in Africa, Asia and the Middle East.<newline><newline><style MMOptionEntry>Made in Yugoslavia <image Mod/KKh3Yhf/Images/Yugoslavia.png 1600>]])
 	M70_1.PenetrationClass = 1
 
@@ -1806,7 +1806,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	STG44R_1.pistol_swap = false
 	STG44R_1.AdditionalHint = T( 587956002848, [[<description_hints>
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> A relic of war]] )
-	STG44R_1.ApertureSnapHipMul = 104
+	STG44R_1.HandlingBaseMul = 104
 	STG44R_1.Description = T(484150379917, [[<style PerkststsBold ><scale 500>The StG 44 (abbreviation of Sturmgewehr 44, "assault rifle 44") is a German assault rifle developed during World War II by Hugo Schmeisser.<newline><newline>Countries to use the StG 44 after World War II included Czechoslovakia (although it was not officially adopted) and Yugoslavia, where units such as the 63rd Paratroop Battalion were equipped with it until the 1980s, when the rifles were ultimately transferred to Territorial Defense reserves or sold to friendly regimes in the Middle East and Africa. France adopted captured StG 44 for colonial Foreign Legion units.<newline><newline>The StG 44 was the first assault rifle to be accepted into widespread service and put into mass production. At the end of the war, Hugo Schmeisser claimed that 424,000 StG 44 rifles were built between June 1943 and April 1945<newline><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	STG44R_1.PenetrationClass = 1
 
@@ -1861,7 +1861,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	AR10std.CanAppearUsed = true
 	AR10std.pistol_swap = false
 	AR10std.AdditionalHint = T( 664367469884, [[<description_hints>]] )
-	AR10std.ApertureSnapHipMul = 104
+	AR10std.HandlingBaseMul = 104
 	AR10std.Description = T(862731285839, [[<style PerkststsBold ><scale 450>The AR-10 is a 7.62×51mm NATO battle rifle designed by Eugene Stoner in the late 1950s<newline><newline>When first introduced in 1956, the AR-10 used an innovative combination forged alloy parts resulting in a small arm significantly easier to control in automatic fire and over 0.45 kg lighter than other infantry rifles of the day.<newline><newline>During 1960 U.S. Army tests and in Portuguese service, the AR-10 was praised for its accuracy, hitting 25 mm groups at 100 meters with standard ammo. Despite limited production, countries like Guatemala, Burma, Italy, Cuba, Sudan, and Portugal issued it to their troops. The AR-10 remained in service with Sudanese Special Forces until 1985 and was used in various African conflicts, sometimes captured and repurposed.<newline><newline>In Chad, the AR-10 was much appreciated by members of the French Foreign Legion. As one police instructor in the Congo stated, "It was a good combat weapon that never failed me; a bit too long (but not as bad as the FAL or M14) for house-to-house work or really heavy brush, but great for 400-800 meters, in the flats - and really nice on the body, after wandering around 12-14 hours looking for bad guys."<newline><newline>Over its production life, the original AR-10 was built in relatively small numbers, with fewer than 10,000 rifles assembled.However, the AR-10 would become the progenitor for a wide range of firearms.<newline><style MMOptionEntry>Made in USA <image UI/Icons/Flags/f_usa.dds 1600>]])
 	AR10std.PenetrationClass = 1
 
@@ -1972,7 +1972,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	Type56A_1.pistol_swap = false
 	Type56A_1.AdditionalHint = T( 360259104299, [[<description_hints>]] )
 	Type56A_1.__parents[1] = "AssaultRifle"
-	Type56A_1.ApertureSnapHipMul = 105
+	Type56A_1.HandlingBaseMul = 105
 	Type56A_1.Description = T(596990177362, [[<style PerkststsBold ><scale 700>The Type 56 is a cold-war era Chinese SKS derivate, chambered in 7.62x39R.<newline><newline>Factory workers skillfully produced the SKS with the help of their Soviet advisors, and the Chinese military adopted the SKS as the Type 56 in 1956. Chinese factories made changes over the lifetime of the SKS's production to simplify manufacturing and increase efficiency. One notable shift in production was the introduction of a stamped trigger guard.<newline><newline> China continued to produce the Type 56 for many years even after adopting an AK47 variant for its own front line military use. As crucial as the Type 56 was for the Chinese military, the Type 56 became even more vital for export. Just as the Soviet Union gave and sold military equipment to sympathetic nations and groups, China did the same sending Type 56s around the world, from Vietnam to Africa and all points in between.<newline><newline><style MMOptionEntry>Made in China <image Mod/HXzCpFa/Icons/Flags/China.png 1600>]])
 	Type56A_1.PenetrationClass = 1
 
@@ -2028,7 +2028,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	Type56B_1.pistol_swap = false
 	Type56B_1.AdditionalHint = T( 975770966024, [[<description_hints>]] )
 	Type56B_1.__parents[1] = "AssaultRifle"
-	Type56B_1.ApertureSnapHipMul = 105
+	Type56B_1.HandlingBaseMul = 105
 	Type56B_1.Description = T(257661389059, [[<style PerkststsBold ><scale 700>The Type 56 is a cold-war era Chinese SKS derivate, chambered in 7.62x39R.<newline><newline>Factory workers skillfully produced the SKS with the help of their Soviet advisors, and the Chinese military adopted the SKS as the Type 56 in 1956. Chinese factories made changes over the lifetime of the SKS's production to simplify manufacturing and increase efficiency. One notable shift in production was the introduction of a stamped trigger guard.<newline><newline> China continued to produce the Type 56 for many years even after adopting an AK47 variant for its own front line military use. As crucial as the Type 56 was for the Chinese military, the Type 56 became even more vital for export. Just as the Soviet Union gave and sold military equipment to sympathetic nations and groups, China did the same sending Type 56s around the world, from Vietnam to Africa and all points in between.<newline><newline><style MMOptionEntry>Made in China <image Mod/HXzCpFa/Icons/Flags/China.png 1600>]])
 	Type56B_1.PenetrationClass = 1
 
@@ -2084,7 +2084,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	Type56C_1.pistol_swap = false
 	Type56C_1.AdditionalHint = T( 196297267299, [[<description_hints>]] )
 	Type56C_1.__parents[1] = "AssaultRifle"
-	Type56C_1.ApertureSnapHipMul = 105
+	Type56C_1.HandlingBaseMul = 105
 	Type56C_1.Description = T(401244908096, [[<style PerkststsBold ><scale 700>The Type 56 is a cold-war era Chinese SKS derivate, chambered in 7.62x39R.<newline><newline>Factory workers skillfully produced the SKS with the help of their Soviet advisors, and the Chinese military adopted the SKS as the Type 56 in 1956. Chinese factories made changes over the lifetime of the SKS's production to simplify manufacturing and increase efficiency. One notable shift in production was the introduction of a stamped trigger guard.<newline><newline> China continued to produce the Type 56 for many years even after adopting an AK47 variant for its own front line military use. As crucial as the Type 56 was for the Chinese military, the Type 56 became even more vital for export. Just as the Soviet Union gave and sold military equipment to sympathetic nations and groups, China did the same sending Type 56s around the world, from Vietnam to Africa and all points in between.<newline><newline><style MMOptionEntry>Made in China <image Mod/HXzCpFa/Icons/Flags/China.png 1600>]])
 	Type56C_1.PenetrationClass = 1
 
@@ -2140,7 +2140,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	Type56D_1.pistol_swap = false
 	Type56D_1.AdditionalHint = T( 363064227137, [[<description_hints>]] )
 	Type56D_1.__parents[1] = "AssaultRifle"
-	Type56D_1.ApertureSnapHipMul = 105
+	Type56D_1.HandlingBaseMul = 105
 	Type56D_1.Description = T(921319479641, [[<style PerkststsBold ><scale 700>The Type 56 is a cold-war era Chinese SKS derivate, chambered in 7.62x39R.<newline><newline>Factory workers skillfully produced the SKS with the help of their Soviet advisors, and the Chinese military adopted the SKS as the Type 56 in 1956. Chinese factories made changes over the lifetime of the SKS's production to simplify manufacturing and increase efficiency. One notable shift in production was the introduction of a stamped trigger guard.<newline><newline> China continued to produce the Type 56 for many years even after adopting an AK47 variant for its own front line military use. As crucial as the Type 56 was for the Chinese military, the Type 56 became even more vital for export. Just as the Soviet Union gave and sold military equipment to sympathetic nations and groups, China did the same sending Type 56s around the world, from Vietnam to Africa and all points in between.<newline><newline><style MMOptionEntry>Made in China <image Mod/HXzCpFa/Icons/Flags/China.png 1600>]])
 	Type56D_1.PenetrationClass = 1
 
@@ -2202,7 +2202,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	G11_1.AdditionalHint = T( 840010918341, [[<description_hints><newline><image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Special 3-shot burst mode with improved rate of fire and greatly reduced recoil]])
 	G11_1.AutoFireCustomDeltaAP = 1
 	G11_1.SingleShotCustomDeltaAP = 1
-	G11_1.ApertureSnapHipMul = 107
+	G11_1.HandlingBaseMul = 107
 	G11_1.Description = T(483015059058, [[<style PerkststsBold ><scale 450>The G11 is a non-production prototype assault rifle developed from the late 1960s-1980s.<newline><newline>It was primarily a project of West Germany, though it was of significance to the other NATO countries as well. In particular, versions of the G11 were included in the U.S. Advanced Combat Rifle program. In 1990, the development of the G11 was finished.<newline><newline>Although the weapon was a technical success, it never entered full production due to the political changes of German reunification and lack of procurement contract.<newline><newline>Only 1000 units were ever produced, some of which made their way into the hands of the Bundeswehr. Ultimately, the German armed forces replaced the G3 with the G36.<style MMOptionEntry><newline><newline>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	G11_1.PenetrationClass = 1
 
@@ -2263,7 +2263,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	SKS_1.pistol_swap = false
 	SKS_1.AdditionalHint = T( 990920247618, [[<description_hints>]] )
 	SKS_1.__parents[1] = "AssaultRifle"
-	SKS_1.ApertureSnapHipMul = 107
+	SKS_1.HandlingBaseMul = 107
 	SKS_1.Description = T(522192688036, [[<style PerkststsBold ><scale 700>The SKS is a semi-automatic rifle designed by Soviet small arms designer Sergei Gavrilovich Simonov in 1945.<newline><newline>As the SKS lacked select-fire capability and its magazine was limited to ten rounds, it was rendered obsolete in the Soviet Armed Forces by the introduction of the AK-47 in the 1950s. Nevertheless, SKS carbines continued to see service with the Soviet Border Troops, Internal Troops, and second-line and reserve army units for decades.<newline><newline>Beginning in the 1960s, vast quantities of obsolete and redundant SKS carbines from military reserve stocks were donated by the Soviet Union and China to left-wing guerrilla movements around the world. The increasing ubiquity of the SKS altered the dynamics of asymmetric warfare in developing nations and colonial territories, where most guerrillas had previously been armed with bolt-action rifles<newline><newline>Since 1988, millions have also been sold on the civilian market in North America, where they remain popular as hunting and sporting rifles.<newline><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
 	SKS_1.PenetrationClass = 1
 
@@ -2323,7 +2323,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	Gewehr43_1.CanAppearUsed = true
 	Gewehr43_1.pistol_swap = false
 	Gewehr43_1.AdditionalHint = T( 538484376797, [[<description_hints>]] )
-	Gewehr43_1.ApertureSnapHipMul = 107
+	Gewehr43_1.HandlingBaseMul = 107
 	Gewehr43_1.Description = T(314229886535, [[<style PerkststsBold ><scale 700>The Gewehr 43 or Karabiner 43 is a semi-automatic rifle developed by Germany during World War II.<newline><newline>In 1941, Germany invaded the Soviet Union as part of Operation Barbarossa. Just prior to the opening of hostilities the Soviet Red Army had started re-arming its infantry, complementing its older bolt-action rifles with the new semi-automatic SVT-38s and SVT-40s. This was a shock to the Germans, who ramped up their own semi-automatic rifle development efforts significantly.<newline><newline>The Gewehr 43 was put into production in October 1943 and followed in 1944 by the Karabiner 43 (K43), which was identical to the G43 in every way except for the letter stamped on the side.<newline><newline>It was manufactured using innovative mass-production techniques, with production amounting to just over 400,000 between 1943 and 1945.<newline><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	Gewehr43_1.PenetrationClass = 1
 
@@ -2384,7 +2384,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	SteyrScout_1.AdditionalHint = T( 542907374091, [[<description_hints>
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Faster bolt-action mechanism
 ]] )
-	SteyrScout_1.ApertureSnapHipMul = 107
+	SteyrScout_1.HandlingBaseMul = 107
 	SteyrScout_1.Description = T(724580740435, [[<style PerkststsBold ><scale 600>The Scout Tactical is an Austrian bolt-action rifle chambered for 7.62 NATO or 5.56mm <newline><newline>It is intended to fill the role of a versatile, lightweight all-around rifle as specified in Jeff Cooper's scout rifle concept. Apart from the barrel and action, the gun is made primarily of polymers and is designed to be accurate to at least 800 m<newline><newline>A variant and effectively the successor of the Scout is the Tactical Elite, a more robustly constructed model with many of the same features of the Scout, but designed primarily for the law enforcement market for an urban tactical role. Differences to the standard Scout include an extended STANAG type mounting rail, an enlarged bolt knob of the SSG type, an adjustable cheek piece, and a height-adjustable buttpad.<newline><newline>It is fitted with a heavy 570 mm (22 in) barrel, and can produce high muzzle velocities due to a "fast" internal profile. The additional features of the Elite give it a weight of over 4.2 kg (9.3 lb), which makes it fall outside the definition of a scout rifle.<newline><newline><style MMOptionEntry>Made in Austria<image Mod/HXzCpFa/Icons/Flags/Austria.png 1600>]])
 	SteyrScout_1.PenetrationClass = 1
 
@@ -2446,7 +2446,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	Papovka2SKS_1.AdditionalHint = T( 682979088346, [[<description_hints>
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Grenade Launcher]] )
 	Papovka2SKS_1.__parents[1] = "AssaultRifle"
-	Papovka2SKS_1.ApertureSnapHipMul = 111
+	Papovka2SKS_1.HandlingBaseMul = 111
 	Papovka2SKS_1.Description = T(545078610627, [[<style PerkststsBold ><scale 700>M59/66 PAP, also known as papovka, is a Yugoslav licensed version of Soviet SKS semi-automatic rifle.<newline><newline>In 1959, Yugoslavia acquired the rights to manufacture the Soviet SKS semi-automatic carbine under license. Limited production of the SKS commenced in 1961, however, no SKS carbines were produced at the Kragujevac facility again until 1964, when the weapon type finally entered serialized mass production.<newline><newline>In 1966, the M59 was redesigned to fire 22mm rifle grenades via the addition of an integrated grenade launcher spigot. The new model also included a folding ladder sight for use with the rifle grenades<newline><newline>During the South African Border War, the People's Liberation Army of Namibia (PLAN) received an unknown number of M59/66s and 22mm M60 rifle grenades, also of Yugoslav origin, as military aid.<newline><newline><style MMOptionEntry>Made in Yugoslavia <image Mod/KKh3Yhf/Images/Yugoslavia.png 1600>]])
 	Papovka2SKS_1.PenetrationClass = 1
 
@@ -2508,9 +2508,68 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	PapovkaSKS_1.AdditionalHint = T( 610094615575, [[<description_hints>
 <image UI/Conversation/T_Dialogue_IconBackgroundCircle.tga 400 130 128 120> Grenade Launcher]] )
 	PapovkaSKS_1.__parents[1] = "AssaultRifle"
-	PapovkaSKS_1.ApertureSnapHipMul = 111
+	PapovkaSKS_1.HandlingBaseMul = 111
 	PapovkaSKS_1.Description = T(414698211337, [[<style PerkststsBold ><scale 700>M59/66 PAP, also known as papovka, is a Yugoslav licensed version of Soviet SKS semi-automatic rifle.<newline><newline>In 1959, Yugoslavia acquired the rights to manufacture the Soviet SKS semi-automatic carbine under license. Limited production of the SKS commenced in 1961, however, no SKS carbines were produced at the Kragujevac facility again until 1964, when the weapon type finally entered serialized mass production.<newline><newline>In 1966, the M59 was redesigned to fire 22mm rifle grenades via the addition of an integrated grenade launcher spigot. The new model also included a folding ladder sight for use with the rifle grenades<newline><newline>During the South African Border War, the People's Liberation Army of Namibia (PLAN) received an unknown number of M59/66s and 22mm M60 rifle grenades, also of Yugoslav origin, as military aid.<newline><newline><style MMOptionEntry>Made in Yugoslavia <image Mod/KKh3Yhf/Images/Yugoslavia.png 1600>]])
 	PapovkaSKS_1.PenetrationClass = 1
+
+
+	M76_1.RestockWeight = 100
+	M76_1.ReloadAP = 3000
+	M76_1.ShootAP = 4000
+	M76_1.OverwatchAngle = 833
+	M76_1.LargeItem = 1
+	M76_1.WeaponRange = 30
+	M76_1.AvailableAttacks = {"SingleShot", "CancelShot"}
+	M76_1.object_class = "SniperRifle"
+	M76_1.HandSlot = "TwoHanded"
+	M76_1.ScrapParts = 14
+	M76_1.PenetrationClass = 1
+	M76_1.Cost = 3900
+	M76_1.Damage = 29
+	M76_1.MagazineSize = 10
+	M76_1.Reliability = 87
+	M76_1.RepairCost = 70
+	M76_1.AimAccuracy = 6
+	M76_1.UnitStat = "Marksmanship"
+	M76_1.recoil_mechanism = "Gas_Operated"
+	M76_1.APStance = 4
+	M76_1.rat_barrel_len = 600
+	M76_1.Valuable = 0
+	M76_1.burst_selective = false
+	M76_1.weigth_held_mul = 132
+	M76_1.PBbonus_base = -3
+	M76_1.rat_weigth = 4500
+	M76_1.Weigth = 4500
+	M76_1.Tier = 2
+	M76_1.Rat_swap_ap = 3
+	M76_1.CategoryPair = "Rifles"
+	M76_1.wep_base_snapshot_mul = 116
+	M76_1.Rat_cycling = "SemiAuto"
+	M76_1.CritChanceScaled = 20
+	M76_1.PointBlankBonus = 1
+	M76_1.HolsterSlot = "Shoulder"
+	M76_1.MaxStock = 3
+	M76_1.CanAppearInShop = true
+	M76_1.is_tog_patched = true
+	M76_1.ObjDamageMod = 100
+	M76_1.Cumbersome = 0
+	M76_1.PreparedAttackType = "Both"
+	M76_1.Noise = 28
+	M76_1.wep_base_hip_mul = 89
+	M76_1.is_vanilla_firearm = false
+	M76_1.wep_base_recoil_mul = 85
+	M76_1.rat_scope_block = false
+	M76_1.ComponentSlots = {{CanBeEmpty = false, SlotType = 'Stock', DefaultComponent = 'm76_stock_def_1', Modifiable = true, AvailableComponents = {'m76_stock_erg_1', 'm76_stock_def_1', 'm76_stock_hvy_1', }}, {CanBeEmpty = false, SlotType = 'Magazine', DefaultComponent = 'm76_mag_def_1', Modifiable = true, AvailableComponents = {'m76_mag_def_1', }}, {CanBeEmpty = false, SlotType = 'Muzzle', DefaultComponent = 'ToG_VFX_Muzzle', Modifiable = true, AvailableComponents = {'ImprovisedSuppressor', 'RAT_TOG_suppressor', 'RAT_TOG_compensator', 'ToG_VFX_Muzzle', }}, {CanBeEmpty = false, SlotType = 'Scope', DefaultComponent = 'ImprovedIronsight', Modifiable = true, AvailableComponents = {'RAT_TOG_Reflex_rpk_mount', 'RAT_TOG_ACOG_rpk_mount', 'RAT_TOG_compactRS_rpk_mount', 'RAT_TOG_Prism_rpk_mount', 'RAT_TOG_vigilanceRS_rpk_mount', 'RAT_TOG_thermal_rpk_mount', 'RAT_TOG_WideScope_rpk_mount', 'RAT_TOG_LRoptics_rpk_mount', 'm76_scope_1', 'RAT_TOG_LRoptics_advanced_rpk_mount', 'ImprovedIronsight', }}, {CanBeEmpty = false, SlotType = 'Barrel', DefaultComponent = 'm76_barrel_def_1', Modifiable = true, AvailableComponents = {'m76_barrel_shrt_1', 'm76_barrel_def_1', 'm76_barrel_ext_1', }}}
+	M76_1.CritChance = 0
+	M76_1.Condition = 100
+	M76_1.unwieldy_weapon = false
+	M76_1.default_long_barrel = false
+	M76_1.CanAppearUsed = true
+	M76_1.pistol_swap = false
+	M76_1.AdditionalHint = T( 542588930667, [[<description_hints>]] )
+	M76_1.HandlingBaseMul = 113
+	M76_1.Description = T(979114916169, [[<style PerkststsBold ><scale 600>The M76 is a military semi-automatic designated marksman rifle released in the mid-1970s<newline><newline>The M76 is similar in concept to the Russian Dragunov SVD sniper/designated marksman rifle; a semi-automatic rifle using a full-power cartridge from a 10-round magazine. However, the M76 is closer to the AK-47/RPK design and the unlicensed M70 AK-derivative than the Dragunov SVD. Rather than being a Dragunov clone, it looks more like a lengthened AK-47 with a heavier barrel, an impression strengthened by the separate stock and pistol grip rather than the Dragunov's thumbhole combination stock<newline><newline>The typical telescopic sight used is a ZRAK ON-M76 scope. The reticle illumination of the ZRAK M76 is provided by (radioactive) tritium. The tritium light source has to be replaced every 8-12 years, since it gradually loses its brightness due to radioactive decay.<newline><newline><style MMOptionEntry>Made in Yugoslavia <image Mod/KKh3Yhf/Images/Yugoslavia.png 1600>]])
+	M76_1.PenetrationClass = 1
 
 
 	SSG69_1.RestockWeight = 80
@@ -2568,68 +2627,9 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	SSG69_1.CanAppearUsed = true
 	SSG69_1.pistol_swap = false
 	SSG69_1.AdditionalHint = T( 787968005557, [[<description_hints>]] )
-	SSG69_1.ApertureSnapHipMul = 113
+	SSG69_1.HandlingBaseMul = 113
 	SSG69_1.Description = T(393371357000, [[<style PerkststsBold ><scale 700>The SSG 69 is a bolt-action sniper rifle that serves as the standard sniper rifle for the Austrian Army.<newline><newline>Designed as a sniper system to replace the SSG 98k sniper rifle (modified and accurized surplus Karabiner 98k rifles) and adopted in 1969 (hence the designation), it was ahead of its time with the use of synthetics like the stock, trigger guard, and magazines and cold hammer-forged barrels for durability.<newline><newline>Aside from being the Austrian Army's standard issue sniper rifle, it is also used by several law enforcement organizations. For its era and weight, it is extremely accurate and several international competitions have been won using an SSG-69 with accuracy being sub 0.15 mrad<newline><newline>The choice for a synthetic stock was remarkable, as other sniper rifles at the time were still using wood stocks.<newline><newline><style MMOptionEntry>Made in Austria<image Mod/HXzCpFa/Icons/Flags/Austria.png 1600>]])
 	SSG69_1.PenetrationClass = 1
-
-
-	M76_1.RestockWeight = 100
-	M76_1.ReloadAP = 3000
-	M76_1.ShootAP = 4000
-	M76_1.OverwatchAngle = 833
-	M76_1.LargeItem = 1
-	M76_1.WeaponRange = 30
-	M76_1.AvailableAttacks = {"SingleShot", "CancelShot"}
-	M76_1.object_class = "SniperRifle"
-	M76_1.HandSlot = "TwoHanded"
-	M76_1.ScrapParts = 14
-	M76_1.PenetrationClass = 1
-	M76_1.Cost = 3900
-	M76_1.Damage = 29
-	M76_1.MagazineSize = 10
-	M76_1.Reliability = 87
-	M76_1.RepairCost = 70
-	M76_1.AimAccuracy = 6
-	M76_1.UnitStat = "Marksmanship"
-	M76_1.recoil_mechanism = "Gas_Operated"
-	M76_1.APStance = 4
-	M76_1.rat_barrel_len = 600
-	M76_1.Valuable = 0
-	M76_1.burst_selective = false
-	M76_1.weigth_held_mul = 132
-	M76_1.PBbonus_base = -3
-	M76_1.rat_weigth = 4500
-	M76_1.Weigth = 4500
-	M76_1.Tier = 2
-	M76_1.Rat_swap_ap = 3
-	M76_1.CategoryPair = "Rifles"
-	M76_1.wep_base_snapshot_mul = 116
-	M76_1.Rat_cycling = "SemiAuto"
-	M76_1.CritChanceScaled = 20
-	M76_1.PointBlankBonus = 1
-	M76_1.HolsterSlot = "Shoulder"
-	M76_1.MaxStock = 3
-	M76_1.CanAppearInShop = true
-	M76_1.is_tog_patched = true
-	M76_1.ObjDamageMod = 100
-	M76_1.Cumbersome = 0
-	M76_1.PreparedAttackType = "Both"
-	M76_1.Noise = 28
-	M76_1.wep_base_hip_mul = 89
-	M76_1.is_vanilla_firearm = false
-	M76_1.wep_base_recoil_mul = 85
-	M76_1.rat_scope_block = false
-	M76_1.ComponentSlots = {{CanBeEmpty = false, SlotType = 'Stock', DefaultComponent = 'm76_stock_def_1', Modifiable = true, AvailableComponents = {'m76_stock_erg_1', 'm76_stock_def_1', 'm76_stock_hvy_1', }}, {CanBeEmpty = false, SlotType = 'Magazine', DefaultComponent = 'm76_mag_def_1', Modifiable = true, AvailableComponents = {'m76_mag_def_1', }}, {CanBeEmpty = false, SlotType = 'Muzzle', DefaultComponent = 'ToG_VFX_Muzzle', Modifiable = true, AvailableComponents = {'ImprovisedSuppressor', 'RAT_TOG_suppressor', 'RAT_TOG_compensator', 'ToG_VFX_Muzzle', }}, {CanBeEmpty = false, SlotType = 'Scope', DefaultComponent = 'ImprovedIronsight', Modifiable = true, AvailableComponents = {'RAT_TOG_Reflex_rpk_mount', 'RAT_TOG_ACOG_rpk_mount', 'RAT_TOG_compactRS_rpk_mount', 'RAT_TOG_Prism_rpk_mount', 'RAT_TOG_vigilanceRS_rpk_mount', 'RAT_TOG_thermal_rpk_mount', 'RAT_TOG_WideScope_rpk_mount', 'RAT_TOG_LRoptics_rpk_mount', 'm76_scope_1', 'RAT_TOG_LRoptics_advanced_rpk_mount', 'ImprovedIronsight', }}, {CanBeEmpty = false, SlotType = 'Barrel', DefaultComponent = 'm76_barrel_def_1', Modifiable = true, AvailableComponents = {'m76_barrel_shrt_1', 'm76_barrel_def_1', 'm76_barrel_ext_1', }}}
-	M76_1.CritChance = 0
-	M76_1.Condition = 100
-	M76_1.unwieldy_weapon = false
-	M76_1.default_long_barrel = false
-	M76_1.CanAppearUsed = true
-	M76_1.pistol_swap = false
-	M76_1.AdditionalHint = T( 542588930667, [[<description_hints>]] )
-	M76_1.ApertureSnapHipMul = 113
-	M76_1.Description = T(979114916169, [[<style PerkststsBold ><scale 600>The M76 is a military semi-automatic designated marksman rifle released in the mid-1970s<newline><newline>The M76 is similar in concept to the Russian Dragunov SVD sniper/designated marksman rifle; a semi-automatic rifle using a full-power cartridge from a 10-round magazine. However, the M76 is closer to the AK-47/RPK design and the unlicensed M70 AK-derivative than the Dragunov SVD. Rather than being a Dragunov clone, it looks more like a lengthened AK-47 with a heavier barrel, an impression strengthened by the separate stock and pistol grip rather than the Dragunov's thumbhole combination stock<newline><newline>The typical telescopic sight used is a ZRAK ON-M76 scope. The reticle illumination of the ZRAK M76 is provided by (radioactive) tritium. The tritium light source has to be replaced every 8-12 years, since it gradually loses its brightness due to radioactive decay.<newline><newline><style MMOptionEntry>Made in Yugoslavia <image Mod/KKh3Yhf/Images/Yugoslavia.png 1600>]])
-	M76_1.PenetrationClass = 1
 
 
 	M1Garand_2.RestockWeight = 90
@@ -2689,7 +2689,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	M1Garand_2.pistol_swap = false
 	M1Garand_2.AdditionalHint = T( 297407062004, [[<description_hints>]] )
 	M1Garand_2.__parents[1] = "AssaultRifle"
-	M1Garand_2.ApertureSnapHipMul = 114
+	M1Garand_2.HandlingBaseMul = 114
 	M1Garand_2.Description = T(757423265427, [[<style PerkststsBold ><scale 600>The M1 Garand or M1 rifle is a semi-automatic rifle that was the service rifle of the U.S. Army during World War II and the Korean War.<newline><newline>The rifle is chambered for the .30-06 Springfield cartridge and is named after its Canadian-American designer, John Garand. It was the first standard-issue autoloading rifle for the United States. By most accounts, the M1 rifle performed well. General George S. Patton called it "the greatest battle implement ever devised".<newline><newline>The M1 replaced the bolt-action M1903 Springfield as the U.S. service rifle in 1936, and was itself replaced by the selective-fire M14 rifle on March 26, 1958.<newline><newline><style MMOptionEntry>Made in USA <image UI/Icons/Flags/f_usa.dds 1600>]])
 	M1Garand_2.PenetrationClass = 1
 
@@ -2748,7 +2748,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	HK23E_1.CanAppearUsed = true
 	HK23E_1.pistol_swap = false
 	HK23E_1.AdditionalHint = T( 390378831477, [[<description_hints>]] )
-	HK23E_1.ApertureSnapHipMul = 118
+	HK23E_1.HandlingBaseMul = 118
 	HK23E_1.Description = T(946262450526, [[<style PerkststsBold ><scale 600>The HK23 is a West German 5.56×45mm NATO light machine gun.<newline><newline>The HK23 was developed in 1972. The purpose of this gun was to compete with various small calibre guns of the time. The main purpose of the gun was to export to foreign markets instead of special development for the German Bundeswehr and German law enforcement agencies. Ten years later, in order to participate in the U.S. military's automatic class weapon campaign, the HK23E participated in the election under the name of XM262, but eventually lost to the M249 SAW<newline><newline>Although the 5.56 NATO HK23E didn't enjoy the same level widespread success as its big brother in 7.62mm NATO - similar to the HK33 vs. the G3 - it did see service with multiple countries, and a few of them are still around in the hands of private collectors as well.<newline><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	HK23E_1.PenetrationClass = 1
 
@@ -2807,7 +2807,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	HK23ECamo_1.CanAppearUsed = true
 	HK23ECamo_1.pistol_swap = false
 	HK23ECamo_1.AdditionalHint = T( 230948710696, [[<description_hints>]] )
-	HK23ECamo_1.ApertureSnapHipMul = 118
+	HK23ECamo_1.HandlingBaseMul = 118
 	HK23ECamo_1.Description = T(483613388445, [[<style PerkststsBold ><scale 600>The HK23 is a West German 5.56×45mm NATO light machine gun.<newline><newline>The HK23 was developed in 1972. The purpose of this gun was to compete with various small calibre guns of the time. The main purpose of the gun was to export to foreign markets instead of special development for the German Bundeswehr and German law enforcement agencies. Ten years later, in order to participate in the U.S. military's automatic class weapon campaign, the HK23E participated in the election under the name of XM262, but eventually lost to the M249 SAW<newline><newline>Although the 5.56 NATO HK23E didn't enjoy the same level widespread success as its big brother in 7.62mm NATO - similar to the HK33 vs. the G3 - it did see service with multiple countries, and a few of them are still around in the hands of private collectors as well.<newline><newline><style MMOptionEntry>Made in Germany <image UI/Icons/Flags/f_germany.dds 1600>]])
 	HK23ECamo_1.PenetrationClass = 1
 
@@ -2866,7 +2866,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	RPD_1.CanAppearUsed = true
 	RPD_1.pistol_swap = false
 	RPD_1.AdditionalHint = T( 862873342222, [[<description_hints>]] )
-	RPD_1.ApertureSnapHipMul = 123
+	RPD_1.HandlingBaseMul = 123
 	RPD_1.Description = T(283294446635, [[<style PerkststsBold ><scale 600>The RPD is a 7.62x39mm light machine gun developed in the Soviet Union<newline><newline>It was created as a replacement for the DP machine gun chambered for the 7.62×54mmR round. It is a precursor of most squad automatic weapons. It was succeeded in Soviet service by the RPK.<newline><newline>Work on the weapon commenced in 1943. Three prominent Soviet engineers were asked to submit their own designs: Vasily Degtyaryov, Sergei Simonov and Alexei Sudayev. Among the completed prototypes prepared for evaluation, the Degtyaryov design proved superior and was accepted into service with the Soviet armed forces<newline><newline>After the introduction of the Kalashnikov-pattern support weapons, such as the RPK and PK machine guns in the 1960s, the RPD was withdrawn from most first-tier units of the former Warsaw Pact. However, the RPD remains in active service in many African and Asian nations<newline><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
 	RPD_1.PenetrationClass = 1
 
@@ -3032,7 +3032,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	PKM_1.CanAppearUsed = true
 	PKM_1.pistol_swap = false
 	PKM_1.AdditionalHint = T( 921786310095, [[<description_hints>]] )
-	PKM_1.ApertureSnapHipMul = 125
+	PKM_1.HandlingBaseMul = 125
 	PKM_1.Description = T(389126554458, [[<style PerkststsBold ><scale 600>The PKM is a belt-fed general-purpose machine gun, chambered for the 7.62×54mmR rimmed cartridge.<newline><newline>Designed in the Soviet Union and currently in production in Russia, the original PK machine gun was introduced in 1961 and the improved PKM variant was introduced in 1969.<newline><newline>Unlike the AKM and RPK the PK machine gun series is an open bolt design, which improves heat management during automatic fire compared to closed bolt designs and helps avoiding the dangerous phenomenon known as "cook-off"<newline><newline><style ConversationChoiceNormalRollover ><scale  900>Designed by Mikhail Kalashnikov<newline><image Mod/KKh3Yhf/Images/KalashnikovM_icon(mil.ru).png 1000><newline><style MMOptionEntry>Made in Russia <image UI/Icons/Flags/f_russia.dds 1600>]])
 	PKM_1.PenetrationClass = 1
 
