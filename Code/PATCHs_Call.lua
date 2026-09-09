@@ -1,8 +1,8 @@
 --- Gun Patch
 function OnMsg.ClassesGenerate()
-    print("RATMOD - Starting TOG patch")
+    print("GBO - Starting TOG patch")
     RatoTOG_Patch()
-    print("RATMOD - TOG patch successful")
+    print("GBO - TOG patch successful")
     --- RevMag
     RatTOG_RevMag_OnClassesGenerateChangeDefaultMags()
 end
