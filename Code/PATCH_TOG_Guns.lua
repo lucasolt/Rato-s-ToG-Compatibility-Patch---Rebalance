@@ -99,7 +99,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	VSS_1.PointBlankBonus = 1
 	VSS_1.PreparedAttackType = "Overwatch"
 	VSS_1.AvailableAttacks = {"SingleShot", "CancelShot", "BurstFire", "AutoFire"}
-	VSS_1.APStance = 3
+	VSS_1.APStance = 30
 	VSS_1.Rat_swap_ap = 3
 	VSS_1.wep_base_recoil_mul = 110
 	VSS_1.wep_base_snapshot_mul = 83
@@ -223,7 +223,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	PP91_1.PointBlankBonus = 1
 	PP91_1.PreparedAttackType = "Overwatch"
 	PP91_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "RunAndGun", "CancelShot"}
-	PP91_1.APStance = 2
+	PP91_1.APStance = 20
 	PP91_1.Rat_swap_ap = 1
 	PP91_1.wep_base_recoil_mul = 121
 	PP91_1.wep_base_snapshot_mul = 80
@@ -281,7 +281,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	P08_1.PointBlankBonus = 1
 	P08_1.PreparedAttackType = "Overwatch"
 	P08_1.AvailableAttacks = {"SingleShot", "DualShot", "LeftHandShot", "RightHandShot", "CancelShot", "MobileShot"}
-	P08_1.APStance = 1
+	P08_1.APStance = 10
 	P08_1.Rat_swap_ap = 1
 	P08_1.wep_base_recoil_mul = 131
 	P08_1.wep_base_snapshot_mul = 71
@@ -344,7 +344,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	B93RR_1.PointBlankBonus = 1
 	B93RR_1.PreparedAttackType = "Overwatch"
 	B93RR_1.AvailableAttacks = {"BurstFire", "SingleShot", "DualShot", "CancelShot", "MobileShot", "RunAndGun"}
-	B93RR_1.APStance = 1
+	B93RR_1.APStance = 10
 	B93RR_1.Rat_swap_ap = 1
 	B93RR_1.wep_base_recoil_mul = 115
 	B93RR_1.wep_base_snapshot_mul = 72
@@ -408,7 +408,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	USP_1.PointBlankBonus = 1
 	USP_1.PreparedAttackType = "Overwatch"
 	USP_1.AvailableAttacks = {"SingleShot", "DualShot", "CancelShot", "MobileShot"}
-	USP_1.APStance = 1
+	USP_1.APStance = 10
 	USP_1.Rat_swap_ap = 1
 	USP_1.wep_base_recoil_mul = 117
 	USP_1.wep_base_snapshot_mul = 69
@@ -467,7 +467,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	VikingMP446_1.PointBlankBonus = 1
 	VikingMP446_1.PreparedAttackType = "Overwatch"
 	VikingMP446_1.AvailableAttacks = {"SingleShot", "DualShot", "CancelShot", "MobileShot"}
-	VikingMP446_1.APStance = 1
+	VikingMP446_1.APStance = 10
 	VikingMP446_1.Rat_swap_ap = 1
 	VikingMP446_1.wep_base_recoil_mul = 114
 	VikingMP446_1.wep_base_snapshot_mul = 70
@@ -525,7 +525,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	Glock17_1.PointBlankBonus = 1
 	Glock17_1.PreparedAttackType = "Overwatch"
 	Glock17_1.AvailableAttacks = {"SingleShot", "DualShot", "CancelShot", "MobileShot"}
-	Glock17_1.APStance = 1
+	Glock17_1.APStance = 10
 	Glock17_1.Rat_swap_ap = 1
 	Glock17_1.wep_base_recoil_mul = 116
 	Glock17_1.wep_base_snapshot_mul = 70
@@ -641,7 +641,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	VigM2_1.PointBlankBonus = 1
 	VigM2_1.PreparedAttackType = "Overwatch"
 	VigM2_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "DualShot", "RunAndGun", "CancelShot"}
-	VigM2_1.APStance = 2
+	VigM2_1.APStance = 20
 	VigM2_1.Rat_swap_ap = 1
 	VigM2_1.wep_base_recoil_mul = 120
 	VigM2_1.wep_base_snapshot_mul = 83
@@ -701,7 +701,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	MicroUZI_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "DualShot", "RunAndGun", "CancelShot"}
 	MicroUZI_1.burst_shots = 4
 	MicroUZI_1.auto_shots = 12
-	MicroUZI_1.APStance = 2
+	MicroUZI_1.APStance = 20
 	MicroUZI_1.Rat_swap_ap = 1
 	MicroUZI_1.wep_base_recoil_mul = 117
 	MicroUZI_1.wep_base_snapshot_mul = 79
@@ -761,7 +761,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	Gewehr43_1.PointBlankBonus = 1
 	Gewehr43_1.PreparedAttackType = "Both"
 	Gewehr43_1.AvailableAttacks = {"SingleShot", "CancelShot"}
-	Gewehr43_1.APStance = 4
+	Gewehr43_1.APStance = 40
 	Gewehr43_1.Rat_swap_ap = 3
 	Gewehr43_1.wep_base_recoil_mul = 92
 	Gewehr43_1.wep_base_snapshot_mul = 110
@@ -820,7 +820,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	M76_1.PointBlankBonus = 1
 	M76_1.PreparedAttackType = "Both"
 	M76_1.AvailableAttacks = {"SingleShot", "CancelShot"}
-	M76_1.APStance = 4
+	M76_1.APStance = 40
 	M76_1.Rat_swap_ap = 3
 	M76_1.wep_base_recoil_mul = 85
 	M76_1.wep_base_snapshot_mul = 116
@@ -879,7 +879,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	STG44R_1.PointBlankBonus = 1
 	STG44R_1.PreparedAttackType = "Overwatch"
 	STG44R_1.AvailableAttacks = {"BurstFire", "SingleShot", "AutoFire", "CancelShot"}
-	STG44R_1.APStance = 4
+	STG44R_1.APStance = 40
 	STG44R_1.Rat_swap_ap = 3
 	STG44R_1.wep_base_recoil_mul = 95
 	STG44R_1.wep_base_snapshot_mul = 106
@@ -941,7 +941,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	PKM_1.PointBlankBonus = 1
 	PKM_1.PreparedAttackType = "Overwatch"
 	PKM_1.AvailableAttacks = {"MGBurstFire"}
-	PKM_1.APStance = 5
+	PKM_1.APStance = 50
 	PKM_1.wep_base_recoil_mul = 75
 	PKM_1.wep_base_snapshot_mul = 127
 	PKM_1.weigth_held_mul = 157
@@ -1052,7 +1052,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	RK95_1.PointBlankBonus = 1
 	RK95_1.PreparedAttackType = "Overwatch"
 	RK95_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "CancelShot"}
-	RK95_1.APStance = 4
+	RK95_1.APStance = 40
 	RK95_1.Rat_swap_ap = 3
 	RK95_1.wep_base_recoil_mul = 99
 	RK95_1.wep_base_snapshot_mul = 102
@@ -1108,7 +1108,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	RK62_1.PointBlankBonus = 1
 	RK62_1.PreparedAttackType = "Overwatch"
 	RK62_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "CancelShot"}
-	RK62_1.APStance = 4
+	RK62_1.APStance = 40
 	RK62_1.Rat_swap_ap = 3
 	RK62_1.wep_base_recoil_mul = 101
 	RK62_1.weigth_held_mul = 126
@@ -1164,7 +1164,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	M70_1.PointBlankBonus = 1
 	M70_1.PreparedAttackType = "Overwatch"
 	M70_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "CancelShot"}
-	M70_1.APStance = 4
+	M70_1.APStance = 40
 	M70_1.Rat_swap_ap = 3
 	M70_1.wep_base_recoil_mul = 97
 	M70_1.wep_base_snapshot_mul = 104
@@ -1224,7 +1224,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	SKS_1.PointBlankBonus = 1
 	SKS_1.PreparedAttackType = "Overwatch"
 	SKS_1.AvailableAttacks = {"SingleShot", "CancelShot", "MobileShot"}
-	SKS_1.APStance = 4
+	SKS_1.APStance = 40
 	SKS_1.Rat_swap_ap = 3
 	SKS_1.wep_base_recoil_mul = 93
 	SKS_1.wep_base_snapshot_mul = 93
@@ -1284,7 +1284,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	Papovka2SKS_1.PointBlankBonus = 1
 	Papovka2SKS_1.PreparedAttackType = "Overwatch"
 	Papovka2SKS_1.AvailableAttacks = {"SingleShot", "CancelShot", "MobileShot"}
-	Papovka2SKS_1.APStance = 4
+	Papovka2SKS_1.APStance = 40
 	Papovka2SKS_1.Rat_swap_ap = 3
 	Papovka2SKS_1.wep_base_recoil_mul = 94
 	Papovka2SKS_1.wep_base_snapshot_mul = 100
@@ -1345,7 +1345,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	PapovkaSKS_1.PointBlankBonus = 1
 	PapovkaSKS_1.PreparedAttackType = "Overwatch"
 	PapovkaSKS_1.AvailableAttacks = {"SingleShot", "CancelShot", "MobileShot"}
-	PapovkaSKS_1.APStance = 4
+	PapovkaSKS_1.APStance = 40
 	PapovkaSKS_1.Rat_swap_ap = 3
 	PapovkaSKS_1.wep_base_recoil_mul = 94
 	PapovkaSKS_1.wep_base_snapshot_mul = 100
@@ -1405,7 +1405,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	Type56A_1.PointBlankBonus = 1
 	Type56A_1.PreparedAttackType = "Overwatch"
 	Type56A_1.AvailableAttacks = {"SingleShot", "CancelShot", "MobileShot"}
-	Type56A_1.APStance = 4
+	Type56A_1.APStance = 40
 	Type56A_1.Rat_swap_ap = 3
 	Type56A_1.wep_base_snapshot_mul = 93
 	Type56A_1.wep_base_hip_mul = 105
@@ -1514,7 +1514,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	Type56B_1.PointBlankBonus = 1
 	Type56B_1.PreparedAttackType = "Overwatch"
 	Type56B_1.AvailableAttacks = {"SingleShot", "CancelShot", "MobileShot"}
-	Type56B_1.APStance = 4
+	Type56B_1.APStance = 40
 	Type56B_1.Rat_swap_ap = 3
 	Type56B_1.wep_base_snapshot_mul = 93
 	Type56B_1.wep_base_hip_mul = 105
@@ -1568,7 +1568,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	Type56C_1.PointBlankBonus = 1
 	Type56C_1.PreparedAttackType = "Overwatch"
 	Type56C_1.AvailableAttacks = {"SingleShot", "CancelShot", "MobileShot"}
-	Type56C_1.APStance = 4
+	Type56C_1.APStance = 40
 	Type56C_1.Rat_swap_ap = 3
 	Type56C_1.wep_base_snapshot_mul = 93
 	Type56C_1.wep_base_hip_mul = 105
@@ -1622,7 +1622,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	Type56D_1.PointBlankBonus = 1
 	Type56D_1.PreparedAttackType = "Overwatch"
 	Type56D_1.AvailableAttacks = {"SingleShot", "CancelShot", "MobileShot"}
-	Type56D_1.APStance = 4
+	Type56D_1.APStance = 40
 	Type56D_1.Rat_swap_ap = 3
 	Type56D_1.wep_base_snapshot_mul = 93
 	Type56D_1.wep_base_hip_mul = 105
@@ -1676,7 +1676,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	RPD_1.PointBlankBonus = 1
 	RPD_1.PreparedAttackType = "Machine Gun"
 	RPD_1.AvailableAttacks = {"MGBurstFire"}
-	RPD_1.APStance = 5
+	RPD_1.APStance = 50
 	RPD_1.Rat_swap_ap = 3
 	RPD_1.wep_base_recoil_mul = 95
 	RPD_1.wep_base_snapshot_mul = 115
@@ -1734,7 +1734,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	AR10std.PointBlankBonus = 1
 	AR10std.PreparedAttackType = "Overwatch"
 	AR10std.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "CancelShot"}
-	AR10std.APStance = 4
+	AR10std.APStance = 40
 	AR10std.Rat_swap_ap = 3
 	AR10std.wep_base_recoil_mul = 94
 	AR10std.wep_base_snapshot_mul = 95
@@ -1790,7 +1790,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	G3A3_1.PointBlankBonus = 1
 	G3A3_1.PreparedAttackType = "Overwatch"
 	G3A3_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "CancelShot"}
-	G3A3_1.APStance = 4
+	G3A3_1.APStance = 40
 	G3A3_1.Rat_swap_ap = 3
 	G3A3_1.wep_base_recoil_mul = 105
 	G3A3_1.wep_base_snapshot_mul = 102
@@ -1849,7 +1849,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	G3A3Green_1.PointBlankBonus = 1
 	G3A3Green_1.PreparedAttackType = "Overwatch"
 	G3A3Green_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "CancelShot"}
-	G3A3Green_1.APStance = 4
+	G3A3Green_1.APStance = 40
 	G3A3Green_1.Rat_swap_ap = 3
 	G3A3Green_1.wep_base_recoil_mul = 105
 	G3A3Green_1.wep_base_snapshot_mul = 102
@@ -1909,7 +1909,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	SSG69_1.PointBlankBonus = 1
 	SSG69_1.PreparedAttackType = "Both"
 	SSG69_1.AvailableAttacks = {"SingleShot", "CancelShot"}
-	SSG69_1.APStance = 4
+	SSG69_1.APStance = 40
 	SSG69_1.Rat_swap_ap = 3
 	SSG69_1.wep_base_recoil_mul = 86
 	SSG69_1.wep_base_snapshot_mul = 115
@@ -1969,7 +1969,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	AN94_1.PreparedAttackType = "Overwatch"
 	AN94_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "CancelShot"}
 	AN94_1.burst_shots = 2
-	AN94_1.APStance = 4
+	AN94_1.APStance = 40
 	AN94_1.Rat_swap_ap = 3
 	AN94_1.wep_base_snapshot_mul = 101
 	AN94_1.weigth_held_mul = 127
@@ -2030,7 +2030,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	A91_2.PointBlankBonus = 1
 	A91_2.PreparedAttackType = "Overwatch"
 	A91_2.AvailableAttacks = {"BurstFire", "SingleShot", "AutoFire", "CancelShot"}
-	A91_2.APStance = 3
+	A91_2.APStance = 30
 	A91_2.Rat_swap_ap = 3
 	A91_2.wep_base_recoil_mul = 98
 	A91_2.wep_base_snapshot_mul = 90
@@ -2084,7 +2084,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	P90_2.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "RunAndGun", "CancelShot"}
 	P90_2.burst_shots = 4
 	P90_2.auto_shots = 12
-	P90_2.APStance = 2
+	P90_2.APStance = 20
 	P90_2.wep_base_recoil_mul = 113
 	P90_2.wep_base_snapshot_mul = 88
 	P90_2.wep_base_hip_mul = 108
@@ -2144,7 +2144,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	M1911_1.PointBlankBonus = 1
 	M1911_1.PreparedAttackType = "Overwatch"
 	M1911_1.AvailableAttacks = {"SingleShot", "DualShot", "CancelShot", "MobileShot"}
-	M1911_1.APStance = 1
+	M1911_1.APStance = 10
 	M1911_1.Rat_swap_ap = 1
 	M1911_1.wep_base_recoil_mul = 113
 	M1911_1.wep_base_snapshot_mul = 72
@@ -2206,7 +2206,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	Delisle_1.PointBlankBonus = 1
 	Delisle_1.PreparedAttackType = "Both"
 	Delisle_1.AvailableAttacks = {"SingleShot", "CancelShot"}
-	Delisle_1.APStance = 4
+	Delisle_1.APStance = 40
 	Delisle_1.Rat_swap_ap = 3
 	Delisle_1.wep_base_recoil_mul = 112
 	Delisle_1.wep_base_snapshot_mul = 89
@@ -2383,7 +2383,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	G11_1.PointBlankBonus = 1
 	G11_1.PreparedAttackType = "Overwatch"
 	G11_1.AvailableAttacks = {"BurstFire", "AutoFire", "SingleShot", "CancelShot"}
-	G11_1.APStance = 3
+	G11_1.APStance = 30
 	G11_1.Rat_swap_ap = 3
 	G11_1.wep_base_recoil_mul = 89
 	G11_1.wep_base_snapshot_mul = 100
@@ -2503,7 +2503,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	SteyrScout_1.PointBlankBonus = 1
 	SteyrScout_1.PreparedAttackType = "Both"
 	SteyrScout_1.AvailableAttacks = {"SingleShot", "CancelShot"}
-	SteyrScout_1.APStance = 4
+	SteyrScout_1.APStance = 40
 	SteyrScout_1.Rat_swap_ap = 3
 	SteyrScout_1.wep_base_recoil_mul = 91
 	SteyrScout_1.wep_base_snapshot_mul = 110
@@ -2565,7 +2565,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	M1Garand_2.PointBlankBonus = 1
 	M1Garand_2.PreparedAttackType = "Overwatch"
 	M1Garand_2.AvailableAttacks = {"SingleShot", "CancelShot"}
-	M1Garand_2.APStance = 4
+	M1Garand_2.APStance = 40
 	M1Garand_2.Rat_swap_ap = 3
 	M1Garand_2.wep_base_recoil_mul = 90
 	M1Garand_2.wep_base_snapshot_mul = 117
@@ -2624,7 +2624,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	HK33A2_1.PointBlankBonus = 1
 	HK33A2_1.PreparedAttackType = "Overwatch"
 	HK33A2_1.AvailableAttacks = {"BurstFire", "SingleShot", "CancelShot"}
-	HK33A2_1.APStance = 4
+	HK33A2_1.APStance = 40
 	HK33A2_1.Rat_swap_ap = 3
 	HK33A2_1.wep_base_snapshot_mul = 101
 	HK33A2_1.weigth_held_mul = 129
@@ -2741,7 +2741,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	HK23E_1.PointBlankBonus = 1
 	HK23E_1.PreparedAttackType = "Machine Gun"
 	HK23E_1.AvailableAttacks = {"MGBurstFire"}
-	HK23E_1.APStance = 5
+	HK23E_1.APStance = 50
 	HK23E_1.Rat_swap_ap = 3
 	HK23E_1.wep_base_recoil_mul = 85
 	HK23E_1.wep_base_snapshot_mul = 128
@@ -2800,7 +2800,7 @@ The HK33 series of rifles were adopted by the Brazilian Air Force (Força Aérea
 	HK23ECamo_1.PointBlankBonus = 1
 	HK23ECamo_1.PreparedAttackType = "Machine Gun"
 	HK23ECamo_1.AvailableAttacks = {"MGBurstFire"}
-	HK23ECamo_1.APStance = 5
+	HK23ECamo_1.APStance = 50
 	HK23ECamo_1.Rat_swap_ap = 3
 	HK23ECamo_1.wep_base_recoil_mul = 85
 	HK23ECamo_1.wep_base_snapshot_mul = 128
