@@ -1063,6 +1063,7 @@ The UMP has been adopted for use by various countries including Brazil, Canada, 
 	AN94_1.AutoFireCustomDeltaAP = 1
 	AN94_1.SingleShotCustomDeltaAP = 2
 	AN94_1.burst_recoil_delta = 5
+	AN94_1.hyperburst = 85
 	AN94_1.long_recoil_delta = 85
 	AN94_1.auto_recoil_delta = 85
 	AN94_1.recoil_mechanism = "Gas_Operated"
