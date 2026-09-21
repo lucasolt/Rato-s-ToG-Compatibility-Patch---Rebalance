@@ -27,7 +27,7 @@ return PlaceObj('ModDef', {
 	'author', "rato",
 	'version_major', 1,
 	'version_minor', 25,
-	'version', 3455,
+	'version', 3456,
 	'lua_revision', 233360,
 	'saved_with_revision', 366685,
 	'code', {
@@ -50,8 +50,8 @@ return PlaceObj('ModDef', {
 	},
 	'default_options', {},
 	'has_data', true,
-	'saved', 1789878647,
-	'code_hash', -8678819824158616474,
+	'saved', 1789965014,
+	'code_hash', -8485487891388966794,
 	'affected_resources', {
 		PlaceObj('ModResourcePreset', {
 			'Class', "Caliber",

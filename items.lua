@@ -1186,7 +1186,7 @@ return {
 				}),
 				PlaceObj('PresetParamPercent', {
 					'Name', "crit",
-					'Value', 20,
+					'Value', 15,
 					'Tag', "<crit>%",
 				}),
 				PlaceObj('PresetParamNumber', {
@@ -1534,9 +1534,8 @@ return {
 			Icon = "Mod/KKh3Yhf/Images/VigM2_stock_fld.png",
 			ModificationDifficulty = -25,
 			ModificationEffects = {
-				"vigneron_folded_PB",
-				"zzStockEquipped",
 				"IncreaseOverwatchAngle",
+				"zzStockEquipped",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
@@ -1601,12 +1600,18 @@ return {
 			ModificationDifficulty = -25,
 			ModificationEffects = {
 				"IncreaseAimAccuracy",
+				"StanceAPincrease",
 				"zzStockEquipped",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
+					'Name', "APincrease",
+					'Value', 2,
+					'Tag', "<APincrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
 					'Name', "AimAccuracyIncrease",
-					'Value', 10,
+					'Value', 5,
 					'Tag', "<AimAccuracyIncrease>",
 				}),
 			},
@@ -4127,7 +4132,6 @@ return {
 				Icon = "UI/Icons/Upgrades/custom_PSG1_scope",
 				ModificationDifficulty = 20,
 				ModificationEffects = {
-					"bodypart_scope",
 					"IncreaseMaxAimActions",
 					"IncreaseRange",
 					"IncreaseSnapshotMul",
@@ -4136,11 +4140,6 @@ return {
 					"DecreaseOverwatchAngle",
 				},
 				Parameters = {
-					PlaceObj('PresetParamNumber', {
-						'Name', "APincrease",
-						'Value', 10,
-						'Tag', "<APincrease>",
-					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "MaxAimActionsIncrease",
 						'Value', 3,
@@ -4161,19 +4160,14 @@ return {
 						'Value', 6,
 						'Tag', "<aim_level_threshold>",
 					}),
-					PlaceObj('PresetParamPercent', {
-						'Name', "crit",
-						'Value', 15,
-						'Tag', "<crit>%",
-					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
-						'Value', 160,
+						'Value', 180,
 						'Tag', "<snap_mul_inc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "threshold_bonus_aim_acc",
-						'Value', 25,
+						'Value', 30,
 						'Tag', "<threshold_bonus_aim_acc>",
 					}),
 				},
@@ -4315,7 +4309,6 @@ return {
 				Icon = "UI/Icons/Upgrades/custom_PSG1_scope",
 				ModificationDifficulty = 20,
 				ModificationEffects = {
-					"bodypart_scope",
 					"IncreaseMaxAimActions",
 					"IncreaseRange",
 					"IncreaseSnapshotMul",
@@ -4324,11 +4317,6 @@ return {
 					"DecreaseOverwatchAngle",
 				},
 				Parameters = {
-					PlaceObj('PresetParamNumber', {
-						'Name', "APincrease",
-						'Value', 10,
-						'Tag', "<APincrease>",
-					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "MaxAimActionsIncrease",
 						'Value', 3,
@@ -4349,19 +4337,14 @@ return {
 						'Value', 6,
 						'Tag', "<aim_level_threshold>",
 					}),
-					PlaceObj('PresetParamPercent', {
-						'Name', "crit",
-						'Value', 15,
-						'Tag', "<crit>%",
-					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
-						'Value', 160,
+						'Value', 180,
 						'Tag', "<snap_mul_inc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "threshold_bonus_aim_acc",
-						'Value', 25,
+						'Value', 30,
 						'Tag', "<threshold_bonus_aim_acc>",
 					}),
 				},
@@ -4503,11 +4486,6 @@ return {
 						'Name', "snap_mul_reduc",
 						'Value', 90,
 						'Tag', "<snap_mul_reduc>",
-					}),
-					PlaceObj('PresetParamNumber', {
-						'Name', "snap_reduc",
-						'Value', 10,
-						'Tag', "<snap_reduc>",
 					}),
 				},
 				Slot = "Scope",
@@ -4685,11 +4663,6 @@ return {
 						'Value', 90,
 						'Tag', "<snap_mul_reduc>",
 					}),
-					PlaceObj('PresetParamNumber', {
-						'Name', "snap_reduc",
-						'Value', 10,
-						'Tag', "<snap_reduc>",
-					}),
 				},
 				Slot = "Scope",
 				Tags = set( "CloseQuarters", "Tactical" ),
@@ -4841,11 +4814,6 @@ return {
 						'Name', "snap_mul_reduc",
 						'Value', 90,
 						'Tag', "<snap_mul_reduc>",
-					}),
-					PlaceObj('PresetParamNumber', {
-						'Name', "snap_reduc",
-						'Value', 10,
-						'Tag', "<snap_reduc>",
 					}),
 				},
 				Slot = "Scope",
@@ -5016,11 +4984,6 @@ return {
 						'Name', "snap_mul_reduc",
 						'Value', 90,
 						'Tag', "<snap_mul_reduc>",
-					}),
-					PlaceObj('PresetParamNumber', {
-						'Name', "snap_reduc",
-						'Value', 10,
-						'Tag', "<snap_reduc>",
 					}),
 				},
 				Slot = "Scope",
@@ -6275,12 +6238,12 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 12,
+						'Value', 10,
 						'Tag', "<bonus_cth>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 85,
+						'Value', 90,
 						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -6455,12 +6418,12 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "bonus_cth",
-						'Value', 12,
+						'Value', 10,
 						'Tag', "<bonus_cth>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 85,
+						'Value', 90,
 						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -8231,6 +8194,21 @@ return {
 				},
 				Cost = 40,
 				DisplayName = T(783842979218, --[[ModItemWeaponComponent RAT_TOG_SteyrS_Barrel_ext_556 DisplayName]] "5.56x45mm Extended Barrel"),
+				GBO_ComponentTraits = "Barrel.Long",
+				GBO_OverrideEffects = {
+					"ChangeCaliberTo556",
+					"ReduceDamage",
+				},
+				GBO_OverrideParams = {
+					PlaceObj('PresetParamNumber', {
+						'Name', "DamageReduced",
+						'Value', 5,
+						'Tag', "<DamageReduced>",
+					}),
+				},
+				GBO_OverrideRemoveEffects = {
+					"IncreaseDamage",
+				},
 				Icon = "Mod/KKh3Yhf/Images/SteyrScout_Barrel_ext.png",
 				ModificationDifficulty = 10,
 				ModificationEffects = {

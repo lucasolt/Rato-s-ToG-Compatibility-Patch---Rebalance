@@ -2520,7 +2520,7 @@ The Groza saw limited use in 1999 in the Second Chechen War, however they quickl
 	STG44R_1.PreparedAttackType = "Overwatch"
 	STG44R_1.AvailableAttacks = {"BurstFire", "SingleShot", "AutoFire", "CancelShot"}
 	STG44R_1.Rat_swap_ap = 3
-	STG44R_1.wep_base_recoil_mul = 95
+	STG44R_1.wep_base_recoil_mul = 90
 	STG44R_1.wep_base_snapshot_mul = 106
 	STG44R_1.wep_base_hip_mul = 99
 	STG44R_1.weigth_held_mul = 135
