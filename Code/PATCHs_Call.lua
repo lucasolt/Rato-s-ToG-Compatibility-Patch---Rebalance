@@ -49,9 +49,9 @@ disable_old_ammo()
 -- Change Zulib Calibers
 function OnMsg.ClassesPostBuilt()
     SharedModEnv["KKh3Yhf"].zzChangeList = {
-        ['SteyrScout_1'] = '308Win',
+        ['SteyrScout_1'] = '556',
         ['MAC11_1'] = '380ACP',
-        ['SSG69_1'] = '308Win',
+        ['SSG69_1'] = '762NATO',
         ['AN94_1'] = '5_45x39',
         ['UMP_1'] = '45ACP',
         ['VSS_1'] = '9x39',
