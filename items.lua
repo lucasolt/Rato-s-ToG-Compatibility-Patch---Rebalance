@@ -2235,7 +2235,7 @@ return {
 				Icon = "Mod/Dau6w/Images/VSS_silencer.png",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
-					"IncreaseConditionDegradationMul",
+					"IncreaseConditionDegradationRate",
 					"SilentShots",
 					"compensator_effect_silencer",
 					"flanker",
@@ -2243,9 +2243,9 @@ return {
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
-						'Name', "ConditionDegradationMulIncrease",
+						'Name', "ConditionDegradationRateIncrease",
 						'Value', 10,
-						'Tag', "<ConditionDegradationMulIncrease>",
+						'Tag', "<ConditionDegradationRateIncrease>",
 					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "NoiseMultiplier",
@@ -2295,7 +2295,7 @@ return {
 				Icon = "Mod/Dau6w/Images/VSS_silencer.png",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
-					"IncreaseConditionDegradationMul",
+					"IncreaseConditionDegradationRate",
 					"SilentShots",
 					"compensator_effect_silencer",
 					"flanker",
@@ -2303,9 +2303,9 @@ return {
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
-						'Name', "ConditionDegradationMulIncrease",
+						'Name', "ConditionDegradationRateIncrease",
 						'Value', 10,
-						'Tag', "<ConditionDegradationMulIncrease>",
+						'Tag', "<ConditionDegradationRateIncrease>",
 					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "NoiseMultiplier",
@@ -2499,7 +2499,7 @@ return {
 				Icon = "UI/Icons/Upgrades/beretta_silencer",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
-					"IncreaseConditionDegradationMul",
+					"IncreaseConditionDegradationRate",
 					"SilentShots",
 					"compensator_effect_silencer",
 					"flanker",
@@ -2507,9 +2507,9 @@ return {
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
-						'Name', "ConditionDegradationMulIncrease",
+						'Name', "ConditionDegradationRateIncrease",
 						'Value', 10,
-						'Tag', "<ConditionDegradationMulIncrease>",
+						'Tag', "<ConditionDegradationRateIncrease>",
 					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "NoiseMultiplier",
@@ -2839,7 +2839,7 @@ return {
 				Icon = "UI/Icons/Upgrades/beretta_silencer",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
-					"IncreaseConditionDegradationMul",
+					"IncreaseConditionDegradationRate",
 					"SilentShots",
 					"compensator_effect_silencer",
 					"flanker",
@@ -2847,9 +2847,9 @@ return {
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
-						'Name', "ConditionDegradationMulIncrease",
+						'Name', "ConditionDegradationRateIncrease",
 						'Value', 10,
-						'Tag', "<ConditionDegradationMulIncrease>",
+						'Tag', "<ConditionDegradationRateIncrease>",
 					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "NoiseMultiplier",
@@ -2893,7 +2893,7 @@ return {
 				Icon = "UI/Icons/Upgrades/762_suppressor",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
-					"IncreaseConditionDegradationMul",
+					"IncreaseConditionDegradationRate",
 					"SilentShots",
 					"compensator_effect_silencer",
 					"flanker",
@@ -2901,9 +2901,9 @@ return {
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
-						'Name', "ConditionDegradationMulIncrease",
+						'Name', "ConditionDegradationRateIncrease",
 						'Value', 10,
-						'Tag', "<ConditionDegradationMulIncrease>",
+						'Tag', "<ConditionDegradationRateIncrease>",
 					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "NoiseMultiplier",
