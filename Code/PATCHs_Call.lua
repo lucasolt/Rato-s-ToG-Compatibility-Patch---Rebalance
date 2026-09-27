@@ -2,6 +2,7 @@
 function OnMsg.ClassesGenerate()
     print("GBO - Starting TOG patch")
     RatoTOG_Patch()
+	RatoTOG_LegacyPatch()
     print("GBO - TOG patch successful")
     --- RevMag
     RatTOG_RevMag_OnClassesGenerateChangeDefaultMags()
