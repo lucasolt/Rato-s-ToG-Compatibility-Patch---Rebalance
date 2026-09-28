@@ -319,11 +319,10 @@ return {
 					'Mode', "oldCTH",
 					'Effects', {
 						"IncreaseOverwatchAngle",
-						"hipfire_dot_effect_laser",
-						"IncreaseCritChangeScaled",
-						"critical_per_aim_laser",
-						"AccuracyBonusWhenAimed",
 						"DecreaseSnapshotMul",
+						"DecreaseHipfireMul",
+						"IncreaseCritPerAim",
+						"AccuracyBonusWhenAimed",
 					},
 					'Params', {
 						PlaceObj('PresetParamNumber', {
@@ -332,9 +331,9 @@ return {
 							'Tag', "<Close_bonus>",
 						}),
 						PlaceObj('PresetParamNumber', {
-							'Name', "CritChangeScaledIncrease",
-							'Value', 10,
-							'Tag', "<CritChangeScaledIncrease>",
+							'Name', "CritPerAimIncrease",
+							'Value', 300,
+							'Tag', "<CritPerAimIncrease>",
 						}),
 						PlaceObj('PresetParamNumber', {
 							'Name', "OverwatchAngleIncrease",
@@ -351,11 +350,6 @@ return {
 							'Value', 85,
 							'Tag', "<snap_mul_reduc>",
 						}),
-						PlaceObj('PresetParamNumber', {
-							'Name', "snap_reduc",
-							'Value', 15,
-							'Tag', "<snap_reduc>",
-						}),
 					},
 				}),
 			},
@@ -371,16 +365,12 @@ return {
 					'Tag', "<OverwatchAngleIncrease>",
 				}),
 			},
-			GBO_OverrideRemoveEffects = {
-				"hipfire_dot_effect_laser",
-			},
 			Icon = "Mod/KKh3Yhf/Images/TAR21_Scope_icon.png",
 			ModificationDifficulty = 20,
 			ModificationEffects = {
 				"DecreaseSnapshotMul",
 				"DecreaseHipfireMul",
-				"IncreaseCritChangeScaled",
-				"critical_per_aim_laser",
+				"IncreaseCritPerAim",
 				"AccuracyBonusWhenAimed",
 				"first_aim_crit",
 			},
@@ -391,9 +381,9 @@ return {
 					'Tag', "<Close_bonus>",
 				}),
 				PlaceObj('PresetParamNumber', {
-					'Name', "CritChangeScaledIncrease",
-					'Value', 10,
-					'Tag', "<CritChangeScaledIncrease>",
+					'Name', "CritPerAimIncrease",
+					'Value', 300,
+					'Tag', "<CritPerAimIncrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "OverwatchAngleIncrease",
@@ -2236,9 +2226,9 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"IncreaseConditionDegradationRate",
+					"IncreaseRPMMul",
 					"SilentShots",
 					"compensator_effect_silencer",
-					"flanker",
 					"DecreaseOverwatchAngle",
 				},
 				Parameters = {
@@ -2258,9 +2248,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "bonus_cth_flank",
-						'Value', 10,
-						'Tag', "<bonus_cth_flank>",
+						'Name', "rpm_increase_mul",
+						'Value', 112,
+						'Tag', "<rpm_increase_mul>",
 					}),
 				},
 				Slot = "General",
@@ -2296,9 +2286,9 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"IncreaseConditionDegradationRate",
+					"IncreaseRPMMul",
 					"SilentShots",
 					"compensator_effect_silencer",
-					"flanker",
 					"DecreaseOverwatchAngle",
 				},
 				Parameters = {
@@ -2318,9 +2308,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "bonus_cth_flank",
-						'Value', 10,
-						'Tag', "<bonus_cth_flank>",
+						'Name', "rpm_increase_mul",
+						'Value', 112,
+						'Tag', "<rpm_increase_mul>",
 					}),
 				},
 				Slot = "Muzzle",
@@ -2349,13 +2339,6 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"compensator_effect",
-				},
-				Parameters = {
-					PlaceObj('PresetParamPercent', {
-						'Name', "cth",
-						'Value', 10,
-						'Tag', "<cth>%",
-					}),
 				},
 				Slot = "Gassblock",
 				Tags = set( "CloseQuarters", "Intimate", "Precision", "Strategic", "Tactical" ),
@@ -2386,13 +2369,6 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"compensator_effect",
-				},
-				Parameters = {
-					PlaceObj('PresetParamPercent', {
-						'Name', "cth",
-						'Value', 10,
-						'Tag', "<cth>%",
-					}),
 				},
 				Slot = "Gassblock",
 				Tags = set( "CloseQuarters", "Intimate", "Precision", "Strategic", "Tactical" ),
@@ -2500,9 +2476,9 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"IncreaseConditionDegradationRate",
+					"IncreaseRPMMul",
 					"SilentShots",
 					"compensator_effect_silencer",
-					"flanker",
 					"DecreaseOverwatchAngle",
 				},
 				Parameters = {
@@ -2522,9 +2498,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "bonus_cth_flank",
-						'Value', 10,
-						'Tag', "<bonus_cth_flank>",
+						'Name', "rpm_increase_mul",
+						'Value', 112,
+						'Tag', "<rpm_increase_mul>",
 					}),
 				},
 				Slot = "Muzzle",
@@ -2840,9 +2816,9 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"IncreaseConditionDegradationRate",
+					"IncreaseRPMMul",
 					"SilentShots",
 					"compensator_effect_silencer",
-					"flanker",
 					"DecreaseOverwatchAngle",
 				},
 				Parameters = {
@@ -2862,9 +2838,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "bonus_cth_flank",
-						'Value', 10,
-						'Tag', "<bonus_cth_flank>",
+						'Name', "rpm_increase_mul",
+						'Value', 112,
+						'Tag', "<rpm_increase_mul>",
 					}),
 				},
 				Slot = "Muzzle",
@@ -2894,9 +2870,9 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"IncreaseConditionDegradationRate",
+					"IncreaseRPMMul",
 					"SilentShots",
 					"compensator_effect_silencer",
-					"flanker",
 					"DecreaseOverwatchAngle",
 				},
 				Parameters = {
@@ -2916,9 +2892,9 @@ return {
 						'Tag', "<OverwatchAngleDecrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "bonus_cth_flank",
-						'Value', 10,
-						'Tag', "<bonus_cth_flank>",
+						'Name', "rpm_increase_mul",
+						'Value', 112,
+						'Tag', "<rpm_increase_mul>",
 					}),
 				},
 				Slot = "Muzzle",
@@ -2942,13 +2918,6 @@ return {
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"compensator_effect",
-				},
-				Parameters = {
-					PlaceObj('PresetParamPercent', {
-						'Name', "cth",
-						'Value', 10,
-						'Tag', "<cth>%",
-					}),
 				},
 				Slot = "Muzzle",
 				Tags = set( "CloseQuarters", "Intimate", "Precision", "Strategic", "Tactical" ),
@@ -6987,7 +6956,7 @@ return {
 				Icon = "UI/Icons/Upgrades/prism_scope",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"critical_per_aim_scope",
+					"IncreaseCritPerAim",
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
@@ -6999,6 +6968,11 @@ return {
 						'Name', "AimAccuracyIncrease",
 						'Value', 2,
 						'Tag', "<AimAccuracyIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "CritPerAimIncrease",
+						'Value', 320,
+						'Tag', "<CritPerAimIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "MaxAimActionsIncrease",
@@ -7169,7 +7143,7 @@ return {
 				Icon = "UI/Icons/Upgrades/prism_scope",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"critical_per_aim_scope",
+					"IncreaseCritPerAim",
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
@@ -7181,6 +7155,11 @@ return {
 						'Name', "AimAccuracyIncrease",
 						'Value', 2,
 						'Tag', "<AimAccuracyIncrease>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "CritPerAimIncrease",
+						'Value', 320,
+						'Tag', "<CritPerAimIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "MaxAimActionsIncrease",
@@ -7774,16 +7753,15 @@ return {
 				Icon = "UI/Icons/Upgrades/side_laser",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"IncreaseCritChangeScaled",
-					"critical_per_aim_laser",
+					"IncreaseCritPerAim",
 					"DecreaseHipfireMul",
 					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
-						'Name', "CritChangeScaledIncrease",
-						'Value', 10,
-						'Tag', "<CritChangeScaledIncrease>",
+						'Name', "CritPerAimIncrease",
+						'Value', 250,
+						'Tag', "<CritPerAimIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "hipfire_mul_reduc",
@@ -7911,16 +7889,15 @@ return {
 				Icon = "UI/Icons/Upgrades/side_laser",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"IncreaseCritChangeScaled",
-					"critical_per_aim_laser",
+					"IncreaseCritPerAim",
 					"DecreaseHipfireMul",
 					"DecreaseSnapshotMul",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
-						'Name', "CritChangeScaledIncrease",
-						'Value', 10,
-						'Tag', "<CritChangeScaledIncrease>",
+						'Name', "CritPerAimIncrease",
+						'Value', 250,
+						'Tag', "<CritPerAimIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "hipfire_mul_reduc",
