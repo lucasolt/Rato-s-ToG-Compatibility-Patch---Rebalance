@@ -88,8 +88,8 @@ function RatTOG_RevMag_ApplyMap(map)
 
         for _, visual in ipairs(visual_table) do
             local found = false
-            print("RAT MOD REVMAG - Processing-------------mag_id:    ", mag_id,
-                  "     --------wep:    ", visual.ApplyTo)
+            --print("RAT MOD REVMAG - Processing-------------mag_id:    ", mag_id,
+            --      "     --------wep:    ", visual.ApplyTo)
             -- Check for existing entry with the same ApplyTo
             for i, existing_visual in ipairs(mag.Visuals) do
 
