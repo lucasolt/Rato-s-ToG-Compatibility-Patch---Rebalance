@@ -20,10 +20,10 @@ function RatoTOGComponents()
 	WeaponComponents["AR10_grip_mountfront"]:PostLoad()
 
 
-	WeaponComponents["B93R_Under_unfld_1"].ModificationEffects = table.copy(WeaponComponents["VerticalGrip"].ModificationEffects)
-	WeaponComponents["B93R_Under_unfld_1"].Parameters = table.copy(WeaponComponents["VerticalGrip"].Parameters)
-	WeaponComponents["B93R_Under_unfld_1"].GBO_ComponentAncestor = "VerticalGrip"
-	WeaponComponents["B93R_Under_unfld_1"]:PostLoad()
+	WeaponComponents["B93RR_grip_unfld_1"].ModificationEffects = table.copy(WeaponComponents["TacGrip"].ModificationEffects)
+	WeaponComponents["B93RR_grip_unfld_1"].Parameters = table.copy(WeaponComponents["TacGrip"].Parameters)
+	WeaponComponents["B93RR_grip_unfld_1"].GBO_ComponentAncestor = "TacGrip"
+	WeaponComponents["B93RR_grip_unfld_1"]:PostLoad()
 
 
 	WeaponComponents["Caws_Grip_def_1"].ModificationEffects = table.copy(WeaponComponents["VerticalGrip"].ModificationEffects)

@@ -900,9 +900,6 @@ return {
 			},
 			group = "Underslung",
 			id = "_Master_B93RR_grip_fld_TOG",
-			zzFoldingPair = {
-				"B93RR_grip_unfld_1",
-			},
 		}),
 		PlaceObj('ModItemWeaponComponent', {
 			Comment = "-- no longer used",
@@ -1047,7 +1044,7 @@ return {
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
 					'Name', "BurstRecoilDeltaMul",
-					'Value', 90,
+					'Value', 95,
 					'Tag', "<BurstRecoilDeltaMul>",
 				}),
 			},
@@ -1973,11 +1970,6 @@ return {
 						'Tag', "<AimAccuracyIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "DamageIncrease",
-						'Value', 1,
-						'Tag', "<DamageIncrease>",
-					}),
-					PlaceObj('PresetParamNumber', {
 						'Name', "OverwatchAngleDecrease",
 						'Value', 92,
 						'Tag', "<OverwatchAngleDecrease>",
@@ -2069,11 +2061,6 @@ return {
 						'Tag', "<AimAccuracyIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
-						'Name', "DamageIncrease",
-						'Value', 1,
-						'Tag', "<DamageIncrease>",
-					}),
-					PlaceObj('PresetParamNumber', {
 						'Name', "OverwatchAngleDecrease",
 						'Value', 92,
 						'Tag', "<OverwatchAngleDecrease>",
@@ -2085,7 +2072,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "ReliabilityIncrease",
-						'Value', 10,
+						'Value', 6,
 						'Tag', "<ReliabilityIncrease>",
 					}),
 				},
@@ -8298,11 +8285,6 @@ return {
 						'Name', "AimAccuracyIncrease",
 						'Value', 6,
 						'Tag', "<AimAccuracyIncrease>",
-					}),
-					PlaceObj('PresetParamNumber', {
-						'Name', "DamageIncrease",
-						'Value', 1,
-						'Tag', "<DamageIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "DamageReduced",
