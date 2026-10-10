@@ -1115,18 +1115,9 @@ return {
 				PlaceObj('GBO_ComponentModeOverride', {
 					'Params', {
 						PlaceObj('PresetParamNumber', {
-							'Name', "threshold_bonus_aim_acc",
-							'Value', 15,
-							'Tag', "<threshold_bonus_aim_acc>",
-						}),
-					},
-				}),
-				PlaceObj('GBO_ComponentModeOverride', {
-					'Params', {
-						PlaceObj('PresetParamNumber', {
-							'Name', "threshold_bonus_aim_acc",
-							'Value', 20,
-							'Tag', "<threshold_bonus_aim_acc>",
+							'Name', "floor_reduc",
+							'Value', 18,
+							'Tag', "<floor_reduc>",
 						}),
 					},
 				}),
@@ -1334,9 +1325,9 @@ return {
 				PlaceObj('GBO_ComponentModeOverride', {
 					'Params', {
 						PlaceObj('PresetParamNumber', {
-							'Name', "threshold_bonus_aim_acc",
-							'Value', 18,
-							'Tag', "<threshold_bonus_aim_acc>",
+							'Name', "floor_reduc",
+							'Value', 11,
+							'Tag', "<floor_reduc>",
 						}),
 					},
 				}),
