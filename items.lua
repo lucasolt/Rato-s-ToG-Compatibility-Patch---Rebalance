@@ -476,14 +476,14 @@ return {
 			Icon = "Mod/KKh3Yhf/Images/AN94_Stock_fld_icon.png",
 			ModificationDifficulty = 20,
 			ModificationEffects = {
-				"Enable_RunAndGun",
-				"ReduceAimAccuracy",
-				"ReduceRange",
-				"StanceAPdecrease",
-				"hipfire_no_stock",
 				"no_stock",
-				"zzStockEquipped",
+				"StanceAPdecrease",
 				"IncreaseOverwatchAngle",
+				"hipfire_no_stock",
+				"Enable_RunAndGun",
+				"zzStockEquipped",
+				"ReduceRange",
+				"MultiplyAimAccuracy_NoStock",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
@@ -497,6 +497,11 @@ return {
 					'Tag', "<AimAccuracyDecrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
+					'Name', "AimAccuracyMul",
+					'Value', 65,
+					'Tag', "<AimAccuracyMul>",
+				}),
+				PlaceObj('PresetParamNumber', {
 					'Name', "OverwatchAngleIncrease",
 					'Value', 108,
 					'Tag', "<OverwatchAngleIncrease>",
@@ -505,10 +510,6 @@ return {
 					'Name', "RangeDecrease",
 					'Value', 4,
 					'Tag', "<RangeDecrease>",
-				}),
-				PlaceObj('PresetParamNumber', {
-					'Name', "AimAccuracyMul",
-					'Tag', "<AimAccuracyMul>",
 				}),
 			},
 			Slot = "Stock",
@@ -681,7 +682,7 @@ return {
 				"hipfire_no_stock",
 				"Enable_RunAndGun",
 				"ReduceRange",
-				"MultiplyAimAccuracy",
+				"MultiplyAimAccuracy_NoStock",
 				"zzStockEquipped",
 			},
 			Parameters = {
@@ -842,6 +843,7 @@ return {
 				"StanceAPdecrease",
 				"hipfire_light_stock",
 				"stocklight_effect_recoil",
+				"MultiplyAimAccuracy",
 				"zzStockEquipped",
 			},
 			Parameters = {
@@ -849,6 +851,11 @@ return {
 					'Name', "APdecrease",
 					'Value', 5,
 					'Tag', "<APdecrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "AimAccuracyMul",
+					'Value', 92,
+					'Tag', "<AimAccuracyMul>",
 				}),
 			},
 			Slot = "Stock",
@@ -1620,12 +1627,18 @@ return {
 				"StanceAPdecrease",
 				"hipfire_light_stock",
 				"stocklight_effect_recoil",
+				"MultiplyAimAccuracy",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
 					'Name', "APdecrease",
 					'Value', 5,
 					'Tag', "<APdecrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "AimAccuracyMul",
+					'Value', 92,
+					'Tag', "<AimAccuracyMul>",
 				}),
 			},
 			Slot = "Stock",
