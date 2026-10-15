@@ -402,7 +402,7 @@ return {
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "snap_mul_reduc",
-					'Value', 90,
+					'Value', 75,
 					'Tag', "<snap_mul_reduc>",
 				}),
 			},
@@ -452,36 +452,25 @@ return {
 		PlaceObj('ModItemWeaponComponent', {
 			Cost = 15,
 			DisplayName = T(630328241510, --[[ModItemWeaponComponent _Master_StockFolded_TOG DisplayName]] "Folded Stock"),
-			GBO_ComponentTraits = "Self",
+			GBO_ComponentAncestor = "StockNo",
 			GBO_OverrideEffects = {
-				"Enable_RunAndGun",
-				"ReduceAimAccuracy",
-				"ReduceRange",
-				"StanceAPdecrease",
-				"hipfire_no_stock",
-				"no_stock",
 				"zzStockEquipped",
+			},
+			GBO_OverrideModes = {
+				PlaceObj('GBO_ComponentModeOverride', {
+					'Effects', {
+						"MultiplyAimAccuracy",
+					},
+					'RemoveEffects', {
+						"ReduceAimAccuracy",
+					},
+				}),
 			},
 			GBO_OverrideParams = {
 				PlaceObj('PresetParamNumber', {
-					'Name', "APdecrease",
-					'Value', 10,
-					'Tag', "<APdecrease>",
-				}),
-				PlaceObj('PresetParamNumber', {
-					'Name', "AimAccuracyDecrease",
-					'Value', 3,
-					'Tag', "<AimAccuracyDecrease>",
-				}),
-				PlaceObj('PresetParamNumber', {
-					'Name', "OverwatchAngle",
-					'Value', 108,
-					'Tag', "<OverwatchAngle>",
-				}),
-				PlaceObj('PresetParamNumber', {
-					'Name', "RangeDecrease",
-					'Value', 4,
-					'Tag', "<RangeDecrease>",
+					'Name', "AimAccuracyMul",
+					'Value', 65,
+					'Tag', "<AimAccuracyMul>",
 				}),
 			},
 			Icon = "Mod/KKh3Yhf/Images/AN94_Stock_fld_icon.png",
@@ -516,6 +505,10 @@ return {
 					'Name', "RangeDecrease",
 					'Value', 4,
 					'Tag', "<RangeDecrease>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "AimAccuracyMul",
+					'Tag', "<AimAccuracyMul>",
 				}),
 			},
 			Slot = "Stock",
@@ -688,7 +681,7 @@ return {
 				"hipfire_no_stock",
 				"Enable_RunAndGun",
 				"ReduceRange",
-				"DecreaseAimAccuracy",
+				"MultiplyAimAccuracy",
 				"zzStockEquipped",
 			},
 			Parameters = {
@@ -698,9 +691,9 @@ return {
 					'Tag', "<APdecrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
-					'Name', "AimAccuracyDecrease",
-					'Value', 12,
-					'Tag', "<AimAccuracyDecrease>",
+					'Name', "AimAccuracyMul",
+					'Value', 65,
+					'Tag', "<AimAccuracyMul>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "OverwatchAngleIncrease",
@@ -1044,7 +1037,7 @@ return {
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
 					'Name', "BurstRecoilDeltaMul",
-					'Value', 95,
+					'Value', 90,
 					'Tag', "<BurstRecoilDeltaMul>",
 				}),
 			},
@@ -1141,6 +1134,7 @@ return {
 				"IncreaseMaxAimActions",
 				"IncreaseSnapshotMul",
 				"ScopeAimThresholdBonus",
+				"ScopeFloorReduction",
 				"ScopePenalty3",
 				"DecreaseOverwatchAngle",
 			},
@@ -1171,13 +1165,18 @@ return {
 					'Tag', "<crit>%",
 				}),
 				PlaceObj('PresetParamNumber', {
+					'Name', "floor_reduc",
+					'Value', 18,
+					'Tag', "<floor_reduc>",
+				}),
+				PlaceObj('PresetParamNumber', {
 					'Name', "snap_mul_inc",
 					'Value', 160,
 					'Tag', "<snap_mul_inc>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "threshold_bonus_aim_acc",
-					'Value', 20,
+					'Value', 25,
 					'Tag', "<threshold_bonus_aim_acc>",
 				}),
 			},
@@ -1202,8 +1201,8 @@ return {
 				}),
 			},
 			Cost = 25,
-			DisplayName = T(691087939058, --[[ModItemWeaponComponent _Master_GW43_Scope_TOG DisplayName]] "ZF-4 Scope x1.5"),
-			GBO_ComponentTraits = "Scope._1dot5x",
+			DisplayName = T(691087939058, --[[ModItemWeaponComponent _Master_GW43_Scope_TOG DisplayName]] "ZF-4 Scope x4"),
+			GBO_ComponentTraits = "Scope._4xZF",
 			GBO_OverrideModes = {
 				PlaceObj('GBO_ComponentModeOverride', {
 					'Mode', "oldCTH",
@@ -1228,13 +1227,16 @@ return {
 			ModificationDifficulty = 0,
 			ModificationEffects = {
 				"IncreaseMaxAimActions",
+				"IncreaseSnapshotMul",
 				"ScopeAimThresholdBonus",
+				"ScopeFloorReduction",
+				"ScopePenalty1",
 				"DecreaseOverwatchAngle",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
 					'Name', "MaxAimActionsIncrease",
-					'Value', 1,
+					'Value', 2,
 					'Tag', "<MaxAimActionsIncrease>",
 				}),
 				PlaceObj('PresetParamNumber', {
@@ -1249,7 +1251,7 @@ return {
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "aim_level_threshold",
-					'Value', 4,
+					'Value', 5,
 					'Tag', "<aim_level_threshold>",
 				}),
 				PlaceObj('PresetParamPercent', {
@@ -1258,8 +1260,18 @@ return {
 					'Tag', "<bonus_cth>%",
 				}),
 				PlaceObj('PresetParamNumber', {
+					'Name', "floor_reduc",
+					'Value', 8,
+					'Tag', "<floor_reduc>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "snap_mul_inc",
+					'Value', 110,
+					'Tag', "<snap_mul_inc>",
+				}),
+				PlaceObj('PresetParamNumber', {
 					'Name', "threshold_bonus_aim_acc",
-					'Value', 10,
+					'Value', 20,
 					'Tag', "<threshold_bonus_aim_acc>",
 				}),
 			},
@@ -1356,6 +1368,7 @@ return {
 				"IncreaseMaxAimActions",
 				"IncreaseSnapshotMul",
 				"ScopeAimThresholdBonus",
+				"ScopeFloorReduction",
 				"ScopePenalty2",
 				"DecreaseOverwatchAngle",
 			},
@@ -1391,13 +1404,18 @@ return {
 					'Tag', "<critical_head>",
 				}),
 				PlaceObj('PresetParamNumber', {
+					'Name', "floor_reduc",
+					'Value', 11,
+					'Tag', "<floor_reduc>",
+				}),
+				PlaceObj('PresetParamNumber', {
 					'Name', "snap_mul_inc",
 					'Value', 140,
 					'Tag', "<snap_mul_inc>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "threshold_bonus_aim_acc",
-					'Value', 18,
+					'Value', 25,
 					'Tag', "<threshold_bonus_aim_acc>",
 				}),
 			},
@@ -1471,6 +1489,7 @@ return {
 				"IncreaseMaxAimActions",
 				"IncreaseSnapshotMul",
 				"ScopeAimThresholdBonus",
+				"ScopeFloorReduction",
 				"ScopePenalty2",
 				"DecreaseOverwatchAngle",
 			},
@@ -1499,6 +1518,11 @@ return {
 					'Name', "crit_torso",
 					'Value', 12,
 					'Tag', "<crit_torso>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "floor_reduc",
+					'Value', 16,
+					'Tag', "<floor_reduc>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "snap_mul_inc",
@@ -1750,6 +1774,7 @@ return {
 				"IncreaseMaxAimActions",
 				"IncreaseSnapshotMul",
 				"ScopeAimThresholdBonus",
+				"ScopeFloorReduction",
 				"ScopePenalty2",
 				"DecreaseOverwatchAngle",
 			},
@@ -1778,6 +1803,11 @@ return {
 					'Name', "aim_level_threshold",
 					'Value', 5,
 					'Tag', "<aim_level_threshold>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "floor_reduc",
+					'Value', 16,
+					'Tag', "<floor_reduc>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "snap_mul_inc",
@@ -1860,6 +1890,7 @@ return {
 			ModificationEffects = {
 				"IncreaseMaxAimActions",
 				"ScopeAimThresholdBonus",
+				"ScopeFloorReduction",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
@@ -1881,6 +1912,11 @@ return {
 					'Name', "bonus_cth",
 					'Value', 10,
 					'Tag', "<bonus_cth>",
+				}),
+				PlaceObj('PresetParamNumber', {
+					'Name', "floor_reduc",
+					'Value', 2,
+					'Tag', "<floor_reduc>",
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "threshold_bonus_aim_acc",
@@ -3160,10 +3196,11 @@ return {
 				Icon = "UI/Icons/Upgrades/scope_thermal",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"FirstAimBonusModifier",
 					"ScopePenalty1",
 					"IncreaseOverwatchAngle",
 					"IncreaseMaxAimActions",
+					"QuickFullAim",
+					"ScopeFloorReduction",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -3188,8 +3225,13 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "first_aim_bonus_acc",
-						'Value', 18,
+						'Value', 3,
 						'Tag', "<first_aim_bonus_acc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 6,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -3371,10 +3413,11 @@ return {
 				Icon = "UI/Icons/Upgrades/scope_thermal",
 				ModificationDifficulty = 10,
 				ModificationEffects = {
-					"FirstAimBonusModifier",
 					"ScopePenalty1",
 					"IncreaseOverwatchAngle",
 					"IncreaseMaxAimActions",
+					"QuickFullAim",
+					"ScopeFloorReduction",
 				},
 				Parameters = {
 					PlaceObj('PresetParamNumber', {
@@ -3399,8 +3442,13 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "first_aim_bonus_acc",
-						'Value', 18,
+						'Value', 3,
 						'Tag', "<first_aim_bonus_acc>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 6,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_reduc",
@@ -3540,12 +3588,12 @@ return {
 					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "bonus_cth_interrupt",
-						'Value', 8,
+						'Value', 12,
 						'Tag', "<bonus_cth_interrupt>%",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "first_aim_bonus_acc",
-						'Value', 12,
+						'Value', 8,
 						'Tag', "<first_aim_bonus_acc>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -3721,12 +3769,12 @@ return {
 					}),
 					PlaceObj('PresetParamPercent', {
 						'Name', "bonus_cth_interrupt",
-						'Value', 8,
+						'Value', 12,
 						'Tag', "<bonus_cth_interrupt>%",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "first_aim_bonus_acc",
-						'Value', 12,
+						'Value', 8,
 						'Tag', "<first_aim_bonus_acc>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -3851,6 +3899,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
 				},
@@ -3879,6 +3928,11 @@ return {
 						'Name', "aim_level_threshold",
 						'Value', 5,
 						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 16,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
@@ -4032,6 +4086,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
 				},
@@ -4060,6 +4115,11 @@ return {
 						'Name', "aim_level_threshold",
 						'Value', 5,
 						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 16,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
@@ -4183,6 +4243,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty3",
 					"DecreaseOverwatchAngle",
 				},
@@ -4208,13 +4269,18 @@ return {
 						'Tag', "<aim_level_threshold>",
 					}),
 					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 34,
+						'Tag', "<floor_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
 						'Value', 180,
 						'Tag', "<snap_mul_inc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "threshold_bonus_aim_acc",
-						'Value', 30,
+						'Value', 25,
 						'Tag', "<threshold_bonus_aim_acc>",
 					}),
 				},
@@ -4359,6 +4425,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty3",
 					"DecreaseOverwatchAngle",
 				},
@@ -4384,13 +4451,18 @@ return {
 						'Tag', "<aim_level_threshold>",
 					}),
 					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 34,
+						'Tag', "<floor_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
 						'Value', 180,
 						'Tag', "<snap_mul_inc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "threshold_bonus_aim_acc",
-						'Value', 30,
+						'Value', 25,
 						'Tag', "<threshold_bonus_aim_acc>",
 					}),
 				},
@@ -4530,7 +4602,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 90,
+						'Value', 75,
 						'Tag', "<snap_mul_reduc>",
 					}),
 				},
@@ -4706,7 +4778,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 90,
+						'Value', 75,
 						'Tag', "<snap_mul_reduc>",
 					}),
 				},
@@ -4858,7 +4930,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 90,
+						'Value', 75,
 						'Tag', "<snap_mul_reduc>",
 					}),
 				},
@@ -5028,7 +5100,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 90,
+						'Value', 75,
 						'Tag', "<snap_mul_reduc>",
 					}),
 				},
@@ -5149,6 +5221,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty3",
 					"DecreaseOverwatchAngle",
 				},
@@ -5177,6 +5250,11 @@ return {
 						'Name', "aim_level_threshold",
 						'Value', 6,
 						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 26,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
@@ -5330,6 +5408,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty3",
 					"DecreaseOverwatchAngle",
 				},
@@ -5358,6 +5437,11 @@ return {
 						'Name', "aim_level_threshold",
 						'Value', 6,
 						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 26,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
@@ -5489,6 +5573,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
 				},
@@ -5517,6 +5602,11 @@ return {
 						'Name', "aim_level_threshold",
 						'Value', 5,
 						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 16,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
@@ -5678,6 +5768,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
 				},
@@ -5706,6 +5797,11 @@ return {
 						'Name', "aim_level_threshold",
 						'Value', 5,
 						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 16,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
@@ -5837,6 +5933,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
 				},
@@ -5865,6 +5962,11 @@ return {
 						'Name', "aim_level_threshold",
 						'Value', 5,
 						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 16,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
@@ -6052,6 +6154,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty2",
 					"DecreaseOverwatchAngle",
 				},
@@ -6080,6 +6183,11 @@ return {
 						'Name', "aim_level_threshold",
 						'Value', 5,
 						'Tag', "<aim_level_threshold>",
+					}),
+					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 16,
+						'Tag', "<floor_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
@@ -6283,7 +6391,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 90,
+						'Value', 75,
 						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -6463,7 +6571,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 90,
+						'Value', 75,
 						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -6619,7 +6727,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 85,
+						'Value', 70,
 						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -6805,7 +6913,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_reduc",
-						'Value', 85,
+						'Value', 70,
 						'Tag', "<snap_mul_reduc>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -6938,6 +7046,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty1",
 					"DecreaseOverwatchAngle",
 				},
@@ -6949,7 +7058,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "CritPerAimIncrease",
-						'Value', 320,
+						'Value', 240,
 						'Tag', "<CritPerAimIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -6973,13 +7082,18 @@ return {
 						'Tag', "<aim_level_threshold>",
 					}),
 					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 6,
+						'Tag', "<floor_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
 						'Value', 125,
 						'Tag', "<snap_mul_inc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "threshold_bonus_aim_acc",
-						'Value', 15,
+						'Value', 20,
 						'Tag', "<threshold_bonus_aim_acc>",
 					}),
 				},
@@ -7125,6 +7239,7 @@ return {
 					"IncreaseMaxAimActions",
 					"IncreaseSnapshotMul",
 					"ScopeAimThresholdBonus",
+					"ScopeFloorReduction",
 					"ScopePenalty1",
 					"DecreaseOverwatchAngle",
 				},
@@ -7136,7 +7251,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "CritPerAimIncrease",
-						'Value', 320,
+						'Value', 240,
 						'Tag', "<CritPerAimIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
@@ -7160,13 +7275,18 @@ return {
 						'Tag', "<aim_level_threshold>",
 					}),
 					PlaceObj('PresetParamNumber', {
+						'Name', "floor_reduc",
+						'Value', 6,
+						'Tag', "<floor_reduc>",
+					}),
+					PlaceObj('PresetParamNumber', {
 						'Name', "snap_mul_inc",
 						'Value', 125,
 						'Tag', "<snap_mul_inc>",
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "threshold_bonus_aim_acc",
-						'Value', 15,
+						'Value', 20,
 						'Tag', "<threshold_bonus_aim_acc>",
 					}),
 				},
