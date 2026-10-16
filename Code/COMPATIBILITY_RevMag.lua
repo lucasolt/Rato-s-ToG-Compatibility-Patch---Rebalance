@@ -1,18 +1,48 @@
+---- The SKS family has a fixed 10-round mag: under Revised Mags it reloads loose rounds like a
+---- non-mag gun. The bench converts one to take AK mags; rat_mag_converted is saved per gun and its
+---- setter restores the Magazine/Platform that Revised Mags reads, so nothing is recomputed on load.
+RAT_SKS_INTERNAL_MAG = "RAT_SKS_InternalMag"
+RAT_SKS_INTERNAL_SIZE = 10
+RAT_SKS_AK_MAG = "AK47Magazine"
+RAT_SKS_CONVERT_PARTS = 10
+
+function OnMsg.ClassesGenerate()
+    AppendClass.Firearm = {
+        properties = {{id = "rat_mag_converted", editor = "bool", default = false, no_edit = true}}
+    }
+end
+
+function Firearm:Setrat_mag_converted(value)
+    self.rat_mag_converted = value
+    if self.rat_sks_internal then
+        self.Magazine = value and RAT_SKS_AK_MAG or nil
+        self.Platform = value and "AK762" or nil
+    end
+end
+
+local function sks_wrap_set_magazine()
+    local orig = Firearm.SetMagazineComponents
+    ---- Revised Mags sizes the gun from the inserted mag; the internal one has no mag item behind it
+    function Firearm:SetMagazineComponents(id, is_init)
+        orig(self, id, is_init)
+        if self.rat_sks_internal and id == RAT_SKS_INTERNAL_MAG then
+            self:RemoveModifiers(id)
+            self:AddModifier(id, "MagazineSize", 1000, RAT_SKS_INTERNAL_SIZE)
+        end
+    end
+end
+
 function OnMsg.RevisedMagPropsAddedToFirearms()
 
+    ---  SKS: internal mag by default, AK mags once converted
+    for _, cls in ipairs{PapovkaSKS_1, Papovka2SKS_1, Type56A_1, Type56B_1, Type56C_1, Type56D_1} do
+        REV_SetupWeapon(cls, "AK762", false, RAT_SKS_INTERNAL_MAG, {RAT_SKS_INTERNAL_MAG, "MagNormal", "MagLarge"})
+        cls.Platform = false -- no Platform: Revised Mags gives a platform gun a phantom mag
+        cls.rat_sks_internal = true
+    end
+    sks_wrap_set_magazine()
+
     ---  AK47 Mag
-    REV_SetupWeapon(PapovkaSKS_1, "AK762", "SKS_mag", "MagSmall_GBOTOG",
-                    {"MagLarge", "MagSmall_GBOTOG", "MagNormal"})
-    REV_SetupWeapon(Papovka2SKS_1, "AK762", "SKS_mag", "MagSmall_GBOTOG",
-                    {"MagLarge", "MagSmall_GBOTOG", "MagNormal"})
-    REV_SetupWeapon(Type56A_1, "AK762", "SKS_mag", "MagSmall_GBOTOG",
-                    {"MagLarge", "MagSmall_GBOTOG", "MagNormal"})
-    REV_SetupWeapon(Type56B_1, "AK762", "SKS_mag", "MagSmall_GBOTOG",
-                    {"MagLarge", "MagSmall_GBOTOG", "MagNormal"})
-    REV_SetupWeapon(Type56C_1, "AK762", "SKS_mag", "MagSmall_GBOTOG",
-                    {"MagLarge", "MagSmall_GBOTOG", "MagNormal"})
-    REV_SetupWeapon(Type56D_1, "AK762", "SKS_mag", "MagSmall_GBOTOG",
-                    {"MagLarge", "MagSmall_GBOTOG", "MagNormal"})
     REV_SetupWeapon(M70_1, "AK762", "AK47Magazine", "MagNormal",
                     {"MagLarge", "MagSmall_GBOTOG", "MagNormal"})
     REV_SetupWeapon(M70D_1, "AK762", "AK47Magazine", "MagNormal",
@@ -47,28 +77,144 @@ function OnMsg.RevisedMagPropsAddedToFirearms()
     REV_SetupWeapon(Glock17_1, "Glock", "GlockMagazine", "MagNormal", {"MagNormal", "MagLarge"})
 end
 
-function RatTOG_RevMag_OnClassesGenerateChangeDefaultMags()
-    if not IsMod_loaded('URkxyfE') then
+---- The SKS's own mag model, as a component of its own: MagSmall_GBOTOG is a 10-round AK mag here.
+function RatTOG_SKS_CreateInternalMag()
+    if not IsMod_loaded("URkxyfE") or WeaponComponents[RAT_SKS_INTERNAL_MAG] then
         return
     end
-    RatTOG_RevMag_ChangeDefaultMag(PapovkaSKS_1, "SKS_mag")
-    RatTOG_RevMag_ChangeDefaultMag(Papovka2SKS_1, "SKS_mag")
-    RatTOG_RevMag_ChangeDefaultMag(Type56A_1, "SKS_mag")
-    RatTOG_RevMag_ChangeDefaultMag(Type56B_1, "SKS_mag")
-    RatTOG_RevMag_ChangeDefaultMag(Type56C_1, "SKS_mag")
-    RatTOG_RevMag_ChangeDefaultMag(Type56D_1, "SKS_mag")
-end
-
-function RatTOG_RevMag_ChangeDefaultMag(wep_class, mag_id)
-    if wep_class then
-        local compSlots = wep_class.ComponentSlots or {}
-        for i, slot in ipairs(compSlots) do
-            if slot.SlotType == "Magazine" then
-                slot.DefaultComponent = mag_id
-                break
-            end
+    local src = WeaponComponents.MagSmall_GBOTOG
+    local visuals = {}
+    for _, v in ipairs(src and src.Visuals or empty_table) do
+        local cls = g_Classes[v.ApplyTo]
+        if cls and cls.rat_sks_internal then
+            visuals[#visuals + 1] = v
         end
     end
+    ---- a code preset gets its id only through SetId, which is also what registers it in WeaponComponents
+    local comp = PlaceObj('WeaponComponent', {
+        'Slot', "Magazine",
+        'DisplayName', Untranslated("Internal Magazine"),
+        'Description', Untranslated("Fixed 10-round magazine, loaded with loose rounds. Converting the rifle to take AK magazines gives up the internal one."),
+        'Icon', "Mod/KKh3Yhf/Images/Papovka_mag_def.png",
+        'Cost', 0,
+        'ModificationDifficulty', src and src.ModificationDifficulty or 0,
+        'Visuals', visuals
+    })
+    comp:SetGroup("Default")
+    comp:SetId(RAT_SKS_INTERNAL_MAG)
+end
+
+---- An AK762 mag item for a mag component, read off the classes: GBO moves some presets' platform.
+function RatTOG_SKS_MagFor(component)
+    for _, p in ipairs(Presets.InventoryItemCompositeDef.Default or empty_table) do
+        local cls = type(p) == "table" and g_Classes[p.id]
+        if cls and cls.Platform == "AK762" and cls.Modification == component then
+            return p.id
+        end
+    end
+end
+
+local function sks_holder_sector(holder)
+    local squad = holder and holder.Squad and gv_Squads[holder.Squad]
+    return squad and squad.CurrentSector or gv_CurrentSectorId
+end
+
+---- Internal -> AK mags: the loose rounds go into a new empty mag of the size picked.
+function RatTOG_SKS_Convert(weapon, component)
+    local mag = PlaceInventoryItem(RatTOG_SKS_MagFor(component) or RAT_SKS_AK_MAG)
+    mag.ammo = weapon.ammo
+    weapon:SetProperty("rat_mag_converted", true)
+    weapon.magazine = mag
+    weapon:SetWeaponComponent("Magazine", component)
+end
+
+---- AK mags -> internal: whatever mag is inserted goes back to the owner, rounds and all.
+function RatTOG_SKS_Revert(weapon, holder)
+    local mag = weapon.magazine
+    weapon.magazine = nil
+    if mag then
+        mag.ammo = weapon.ammo
+        if not (holder and holder:AddItem("Inventory", mag)) then
+            AddToSectorInventory(sks_holder_sector(holder), {mag})
+        end
+    end
+    weapon.ammo = nil
+    weapon:RemoveModifiers("ammo")
+    weapon:SetProperty("rat_mag_converted", false)
+    weapon:SetWeaponComponent("Magazine", RAT_SKS_INTERNAL_MAG)
+    ObjModified(holder)
+end
+
+function OnMsg.WeaponModifiedSuccessSync(weapon, owner, modAdded, mechanic, modSlot, oldComponent)
+    if modSlot ~= "Magazine" or not (weapon and weapon.rat_sks_internal) then
+        return
+    end
+    local placed = weapon.components.Magazine
+    if oldComponent == RAT_SKS_INTERNAL_MAG and placed ~= RAT_SKS_INTERNAL_MAG then
+        RatTOG_SKS_Convert(weapon, placed)
+    elseif oldComponent ~= RAT_SKS_INTERNAL_MAG and placed == RAT_SKS_INTERNAL_MAG then
+        RatTOG_SKS_Revert(weapon, owner)
+    end
+    ObjModified(weapon)
+end
+
+---- Saves from before: the old SKS mag folds back into the internal one (its rounds already sit in
+---- the gun's ammo); an SKS holding a real AK mag loads as converted, keeping it.
+RAT_SKS_LEGACY_MAGS = {MagSmall_GBOTOG = true, RevMag_Tog_MagSmall = true}
+
+local orig_place = PlaceInventoryItem
+function PlaceInventoryItem(item_id, instance, ...)
+    local obj = orig_place(item_id, instance, ...)
+    local comp = obj and obj.rat_sks_internal and instance and not obj.rat_mag_converted and obj.components.Magazine
+    if comp and comp ~= RAT_SKS_INTERNAL_MAG then
+        if RAT_SKS_LEGACY_MAGS[comp] then
+            obj.magazine = nil
+            obj:SetWeaponComponent("Magazine", RAT_SKS_INTERNAL_MAG)
+        else
+            obj:SetProperty("rat_mag_converted", true)
+        end
+    end
+    return obj
+end
+
+---- Bench: an internal SKS converts to any AK mag size, a converted one only goes back to internal.
+local orig_can_modify = ModifyWeaponDlg.CanModifySlot
+function ModifyWeaponDlg:CanModifySlot(slot, partId)
+    local weapon = self.context.weapon
+    if partId and slot and slot.SlotType == "Magazine" and weapon and weapon.rat_sks_internal then
+        local internal = weapon.components.Magazine == RAT_SKS_INTERNAL_MAG
+        if internal == (partId == RAT_SKS_INTERNAL_MAG) then
+            return false, "blocked", weapon.components.Magazine
+        end
+    end
+    return orig_can_modify(self, slot, partId)
+end
+
+---- The conversion kit: a mag well and one empty mag, on top of the part's own bill.
+local orig_changes_cost = ModifyWeaponDlg.GetChangesCost
+function ModifyWeaponDlg:GetChangesCost(slotFilter, placedComponentOverride)
+    local costs, anyChanged, canAfford, perType = orig_changes_cost(self, slotFilter, placedComponentOverride)
+    local weapon = self.context.weapon
+    if not anyChanged or not (weapon and weapon.rat_sks_internal) or not self.weaponClone or
+        (slotFilter and slotFilter ~= "Magazine") or weapon.components.Magazine ~= RAT_SKS_INTERNAL_MAG then
+        return costs, anyChanged, canAfford, perType
+    end
+    local placed = slotFilter and placedComponentOverride or self.weaponClone.components.Magazine
+    if not placed or placed == RAT_SKS_INTERNAL_MAG then
+        return costs, anyChanged, canAfford, perType
+    end
+    costs.Parts = (costs.Parts or 0) + RAT_SKS_CONVERT_PARTS
+    if CheatEnabled("FreeParts") then
+        return costs, anyChanged, canAfford, perType
+    end
+    canAfford, perType = true, {}
+    for typ, cost in pairs(costs) do
+        local preset = SectorOperationResouces and SectorOperationResouces[typ]
+        local has = preset and preset.current(self.sector) or 0
+        perType[typ] = has >= cost
+        canAfford = canAfford and has >= cost
+    end
+    return costs, anyChanged, canAfford, perType
 end
 
 function RatTOG_RevMag_ApplyMap(map)

@@ -5,8 +5,6 @@ function OnMsg.ClassesGenerate()
 	RatoTOG_LegacyPatch()
     GBO_ApplyWeaponSlots(GBO_TOGWeaponSlots)
     print("GBO - TOG patch successful")
-    --- RevMag
-    RatTOG_RevMag_OnClassesGenerateChangeDefaultMags()
 end
 
 function OnMsg.ClassesPreprocess()
@@ -31,6 +29,7 @@ function OnMsg.DataLoaded()
     GBOTOG_RevMag_AddClassesToInventoryItemDefs_manual()
     GBOTOG_RevMag_WeaponComponentVisualPatch_manual()
     GBOTOG_RevMag_WeaponComponentVisualPatch()
+    RatTOG_SKS_CreateInternalMag()
 end
 
 function OnMsg.ModsReloaded()
@@ -42,6 +41,7 @@ function OnMsg.ModsReloaded()
     --- RevMag
     GBOTOG_RevMag_WeaponComponentVisualPatch_manual()
     GBOTOG_RevMag_WeaponComponentVisualPatch()
+    RatTOG_SKS_CreateInternalMag()
 end
 
 ---- Disable unpatched guns
