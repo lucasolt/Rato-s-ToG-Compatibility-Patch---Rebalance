@@ -27,7 +27,6 @@ function OnMsg.DataLoaded()
     --- RevMag
     GBOTOG_RevMag_AddClassesToInventoryItemDefs()
     GBOTOG_RevMag_AddClassesToInventoryItemDefs_manual()
-    RatTOG_RevMag_SyncCalibers()
     GBOTOG_RevMag_WeaponComponentVisualPatch_manual()
     GBOTOG_RevMag_WeaponComponentVisualPatch()
     RatTOG_SKS_CreateInternalMag()
@@ -43,6 +42,8 @@ function OnMsg.ModsReloaded()
     GBOTOG_RevMag_WeaponComponentVisualPatch_manual()
     GBOTOG_RevMag_WeaponComponentVisualPatch()
     RatTOG_SKS_CreateInternalMag()
+    ---- gun calibers are final only once every ModsReloaded handler (GBO's preset->class copy) has run
+    CreateRealTimeThread(RatTOG_RevMag_SyncCalibers)
 end
 
 ---- Disable unpatched guns
