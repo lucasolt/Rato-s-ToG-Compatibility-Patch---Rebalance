@@ -52,9 +52,9 @@ function OnMsg.RevisedMagPropsAddedToFirearms()
     REV_SetupWeapon(RK95_1, "AK762", "AK47Magazine", "MagNormal",
                     {"MagLarge", "MagSmall_GBOTOG", "MagNormal"})
 
-    --- HKG3
-    REV_SetupWeapon(G3A3Green_1, "HKG3", "HKG3Magazine", "MagNormal", {"MagLarge", "MagNormal"})
-    REV_SetupWeapon(G3A3_1, "HKG3", "HKG3Magazine", "MagNormal", {"MagLarge", "MagNormal"})
+    --- HKG3: the G3 ships with its 20-round mag; HKG3Magazine is the PSG1's 5-round one
+    REV_SetupWeapon(G3A3Green_1, "HKG3", "HKG3MagazineLarge", "MagLarge", {"MagLarge", "MagNormal"})
+    REV_SetupWeapon(G3A3_1, "HKG3", "HKG3MagazineLarge", "MagLarge", {"MagLarge", "MagNormal"})
 
     --- STANAG
     ----- Small mags (10 round) not used for now, due to model incompatibility with vanilla guns
@@ -776,6 +776,20 @@ function GBOTOG_RevMag_AddClassesToInventoryItemDefs_manual()
     local classes = {"SKS_mag", "VSK_Mag", "VSS_Mag"}
     for _, id in ipairs(classes) do
         InventoryItemDefs[id] = g_Classes[id]
+    end
+end
+
+---- Revised Mags calls the 20-round HKG3 mag an HK21 one; it is the G3's standard box (HK21, PSG1 take it too).
+function RatTOG_RevMag_RenameG3Mag()
+    if not IsMod_loaded('URkxyfE') then
+        return
+    end
+    for _, target in ipairs{g_Classes.HKG3MagazineLarge or false, InventoryItemDefs.HKG3MagazineLarge or false} do
+        if target then
+            target.DisplayName = Untranslated("G3 Magazine")
+            target.DisplayNamePlural = Untranslated("G3 Magazines")
+            target.Description = Untranslated("Standard 20-round 7.62 NATO box magazine for the G3, also used by the HK21 and PSG1.")
+        end
     end
 end
 

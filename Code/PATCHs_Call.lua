@@ -31,6 +31,7 @@ function OnMsg.DataLoaded()
     GBOTOG_RevMag_WeaponComponentVisualPatch_manual()
     GBOTOG_RevMag_WeaponComponentVisualPatch()
     RatTOG_SKS_CreateInternalMag()
+    RatTOG_RevMag_RenameG3Mag()
 end
 
 function OnMsg.ModsReloaded()
@@ -43,6 +44,7 @@ function OnMsg.ModsReloaded()
     GBOTOG_RevMag_WeaponComponentVisualPatch_manual()
     GBOTOG_RevMag_WeaponComponentVisualPatch()
     RatTOG_SKS_CreateInternalMag()
+    RatTOG_RevMag_RenameG3Mag()
     ---- gun calibers are final only once every ModsReloaded handler (GBO's preset->class copy) has run
     CreateRealTimeThread(RatTOG_RevMag_SyncCalibers)
 end
