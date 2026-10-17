@@ -1394,7 +1394,10 @@ function GBOTOG_RevMag_AddClassesToInventoryItemDefs()
         'RPD_1_Magazine', 'Gewehr43_1_Magazine', 'P08_1_Magazine', 'M1911_1_Magazine',
         'M76_1_Magazine', 'MAC11_1_Magazine', 'MicroUZI_1_Magazine', 'PP91_1_Magazine',
         'VigM2_1_Magazine', 'Delisle_1_Magazine', 'SSG69_1_Magazine', 'HK23E_1_Magazine',
-        'SteyrScout_1_Magazine', 'StenMK2_1_Magazine', 'STG44R_1_Magazine', 'AR10std_Magazine'
+        'SteyrScout_1_Magazine', 'StenMK2_1_Magazine', 'STG44R_1_Magazine', 'AR10std_Magazine',
+        'B93RR_1_MagazineLarge', 'USP_1_MagazineLarge', 'VikingMP446_1_MagazineLarge',
+        'Gewehr43_1_MagazineLarge', 'P08_1_MagazineLarge', 'M1911_1_MagazineLarge',
+        'MicroUZI_1_MagazineLarge', 'PP91_1_MagazineLarge', 'SSG69_1_MagazineLarge'
     }
     for _, id in ipairs(classes) do
         InventoryItemDefs[id] = g_Classes[id]

@@ -778,3 +778,30 @@ function GBOTOG_RevMag_AddClassesToInventoryItemDefs_manual()
         InventoryItemDefs[id] = g_Classes[id]
     end
 end
+
+---- Revised Mags only loads a mag whose Platform and Caliber both match the gun. The generated mags
+---- took the caliber the gun had at build time, so a later caliber change (PP91 9x18, SSG69, Scout)
+---- left them unusable. A platform whose guns all share one caliber pulls its mags onto it.
+function RatTOG_RevMag_SyncCalibers()
+    if not IsMod_loaded('URkxyfE') then
+        return
+    end
+    local cal_of = {}
+    ClassDescendantsList("Firearm", function(id, w)
+        local plat = w.Platform
+        if plat and w.Magazine and w.Caliber and (IsVanillaFirearm(w) or w.is_tog_patched) then
+            if cal_of[plat] == nil then
+                cal_of[plat] = w.Caliber
+            elseif cal_of[plat] ~= w.Caliber then
+                cal_of[plat] = false
+            end
+        end
+    end)
+    ClassDescendantsList("Mag", function(id, mag)
+        local cal = cal_of[mag.Platform or ""]
+        if cal and InventoryItemDefs[id] and mag.Caliber ~= cal then
+            print("GBO TOG RevMag: " .. id .. " caliber " .. tostring(mag.Caliber) .. " -> " .. cal)
+            mag.Caliber = cal
+        end
+    end)
+end

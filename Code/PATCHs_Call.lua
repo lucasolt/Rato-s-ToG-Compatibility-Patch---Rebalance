@@ -27,6 +27,7 @@ function OnMsg.DataLoaded()
     --- RevMag
     GBOTOG_RevMag_AddClassesToInventoryItemDefs()
     GBOTOG_RevMag_AddClassesToInventoryItemDefs_manual()
+    RatTOG_RevMag_SyncCalibers()
     GBOTOG_RevMag_WeaponComponentVisualPatch_manual()
     GBOTOG_RevMag_WeaponComponentVisualPatch()
     RatTOG_SKS_CreateInternalMag()
