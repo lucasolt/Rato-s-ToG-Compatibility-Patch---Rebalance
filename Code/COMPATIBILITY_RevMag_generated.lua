@@ -27,6 +27,9 @@ function OnMsg.RevisedMagPropsAddedToFirearms()
     REV_SetupWeapon(StenMK2_1, 'StenMK2_1_9mm', 'StenMK2_1_Magazine', 'MagNormal', {'MagNormal'})
     REV_SetupWeapon(STG44R_1, 'STG44R_1_7_92x33', 'STG44R_1_Magazine', 'MagNormal', {'MagNormal'})
     REV_SetupWeapon(AR10std, 'AR10std_762NATO', 'AR10std_Magazine', 'MagNormal', {'MagNormal'})
+    REV_SetupWeapon(A91_2, 'A91_2_5_45x39', 'A91_2_Magazine', 'MagNormal', { 'MagNormal', 'MagLarge' })
+    REV_SetupWeapon(G11_1, 'G11_1_4_7x33', 'G11_1_Magazine', 'MagNormal', { 'MagNormal', 'MagLarge', 'MagLarger' })
+    REV_SetupWeapon(M24Sniper, 'M24Sniper_762NATO', 'M24Sniper_Magazine', 'MagNormal', { 'MagNormal', 'MagLarge' })
 end
 
 function GBOTOG_RevMag_CreateMagazine()
@@ -1195,9 +1198,296 @@ function GBOTOG_RevMag_CreateMagazine()
         DisplayName = T(331234252847, 'Sturmgewehr 44 Magazine')
     }
 
+    UndefineClass('A91_2_Magazine')
+    DefineClass.A91_2_Magazine = {
+        __parents = {"RifleMag"},
+        __generated_by_class = "ModItemInventoryItemCompositeDef",
+
+        Type = "Rifle",
+        Group = "Default",
+        PocketM_amount = 0,
+        DisplayNamePlural = T(252078691558,'A91 Magazines'),
+        MagReloadCosts = 22000,
+        Id = "A91_2_Magazine",
+        CanAppearInShop = true,
+        Modification = "MagNormal",
+        KnifeSheath_amount = 0,
+        Icon = "Mod/KKh3Yhf/Images/A91_mag_def.png",
+        PistolHolster_amount = 0,
+        Description = T(542694157183,'A91 Magazine for 5.45x39mm rounds'),
+        RifleMag_amount = 1,
+        DisplayName = T(776373410995,'A91 Magazine'),
+        Platform = "A91_2_5_45x39",
+        PocketL_amount = 1,
+        object_class = "RifleMag",
+        CanBeConsumed = false,
+        ScrapParts = 3,
+        RestockWeight = 50,
+        PocketML_amount = 1,
+        MagUnloadCosts = 11000,
+        Caliber = "5_45x39",
+        Carabiner_amount = 0,
+        Tier = 2,
+        CategoryPair = "RifleMags",
+        Repairable = false,
+        PocketS_amount = 0,
+        PistolMag_amount = 0,
+        ExtraAPCosts = 0,
+        Weight = 200,
+        AdditionalHint = T(729763554312,'5.45x39mm'),
+        MagazineSize = 30,
+        Cost = 349
+    }
+    UndefineClass('A91_2_MagazineLarge')
+    DefineClass.A91_2_MagazineLarge = {
+        __parents = {"RifleMag"},
+        __generated_by_class = "ModItemInventoryItemCompositeDef",
+
+        Type = "Rifle",
+        Group = "Default",
+        PocketM_amount = 0,
+        DisplayNamePlural = T(227413914581,'A91 Extended Magazines'),
+        MagReloadCosts = 30000,
+        Id = "A91_2_MagazineLarge",
+        CanAppearInShop = true,
+        Modification = "MagLarge",
+        KnifeSheath_amount = 0,
+        Icon = "Mod/KKh3Yhf/Images/A91_mag_ext.png",
+        PistolHolster_amount = 0,
+        Description = T(723583372735,'A91 Extended Magazine for 5.45x39mm rounds'),
+        RifleMag_amount = 1,
+        DisplayName = T(232742954598,'A91 Extended Magazine'),
+        Platform = "A91_2_5_45x39",
+        PocketL_amount = 1,
+        object_class = "RifleMag",
+        CanBeConsumed = false,
+        ScrapParts = 3,
+        RestockWeight = 38,
+        PocketML_amount = 1,
+        MagUnloadCosts = 15000,
+        Caliber = "5_45x39",
+        Carabiner_amount = 0,
+        Tier = 2,
+        CategoryPair = "RifleMags",
+        Repairable = false,
+        PocketS_amount = 0,
+        PistolMag_amount = 0,
+        ExtraAPCosts = 0,
+        Weight = 200,
+        AdditionalHint = T(729763554312,'5.45x39mm'),
+        MagazineSize = 60,
+        Cost = 449
+    }
+    UndefineClass('G11_1_Magazine')
+    DefineClass.G11_1_Magazine = {
+        __parents = {"RifleMag"},
+        __generated_by_class = "ModItemInventoryItemCompositeDef",
+
+        Type = "Rifle",
+        Group = "Default",
+        PocketM_amount = 0,
+        DisplayNamePlural = T(969924714849,'G 11 Magazines'),
+        MagReloadCosts = 22000,
+        Id = "G11_1_Magazine",
+        CanAppearInShop = true,
+        Modification = "MagNormal",
+        KnifeSheath_amount = 0,
+        Icon = "Mod/KKh3Yhf/Images/G11_Mag_def_icon.png",
+        PistolHolster_amount = 0,
+        Description = T(237905889505,'G 11 Magazine for 4.7x33mm rounds'),
+        RifleMag_amount = 1,
+        DisplayName = T(483889163336,'G 11 Magazine'),
+        Platform = "G11_1_4_7x33",
+        PocketL_amount = 1,
+        object_class = "RifleMag",
+        CanBeConsumed = false,
+        ScrapParts = 3,
+        RestockWeight = 50,
+        PocketML_amount = 1,
+        MagUnloadCosts = 11000,
+        Caliber = "4_7x33",
+        Carabiner_amount = 0,
+        Tier = 3,
+        CategoryPair = "RifleMags",
+        Repairable = false,
+        PocketS_amount = 0,
+        PistolMag_amount = 0,
+        ExtraAPCosts = 0,
+        Weight = 200,
+        AdditionalHint = T(839489623828,'4.7x33mm'),
+        MagazineSize = 45,
+        Cost = 349
+    }
+    UndefineClass('G11_1_MagazineLarge')
+    DefineClass.G11_1_MagazineLarge = {
+        __parents = {"RifleMag"},
+        __generated_by_class = "ModItemInventoryItemCompositeDef",
+
+        Type = "Rifle",
+        Group = "Default",
+        PocketM_amount = 0,
+        DisplayNamePlural = T(835452527725,'G 11 Extended Magazines'),
+        MagReloadCosts = 28000,
+        Id = "G11_1_MagazineLarge",
+        CanAppearInShop = true,
+        Modification = "MagLarge",
+        KnifeSheath_amount = 0,
+        Icon = "Mod/KKh3Yhf/Images/G11_Mag_ext_icon.png",
+        PistolHolster_amount = 0,
+        Description = T(239993553515,'G 11 Extended Magazine for 4.7x33mm rounds'),
+        RifleMag_amount = 1,
+        DisplayName = T(272210260098,'G 11 Extended Magazine'),
+        Platform = "G11_1_4_7x33",
+        PocketL_amount = 1,
+        object_class = "RifleMag",
+        CanBeConsumed = false,
+        ScrapParts = 3,
+        RestockWeight = 38,
+        PocketML_amount = 1,
+        MagUnloadCosts = 14000,
+        Caliber = "4_7x33",
+        Carabiner_amount = 0,
+        Tier = 3,
+        CategoryPair = "RifleMags",
+        Repairable = false,
+        PocketS_amount = 0,
+        PistolMag_amount = 0,
+        ExtraAPCosts = 0,
+        Weight = 200,
+        AdditionalHint = T(839489623828,'4.7x33mm'),
+        MagazineSize = 68,
+        Cost = 449
+    }
+    UndefineClass('G11_1_MagazineLarger')
+    DefineClass.G11_1_MagazineLarger = {
+        __parents = {"LargeMag"},
+        __generated_by_class = "ModItemInventoryItemCompositeDef",
+
+        Type = "Large",
+        Group = "Default",
+        PocketM_amount = 0,
+        DisplayNamePlural = T(351614611853,'G 11 Drum Magazines'),
+        MagReloadCosts = 50000,
+        Id = "G11_1_MagazineLarger",
+        CanAppearInShop = true,
+        Modification = "MagLarger",
+        KnifeSheath_amount = 0,
+        Icon = "Mod/KKh3Yhf/Images/G11_Mag_ext2_icon.png",
+        PistolHolster_amount = 0,
+        Description = T(713998780245,'G 11 Drum Magazine for 4.7x33mm rounds'),
+        RifleMag_amount = 0,
+        DisplayName = T(758795465020,'G 11 Drum Magazine'),
+        Platform = "G11_1_4_7x33",
+        PocketL_amount = 1,
+        object_class = "LargeMag",
+        CanBeConsumed = false,
+        ScrapParts = 3,
+        RestockWeight = 38,
+        PocketML_amount = 0,
+        MagUnloadCosts = 5000,
+        Caliber = "4_7x33",
+        Carabiner_amount = 0,
+        Tier = 3,
+        CategoryPair = "MGMags",
+        Repairable = false,
+        PocketS_amount = 0,
+        PistolMag_amount = 0,
+        ExtraAPCosts = 2000,
+        Weight = 300,
+        AdditionalHint = T(839489623828,'4.7x33mm'),
+        MagazineSize = 135,
+        Cost = 599
+    }
+    UndefineClass('M24Sniper_Magazine')
+    DefineClass.M24Sniper_Magazine = {
+        __parents = {"RifleMag"},
+        __generated_by_class = "ModItemInventoryItemCompositeDef",
+
+        Type = "Rifle",
+        Group = "Default",
+        PocketM_amount = 0,
+        DisplayNamePlural = T(210714431018,'M24 Magazines'),
+        MagReloadCosts = 12000,
+        Id = "M24Sniper_Magazine",
+        CanAppearInShop = true,
+        Modification = "MagNormal",
+        KnifeSheath_amount = 0,
+        Icon = "UI/Icons/Upgrades/default_magazine",
+        PistolHolster_amount = 0,
+        Description = T(851190131585,'M24 Magazine for 7.62 NATO rounds'),
+        RifleMag_amount = 1,
+        DisplayName = T(749703527752,'M24 Magazine'),
+        Platform = "M24Sniper_762NATO",
+        PocketL_amount = 1,
+        object_class = "RifleMag",
+        CanBeConsumed = false,
+        ScrapParts = 3,
+        RestockWeight = 50,
+        PocketML_amount = 1,
+        MagUnloadCosts = 6000,
+        Caliber = "762NATO",
+        Carabiner_amount = 0,
+        Tier = 2,
+        CategoryPair = "RifleMags",
+        Repairable = false,
+        PocketS_amount = 0,
+        PistolMag_amount = 0,
+        ExtraAPCosts = 0,
+        Weight = 200,
+        AdditionalHint = T(565298696667,'7.62 NATO'),
+        MagazineSize = 5,
+        Cost = 349
+    }
+    UndefineClass('M24Sniper_MagazineLarge')
+    DefineClass.M24Sniper_MagazineLarge = {
+        __parents = {"RifleMag"},
+        __generated_by_class = "ModItemInventoryItemCompositeDef",
+
+        Type = "Rifle",
+        Group = "Default",
+        PocketM_amount = 0,
+        DisplayNamePlural = T(954379929220,'M24 Extended Magazines'),
+        MagReloadCosts = 20000,
+        Id = "M24Sniper_MagazineLarge",
+        CanAppearInShop = true,
+        Modification = "MagLarge",
+        KnifeSheath_amount = 0,
+        Icon = "UI/Icons/Upgrades/M14_magazine",
+        PistolHolster_amount = 0,
+        Description = T(594577411380,'M24 Extended Magazine for 7.62 NATO rounds'),
+        RifleMag_amount = 1,
+        DisplayName = T(483587194207,'M24 Extended Magazine'),
+        Platform = "M24Sniper_762NATO",
+        PocketL_amount = 1,
+        object_class = "RifleMag",
+        CanBeConsumed = false,
+        ScrapParts = 3,
+        RestockWeight = 44,
+        PocketML_amount = 1,
+        MagUnloadCosts = 10000,
+        Caliber = "762NATO",
+        Carabiner_amount = 0,
+        Tier = 2,
+        CategoryPair = "RifleMags",
+        Repairable = false,
+        PocketS_amount = 0,
+        PistolMag_amount = 0,
+        ExtraAPCosts = 0,
+        Weight = 200,
+        AdditionalHint = T(565298696667,'7.62 NATO'),
+        MagazineSize = 8,
+        Cost = 449
+    }
 end
 local map = {
     ["MagLarger"] = {
+        PlaceObj('WeaponComponentVisual', {
+            Slot = "Magazine",
+            Entity = "G11_Mag_ext2",
+            ApplyTo = "G11_1",
+            param_bindings = false,
+            Icon = "Mod/KKh3Yhf/Images/G11_Mag_ext2_icon.png"
+        }),
         PlaceObj('WeaponComponentVisual', {
             Icon = "Mod/Dau6w/Images/pkm_mag_def.png",
             param_bindings = false,
@@ -1219,6 +1509,27 @@ local map = {
         })
     },
     ["MagLarge"] = {
+        PlaceObj('WeaponComponentVisual', {
+            Slot = "Magazine",
+            Entity = "A91_762_mag_ext",
+            ApplyTo = "A91_2",
+            param_bindings = false,
+            Icon = "Mod/KKh3Yhf/Images/A91_mag_ext.png"
+        }),
+        PlaceObj('WeaponComponentVisual', {
+            Slot = "Magazine",
+            Entity = "G11_Mag_ext",
+            ApplyTo = "G11_1",
+            param_bindings = false,
+            Icon = "Mod/KKh3Yhf/Images/G11_Mag_ext_icon.png"
+        }),
+        PlaceObj('WeaponComponentVisual', {
+            Slot = "Magazine",
+            Entity = "WeaponAttA_MagazineM24_02",
+            ApplyTo = "M24Sniper",
+            param_bindings = false,
+            Icon = "UI/Icons/Upgrades/M14_magazine"
+        }),
         PlaceObj('WeaponComponentVisual', {
             Icon = "Mod/KKh3Yhf/Images/B93RR_mag_ext.png",
             param_bindings = false,
@@ -1276,6 +1587,27 @@ local map = {
         })
     },
     ["MagNormal"] = {
+        PlaceObj('WeaponComponentVisual', {
+            Slot = "Magazine",
+            Entity = "A91_762_mag_def",
+            ApplyTo = "A91_2",
+            param_bindings = false,
+            Icon = "Mod/KKh3Yhf/Images/A91_mag_def.png"
+        }),
+        PlaceObj('WeaponComponentVisual', {
+            Slot = "Magazine",
+            Entity = "G11_Mag_def",
+            ApplyTo = "G11_1",
+            param_bindings = false,
+            Icon = "Mod/KKh3Yhf/Images/G11_Mag_def_icon.png"
+        }),
+        PlaceObj('WeaponComponentVisual', {
+            Slot = "Magazine",
+            Entity = "WeaponAttA_MagazineM24_01",
+            ApplyTo = "M24Sniper",
+            param_bindings = false,
+            Icon = "UI/Icons/Upgrades/default_magazine"
+        }),
         PlaceObj('WeaponComponentVisual', {
             param_bindings = false,
             Icon = "Mod/KKh3Yhf/Images/BM59_mag_def.png",
@@ -1397,7 +1729,8 @@ function GBOTOG_RevMag_AddClassesToInventoryItemDefs()
         'SteyrScout_1_Magazine', 'StenMK2_1_Magazine', 'STG44R_1_Magazine', 'AR10std_Magazine',
         'B93RR_1_MagazineLarge', 'USP_1_MagazineLarge', 'VikingMP446_1_MagazineLarge',
         'Gewehr43_1_MagazineLarge', 'P08_1_MagazineLarge', 'M1911_1_MagazineLarge',
-        'MicroUZI_1_MagazineLarge', 'PP91_1_MagazineLarge', 'SSG69_1_MagazineLarge'
+        'MicroUZI_1_MagazineLarge', 'PP91_1_MagazineLarge', 'SSG69_1_MagazineLarge',
+        'A91_2_Magazine', 'A91_2_MagazineLarge', 'G11_1_Magazine', 'G11_1_MagazineLarge', 'G11_1_MagazineLarger', 'M24Sniper_Magazine', 'M24Sniper_MagazineLarge'
     }
     for _, id in ipairs(classes) do
         InventoryItemDefs[id] = g_Classes[id]
