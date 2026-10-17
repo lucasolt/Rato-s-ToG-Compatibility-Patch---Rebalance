@@ -374,6 +374,12 @@ function RatoTOGComponents()
 	WeaponComponents["Type56D_stock_hvy_1"]:PostLoad()
 
 
+	WeaponComponents["VSK94_Stock_hvy_1"].ModificationEffects = table.copy(WeaponComponents["StockHeavy"].ModificationEffects)
+	WeaponComponents["VSK94_Stock_hvy_1"].Parameters = table.copy(WeaponComponents["StockHeavy"].Parameters)
+	WeaponComponents["VSK94_Stock_hvy_1"].GBO_ComponentAncestor = "StockHeavy"
+	WeaponComponents["VSK94_Stock_hvy_1"]:PostLoad()
+
+
 	WeaponComponents["RAT_TOG_ACOG"].ModificationEffects = table.copy(WeaponComponents["ScopeCOGQuick"].ModificationEffects)
 	WeaponComponents["RAT_TOG_ACOG"].Parameters = table.copy(WeaponComponents["ScopeCOGQuick"].Parameters)
 	WeaponComponents["RAT_TOG_ACOG"].GBO_ComponentAncestor = "ScopeCOGQuick"
@@ -2751,11 +2757,6 @@ function RatoTOGComponents()
 	WeaponComponents["VSK94_Mag_def_1"].ModificationEffects = {}
 	WeaponComponents["VSK94_Mag_def_1"].Parameters = {}
 	WeaponComponents["VSK94_Mag_def_1"]:PostLoad()
-
-
-	WeaponComponents["VSK94_Stock_hvy_1"].ModificationEffects = {}
-	WeaponComponents["VSK94_Stock_hvy_1"].Parameters = {}
-	WeaponComponents["VSK94_Stock_hvy_1"]:PostLoad()
 
 
 	WeaponComponents["VSS_Barrel_def_1"].ModificationEffects = {}
