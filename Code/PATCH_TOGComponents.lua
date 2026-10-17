@@ -1280,9 +1280,9 @@ function RatoTOGComponents()
 	WeaponComponents["AN94_Stock_def_1"]:PostLoad()
 
 
-	WeaponComponents["foldable_StockNormal"].ModificationEffects = table.copy(WeaponComponents["_Master_StockNormalUnfolded_TOG"].ModificationEffects)
-	WeaponComponents["foldable_StockNormal"].Parameters = table.copy(WeaponComponents["_Master_StockNormalUnfolded_TOG"].Parameters)
-	WeaponComponents["foldable_StockNormal"].GBO_ComponentAncestor = "_Master_StockNormalUnfolded_TOG"
+	WeaponComponents["foldable_StockNormal"].ModificationEffects = table.copy(WeaponComponents["_Master_StockLightUnfolded_TOG"].ModificationEffects)
+	WeaponComponents["foldable_StockNormal"].Parameters = table.copy(WeaponComponents["_Master_StockLightUnfolded_TOG"].Parameters)
+	WeaponComponents["foldable_StockNormal"].GBO_ComponentAncestor = "_Master_StockLightUnfolded_TOG"
 	WeaponComponents["foldable_StockNormal"].zzFoldingPair = {"StockFolded"}
 	WeaponComponents["foldable_StockNormal"]:PostLoad()
 
