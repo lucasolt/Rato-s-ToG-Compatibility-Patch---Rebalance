@@ -799,9 +799,49 @@ function RatTOG_RevMag_SyncCalibers()
     end)
     ClassDescendantsList("Mag", function(id, mag)
         local cal = cal_of[mag.Platform or ""]
-        if cal and InventoryItemDefs[id] and mag.Caliber ~= cal then
+        local def = InventoryItemDefs[id]
+        if cal and def and mag.Caliber ~= cal then
             print("GBO TOG RevMag: " .. id .. " caliber " .. tostring(mag.Caliber) .. " -> " .. cal)
             mag.Caliber = cal
+            ---- the store's stats column reads the preset
+            def.Caliber = cal
+        end
+    end)
+end
+
+---- The restock walks InventoryItemCompositeDef presets and the store UI reads them, so a mag that is
+---- only a class (registered as InventoryItemDefs[id] = class) is never sold. Each gets a preset built
+---- from its class; the class stays the item, so saves and the generated definitions are untouched.
+RAT_TOG_MAG_PRESET_PROPS = {
+    "Icon", "DisplayName", "DisplayNamePlural", "Description", "AdditionalHint", "Cost", "CanAppearInShop",
+    "Tier", "RestockWeight", "CanBeConsumed", "CategoryPair", "Platform", "MagazineSize", "Caliber",
+    "Modification", "Weight", "ScrapParts", "Repairable", "PocketS_amount", "PocketM_amount",
+    "PocketML_amount", "PocketL_amount", "RifleMag_amount", "PistolMag_amount", "PistolHolster_amount",
+    "KnifeSheath_amount", "Carabiner_amount"
+}
+
+function RatTOG_RevMag_EnsurePresets()
+    if not IsMod_loaded('URkxyfE') then
+        return
+    end
+    ClassDescendantsList("Mag", function(id, mag)
+        ---- legacy SKS mags fit no slot any more: they stay loadable from saves but are never sold
+        if InventoryItemDefs[id] ~= mag or RAT_SKS_LEGACY_MAGS[mag.Modification or ""] then
+            return
+        end
+        local props = {'Group', "Default", 'Id', id, 'object_class', mag.object_class or mag.__parents[1]}
+        for _, k in ipairs(RAT_TOG_MAG_PRESET_PROPS) do
+            local v = mag[k]
+            if v ~= nil then
+                props[#props + 1] = k
+                props[#props + 1] = v
+            end
+        end
+        InventoryItemDefs[id] = nil
+        PlaceObj('InventoryItemCompositeDef', props)
+        if not InventoryItemDefs[id] then
+            print("GBO TOG RevMag: preset for " .. id .. " did not register")
+            InventoryItemDefs[id] = mag
         end
     end)
 end
