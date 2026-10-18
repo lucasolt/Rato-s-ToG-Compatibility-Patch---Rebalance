@@ -66,8 +66,7 @@ function OnMsg.RevisedMagPropsAddedToFirearms()
     -- REV_SetupWeapon(HK23E_1, "AR15", "STANAGMagazine", "MagLarge", { "MagLarge", "MagNormal"})--, "MagSmall_GBOTOG" })	
 
     --- AK74 Mag
-    REV_SetupWeapon(AN94_1, "AK545", "AK74Magazine", "MagNormalFine",
-                    {"MagLargeFine", "MagLarger", "MagNormalFine"})
+    REV_SetupWeapon(AN94_1, "AK545", "AK74Magazine", "MagNormalFine", {"MagLargeFine", "MagNormalFine"})
 
     --- 9x39 
     REV_SetupWeapon(VSS_1, "VSS939", "VSS_Mag", "MagNormal", {"MagNormal", "MagLarge"})
@@ -709,18 +708,7 @@ local map = {
             Scale = 100,
             Slot = "Magazine",
             param_bindings = false
-        }), ----AK74 Mag
-        PlaceObj('WeaponComponentVisual', {
-            Angle = -10800,
-            ApplyTo = "AN94_1",
-            Entity = "WeaponAttA_MagazineRPK74_03",
-            Icon = "UI/Icons/Upgrades/RPK74_drum_magazine",
-            Offset = point(10, 0, 20),
-            Scale = 100,
-            Slot = "Magazine",
-            param_bindings = false
         })
-
     },
     ['MagNormalFine'] = {
 
