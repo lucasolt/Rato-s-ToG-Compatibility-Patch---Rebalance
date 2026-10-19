@@ -483,7 +483,7 @@ return {
 				"Enable_RunAndGun",
 				"zzStockEquipped",
 				"ReduceRange",
-				"MultiplyAimAccuracy_NoStock",
+				"MultiplyAimAccuracy",
 			},
 			Parameters = {
 				PlaceObj('PresetParamNumber', {
@@ -854,7 +854,7 @@ return {
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "AimAccuracyMul",
-					'Value', 92,
+					'Value', 90,
 					'Tag', "<AimAccuracyMul>",
 				}),
 			},
@@ -1348,6 +1348,11 @@ return {
 							'Value', 11,
 							'Tag', "<floor_reduc>",
 						}),
+						PlaceObj('PresetParamNumber', {
+							'Name', "threshold_bonus_aim_acc",
+							'Value', 20,
+							'Tag', "<threshold_bonus_aim_acc>",
+						}),
 					},
 				}),
 			},
@@ -1422,7 +1427,7 @@ return {
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "threshold_bonus_aim_acc",
-					'Value', 25,
+					'Value', 20,
 					'Tag', "<threshold_bonus_aim_acc>",
 				}),
 			},
@@ -1637,7 +1642,7 @@ return {
 				}),
 				PlaceObj('PresetParamNumber', {
 					'Name', "AimAccuracyMul",
-					'Value', 92,
+					'Value', 90,
 					'Tag', "<AimAccuracyMul>",
 				}),
 			},
@@ -2249,11 +2254,13 @@ return {
 				Cost = 10,
 				DisplayName = T(816803515806, --[[ModItemWeaponComponent R_VSS_suppressor DisplayName]] "Suppressor"),
 				GBO_ComponentAncestor = "Suppressor",
+				GBO_OverrideRemoveEffects = {
+					"IncreaseRPMMul",
+				},
 				Icon = "Mod/Dau6w/Images/VSS_silencer.png",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"IncreaseConditionDegradationRate",
-					"IncreaseRPMMul",
 					"SilentShots",
 					"compensator_effect_silencer",
 					"DecreaseOverwatchAngle",
@@ -2309,11 +2316,13 @@ return {
 				Cost = 10,
 				DisplayName = T(981109124405, --[[ModItemWeaponComponent RAT_VSK_Suppressor DisplayName]] "Suppressor"),
 				GBO_ComponentAncestor = "Suppressor",
+				GBO_OverrideRemoveEffects = {
+					"IncreaseRPMMul",
+				},
 				Icon = "Mod/Dau6w/Images/VSS_silencer.png",
 				ModificationDifficulty = 0,
 				ModificationEffects = {
 					"IncreaseConditionDegradationRate",
-					"IncreaseRPMMul",
 					"SilentShots",
 					"compensator_effect_silencer",
 					"DecreaseOverwatchAngle",

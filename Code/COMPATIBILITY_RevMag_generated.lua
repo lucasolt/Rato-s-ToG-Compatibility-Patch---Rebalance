@@ -1090,7 +1090,7 @@ function GBOTOG_RevMag_CreateMagazine()
         Modification = "MagNormal",
         Group = "Default",
         Weight = 200,
-        Description = T(371252754400, 'Scout Tactical Elite Magazine for .308Win rounds'),
+        Description = T(371252754400, 'Detachable 5-round box magazine for the Scout Tactical Elite'),
         DisplayNamePlural = T(886950325054, 'Scout Tactical Elite Magazines'),
         PocketM_amount = 0,
         CanBeConsumed = false,

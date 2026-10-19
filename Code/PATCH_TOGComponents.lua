@@ -98,8 +98,7 @@ function RatoTOGComponents()
 	WeaponComponents["MP7_Supr_1"]:PostLoad()
 
 
-	WeaponComponents["R_VSS_suppressor"].ModificationEffects = table.copy(WeaponComponents["Suppressor"].ModificationEffects)
-	WeaponComponents["R_VSS_suppressor"].Parameters = table.copy(WeaponComponents["Suppressor"].Parameters)
+
 	WeaponComponents["R_VSS_suppressor"].GBO_ComponentAncestor = "Suppressor"
 	WeaponComponents["R_VSS_suppressor"]:PostLoad()
 
@@ -122,8 +121,7 @@ function RatoTOGComponents()
 	WeaponComponents["RAT_TOG_suppressor_wp"]:PostLoad()
 
 
-	WeaponComponents["RAT_VSK_Suppressor"].ModificationEffects = table.copy(WeaponComponents["Suppressor"].ModificationEffects)
-	WeaponComponents["RAT_VSK_Suppressor"].Parameters = table.copy(WeaponComponents["Suppressor"].Parameters)
+
 	WeaponComponents["RAT_VSK_Suppressor"].GBO_ComponentAncestor = "Suppressor"
 	WeaponComponents["RAT_VSK_Suppressor"]:PostLoad()
 
