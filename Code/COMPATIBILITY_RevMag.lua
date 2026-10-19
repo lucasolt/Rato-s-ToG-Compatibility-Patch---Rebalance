@@ -4,7 +4,7 @@
 RAT_SKS_INTERNAL_MAG = "RAT_SKS_InternalMag"
 RAT_SKS_INTERNAL_SIZE = 10
 RAT_SKS_AK_MAG = "AK47Magazine"
-RAT_SKS_CONVERT_PARTS = 10
+RAT_SKS_CONVERT_PARTS = 5 -- the mag well only: the mag itself comes out of the squad or the stash
 
 function OnMsg.ClassesGenerate()
     AppendClass.Firearm = {
@@ -118,6 +118,97 @@ local function sks_holder_sector(holder)
     return squad and squad.CurrentSector or gv_CurrentSectorId
 end
 
+---- Every mag of this class the bench can reach: mercs in the sector, then the opened stash.
+local function sks_reachable_mags(sector_id, mag_id)
+    local found = {}
+    for _, id in ipairs(GetPlayerMercsInSector(sector_id) or empty_table) do
+        local merc = gv_UnitData[id]
+        if merc then
+            merc:ForEachItemDef(mag_id, function(item, slot)
+                found[#found + 1] = {item = item, merc = merc, slot = slot}
+            end)
+        end
+    end
+    local sector = gv_Sectors and gv_Sectors[sector_id]
+    for _, container in ipairs(sector and sector.sector_inventory or empty_table) do
+        if container[2] then
+            for _, item in ipairs(container[3] or empty_table) do
+                if item.class == mag_id then
+                    found[#found + 1] = {item = item, list = container[3]}
+                end
+            end
+        end
+    end
+    return found
+end
+
+local function sks_sector_id(sector)
+    return type(sector) == "table" and sector.Id or sector
+end
+
+---- Takes the emptiest one; rounds still in it go back where the mag was, as a loose stack.
+function NetSyncEvents.RatTOG_SKS_TakeMag(sector_id, mag_id)
+    local best
+    for _, entry in ipairs(sks_reachable_mags(sector_id, mag_id)) do
+        local rounds = entry.item.ammo and entry.item.ammo.Amount or 0
+        if not best or rounds < best.rounds then
+            best = entry
+            best.rounds = rounds
+        end
+    end
+    if not best then
+        print("GBO TOG: no " .. tostring(mag_id) .. " left to convert the SKS")
+        return
+    end
+    local mag, ammo = best.item, best.item.ammo
+    mag.ammo = nil
+    if best.merc then
+        best.merc:RemoveItem(best.slot, mag)
+        if ammo and not best.merc:AddItem("Inventory", ammo) then
+            AddToSectorInventory(sector_id, {ammo})
+        end
+    else
+        table.remove_value(best.list, mag)
+        if ammo then
+            AddToSectorInventory(sector_id, {ammo})
+        end
+    end
+    DoneObject(mag)
+    InventoryUIRespawn()
+    ObjModified(gv_Sectors[sector_id])
+end
+
+---- The bench charges the AK mag like any other resource: a cost row, the afford check, the pay.
+function RatTOG_SKS_EnsureMagResource(mag_id)
+    local list = SectorOperationResouces
+    local cls = g_Classes[mag_id]
+    if not list or not cls or list[mag_id] then
+        return
+    end
+    local entry = {
+        id = mag_id,
+        name = cls.DisplayName,
+        icon = cls.Icon,
+        additional = true, -- keeps it out of the sector operations resource bar
+        context = function(sector)
+            return sector
+        end,
+        current = function(sector)
+            return #sks_reachable_mags(sks_sector_id(sector), mag_id)
+        end,
+        pay = function(sector, cost)
+            for _ = 1, cost do
+                NetSyncEvent("RatTOG_SKS_TakeMag", sks_sector_id(sector), mag_id)
+            end
+        end,
+        restore = function(merc, cost)
+            RestoreSectorOperationResource(merc, mag_id, cost)
+        end
+    }
+    list[#list + 1] = entry
+    list[mag_id] = entry
+end
+
 ---- Internal -> AK mags: the loose rounds go into a new empty mag of the size picked.
 function RatTOG_SKS_Convert(weapon, component)
     local mag = PlaceInventoryItem(RatTOG_SKS_MagFor(component) or RAT_SKS_AK_MAG)
@@ -189,7 +280,7 @@ function ModifyWeaponDlg:CanModifySlot(slot, partId)
     return orig_can_modify(self, slot, partId)
 end
 
----- The conversion kit: a mag well and one empty mag, on top of the part's own bill.
+---- The conversion kit: a mag well plus an AK mag of the picked size, on top of the part's own bill.
 local orig_changes_cost = ModifyWeaponDlg.GetChangesCost
 function ModifyWeaponDlg:GetChangesCost(slotFilter, placedComponentOverride)
     local costs, anyChanged, canAfford, perType = orig_changes_cost(self, slotFilter, placedComponentOverride)
@@ -203,6 +294,9 @@ function ModifyWeaponDlg:GetChangesCost(slotFilter, placedComponentOverride)
         return costs, anyChanged, canAfford, perType
     end
     costs.Parts = (costs.Parts or 0) + RAT_SKS_CONVERT_PARTS
+    local mag_id = RatTOG_SKS_MagFor(placed) or RAT_SKS_AK_MAG
+    RatTOG_SKS_EnsureMagResource(mag_id)
+    costs[mag_id] = (costs[mag_id] or 0) + 1
     if CheatEnabled("FreeParts") then
         return costs, anyChanged, canAfford, perType
     end
