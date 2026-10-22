@@ -2,7 +2,6 @@ return PlaceObj('ModDef', {
 	'title', "Rato's ToG Compatibility Patch & Rebalance",
 	'description', "[h1](Partial) Compatibility patch for Rato's Gameplay Balance and Overhaul and Tons of Guns[/h1]\n\n	\nWill balance and patch a number of guns of ToG to work with Rato's Mod. \n\n\nIt is recommended to start a fresh game. Will cause compatibility issues on a already ToG enabled save.\n\n\n[*] Compatible with Revised Mags II \nPatched weapons will have correct magazines!\n\nPatched Weapons:\n\nRifles:\n[list]\n[*]AN 94\n[*]SKS\n[*]Papovka\n[*]Type 56\n[*]STG44\n[*]Gewehr 43\n[*]M1 Garand\n[*]HK33A2\n[*]G3A3\n[*]M70\n[*]TAR 21\n[*]RK 95\n[*]RK 62\n[*]AR10\n[*]A91\n[*]G11\n\n[/list]\nPrecision Rifles:\n[list]\n[*]Mosin Carbine\n[*]VSS Vintorez\n[*]SSG 69\n[*]Steyr Scout Elite\n[*]M76\n[*]Delisle\n[*]VSK94\n[/list]\n\nSMGs:\n[list]\n[*]P90\n[*]Micro Uzi\n[*]Sten MK2\n[*]Mac11\n[*]HK53\n[*]UMP\n[*]PP91\n[*]Vigneron M2\n[/list]\n\nPistols:\n[list]\n[*]Glock17\n[*]USP\n[*]Viking Mp446\n[*]B93R\n[*]P 08 Luger\n[*]M1911\n[/list]\n\nMachine Guns:\n[list]\n[*]RPD\n[*]PKM\n[*]HK23E\n[/list]\n\n\n\nSome other changes:\nChanges some components installation logic.\nPapovka Grenade Launcher now blocks the gun from shooting, and appends a grenade to the muzzle\n\n[b] It is very recommended to use CUAE (check the collection), so that weapons will drop as intended[/b]\n\nUnpatched weapons won't drop and won't appear on Bobby Rays\n\n[b]Big thanks to Archimedes, the creator of ToG, and to Wittzard for helping the mod community with a lot of coding stuff[/b]",
 	'image', "Mod/Dau6w/Images/tog.PNG",
-	'last_changes', "1.25\n\nRemoved some components that did not make sense\n\nImproved weapon icons\n\ngeneral tweaks and fixes\n\nGroza has been discontinued\nSteyr Scout has been turned back to 556. \nSSG69 to 762 nato\nG11 3 round burst now is almost recoil-less, same as An94 2 round. Other things changed based on RPM overhaul in GBO4\n\nzf-4 (STG scope) is now a x4",
 	'ignore_files', {
 		"*.git/*",
 		"*.svn/*",
@@ -36,7 +35,7 @@ return PlaceObj('ModDef', {
 	'author', "rato",
 	'version_major', 1,
 	'version_minor', 25,
-	'version', 3502,
+	'version', 3505,
 	'lua_revision', 233360,
 	'saved_with_revision', 366685,
 	'code', {
@@ -58,7 +57,7 @@ return PlaceObj('ModDef', {
 	},
 	'default_options', {},
 	'has_data', true,
-	'saved', 1792378146,
+	'saved', 1792441625,
 	'code_hash', 4913832291134555381,
 	'affected_resources', {
 		PlaceObj('ModResourcePreset', {
