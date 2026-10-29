@@ -275,6 +275,34 @@ function PlaceInventoryItem(item_id, instance, ...)
     return obj
 end
 
+---- C-UAE skips only the slot default, so every Magazine roll on an SKS was an AK mag conversion.
+RAT_SKS_CUAE_CONVERT_CHANCE = 15
+
+function OnMsg.ModsReloaded()
+    if not IsMod_loaded("LDCUAE") then
+        return
+    end
+    local orig = Cuae_AddRandomComponents
+    function Cuae_AddRandomComponents(settings, weapon, ...)
+        local before = weapon and weapon.components and weapon.components.Magazine
+        orig(settings, weapon, ...)
+        if not (weapon and weapon.rat_sks_internal) or before ~= RAT_SKS_INTERNAL_MAG or
+            weapon.components.Magazine == RAT_SKS_INTERNAL_MAG or
+            InteractionRand(100, "LDCUAE") < RAT_SKS_CUAE_CONVERT_CHANCE then
+            return
+        end
+        if weapon.magazine then
+            DoneObject(weapon.magazine)
+            weapon.magazine = nil
+        end
+        weapon:SetProperty("rat_mag_converted", false)
+        weapon:SetWeaponComponent("Magazine", RAT_SKS_INTERNAL_MAG)
+        if weapon.ammo and weapon.ammo.Amount > weapon.MagazineSize then
+            weapon.ammo.Amount = weapon.MagazineSize
+        end
+    end
+end
+
 ---- Bench: an internal SKS converts to any AK mag size, a converted one only goes back to internal.
 local orig_can_modify = ModifyWeaponDlg.CanModifySlot
 function ModifyWeaponDlg:CanModifySlot(slot, partId)
