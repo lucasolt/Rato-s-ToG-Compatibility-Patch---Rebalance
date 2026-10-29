@@ -24,6 +24,12 @@ local function sks_wrap_set_magazine()
     local orig = Firearm.SetMagazineComponents
     ---- Revised Mags sizes the gun from the inserted mag; the internal one has no mag item behind it
     function Firearm:SetMagazineComponents(id, is_init)
+        ---- an AK mag component without the bench (enemy loadouts) needs the mag item Revised Mags sizes from
+        if self.rat_sks_internal and (id or "") ~= "" and id ~= RAT_SKS_INTERNAL_MAG and not self.magazine and
+            not RAT_SKS_LEGACY_MAGS[id] then
+            self:SetProperty("rat_mag_converted", true)
+            self.magazine = PlaceInventoryItem(RatTOG_SKS_MagFor(id) or RAT_SKS_AK_MAG)
+        end
         orig(self, id, is_init)
         if self.rat_sks_internal and id == RAT_SKS_INTERNAL_MAG then
             self:RemoveModifiers(id)
@@ -211,7 +217,7 @@ end
 
 ---- Internal -> AK mags: the loose rounds go into a new empty mag of the size picked.
 function RatTOG_SKS_Convert(weapon, component)
-    local mag = PlaceInventoryItem(RatTOG_SKS_MagFor(component) or RAT_SKS_AK_MAG)
+    local mag = weapon.magazine or PlaceInventoryItem(RatTOG_SKS_MagFor(component) or RAT_SKS_AK_MAG)
     mag.ammo = weapon.ammo
     weapon:SetProperty("rat_mag_converted", true)
     weapon.magazine = mag
@@ -255,13 +261,15 @@ RAT_SKS_LEGACY_MAGS = {MagSmall_GBOTOG = true, RevMag_Tog_MagSmall = true}
 local orig_place = PlaceInventoryItem
 function PlaceInventoryItem(item_id, instance, ...)
     local obj = orig_place(item_id, instance, ...)
-    local comp = obj and obj.rat_sks_internal and instance and not obj.rat_mag_converted and obj.components.Magazine
+    local comp = obj and obj.rat_sks_internal and instance and obj.components.Magazine
     if comp and comp ~= RAT_SKS_INTERNAL_MAG then
-        if RAT_SKS_LEGACY_MAGS[comp] then
+        if RAT_SKS_LEGACY_MAGS[comp] and not obj.rat_mag_converted then
             obj.magazine = nil
             obj:SetWeaponComponent("Magazine", RAT_SKS_INTERNAL_MAG)
-        else
+        elseif not obj.rat_mag_converted or obj.MagazineSize <= 0 then
+            ---- saves hold converted guns that never got their size modifier
             obj:SetProperty("rat_mag_converted", true)
+            obj:SetWeaponComponent("Magazine", comp)
         end
     end
     return obj
