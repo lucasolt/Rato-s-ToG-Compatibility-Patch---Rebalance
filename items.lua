@@ -2021,7 +2021,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "RangeIncrease",
-						'Value', 2,
+						'Value', 4,
 						'Tag', "<RangeIncrease>",
 					}),
 				},
@@ -2112,7 +2112,7 @@ return {
 					}),
 					PlaceObj('PresetParamNumber', {
 						'Name', "RangeIncrease",
-						'Value', 2,
+						'Value', 4,
 						'Tag', "<RangeIncrease>",
 					}),
 					PlaceObj('PresetParamNumber', {
